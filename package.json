@@ -1,0 +1,24 @@
+{
+  "name": "fullstack_app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "cd backend && node node_modules/babel-cli/bin/babel.js ./ --source-maps --out-dir dist",
+    "start": "concurrently \"cd backend && node node_modules/nodemon/bin/nodemon.js -- node_modules/babel-cli/bin/babel-node.js server.js\" \"cd AdminClient && npm start\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^4.1.0"
+  },
+  "devDependencies": {
+    "babel": "^6.23.0",
+    "babel-cli": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "nodemon": "^1.19.1"
+  }
+}
