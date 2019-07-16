@@ -2,6 +2,7 @@ import express, { Router } from 'express';
 
 //import router from './router';
 import Data from '../data';
+import Jobs from '../Schema';
 import { type } from 'os';
 
 //initialize the router
@@ -13,7 +14,7 @@ router.delete('/deleteData', (req, res) => {
     const { id } = req.body;
    
     console.log("id is type "+ typeof id);
-    Data.findByIdAndDelete(id, (err) => {
+    Jobs.findByIdAndDelete(id, (err) => {
       if (err) return res.send(err);
       return res.json({ success: true });
     });

@@ -19,7 +19,6 @@ class App extends Component {
     idToDelete: null,
     idToUpdate: null,
     objectToUpdate: null,
-    loaded: false,
   };
 
   componentDidMount() {
@@ -35,13 +34,15 @@ class App extends Component {
     console.log("unmounted interval...")
     if (this.state.intervalIsSet) {
       clearInterval(this.state.intervalIsSet);
-      this.setState({ intervalIsSet: null,loaded:false });
+      this.setState({ intervalIsSet: null });
+      //this.setState({ intervalIsSet: null,loaded:false });
     }
   }
 
   getDataFromDb = async () => {
       const data  = await fetchData()
-      this.setState({data:data,loaded:true})
+      this.setState({data:data})
+      // this.printData()
   }
 
   printData= () => {
@@ -55,7 +56,6 @@ class App extends Component {
       idToBeAdded++;
     }
     addDataToDB(idToBeAdded,message)
-    this.setState({loaded:false})
   };
 
   deleteFromDB = (idTodelete) => {
@@ -70,27 +70,47 @@ class App extends Component {
   };
 
   
-  updateDB = (idToUpdate, updateToApply) => {
-    let objIdToUpdate = null;
-    let tempIdToUpdate = parseInt(idToUpdate);
+  updateDB = (update) => {
+     let objIdToUpdate = null;
+     let oldData = {};
+     let tempIdToUpdate = parseInt(update.id);
     this.state.data.forEach((dat) => {
       if (dat.id === tempIdToUpdate) {
         objIdToUpdate = dat._id;
+        oldData =  dat;
       }
     });
-    updateDataInDB(objIdToUpdate,updateToApply)
+    if(Object.keys(oldData).length > 0){ //check if oldData is found
+      for(let key in update){
+        if(key === "address" ){
+          for(let addr in update[key]){
+            if(update[key][addr] === ""){
+              update[key][addr] = oldData[key][addr];
+            }
+          }
+        }else if(update[key] === ""){
+          update[key] = oldData[key];
+        }
+      }
+      updateDataInDB(objIdToUpdate,update)
+    }
   };
 
   render() {
     const { data } = this.state;
     return (
       <div>
-          <AddData add={this.putDataToDB}/>
-          <DeleteData delete={this.deleteFromDB}/>
-          <UpdateData update={this.updateDB}/>  
+        <div className='arrangeRow'>
+          <div className='container'><AddData add={this.putDataToDB}/></div>
+          <div className='container'><DeleteData delete={this.deleteFromDB}/></div>
+          <div className='container'><UpdateData update={this.updateDB}/></div>  
+        </div>
+        {
           <ul>
-            {data.length <= 0 ? 'NO DB ENTRIES YET' : data.map(job => <ListJob {...job}/>)}
+            {data.length <= 0 ? 'NO DB ENTRIES YET' : data.map(job => <ListJob key={job.id} {...job}/>)}
           </ul>
+        }
+        
       </div>
     );
   }

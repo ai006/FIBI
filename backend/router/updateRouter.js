@@ -1,7 +1,6 @@
 import express, { Router } from 'express';
 
-//import router from './router';
-import Data from '../data';
+import Jobs from '../Schema';
 
 //initialize the router
 const router = Router();
@@ -10,7 +9,7 @@ const router = Router();
 // this method overwrites existing data in our database
 router.post('/updateData', (req, res) => {
     const { id, update } = req.body;
-    Data.findByIdAndUpdate(id, update, (err) => {
+    Jobs.findByIdAndUpdate(id, update, (err) => {
       if (err) return res.json({ success: false, error: err });
       return res.json({ success: true });
     });

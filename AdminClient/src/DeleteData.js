@@ -24,7 +24,8 @@ export default class DeleteData extends Component {
     render(){
         return(
             <div>
-               <h3 className='colorOrange'>Delete data</h3> 
+              <div>
+              <h3 className='colorBlue'>Delete data</h3> 
                 <div>
                   <input
                     type="text" 
@@ -32,10 +33,13 @@ export default class DeleteData extends Component {
                     placeholder="Enter id to delete"
                     value={this.state.id}
                     onChange={this.handleIdChange}
-                  /> 
-                  <button onClick={() => this.deleteFromDB(this.state.id)}>
-                    Delete
-                  </button> 
+                  />
+              </div>
+                  <div className="MarginTop">
+                    <button onClick={() => this.deleteFromDB(this.state.id)}>
+                      Delete
+                    </button> 
+                  </div>
                 </div>
             </div>
         )

@@ -10,10 +10,23 @@ export const fetchData = async () => {
 
 // our put method that uses our backend api
 // to create new query into our data base
-export const addDataToDB = async (id, message) => {
+export const addDataToDB = async (id, data) => {
     axios.post('http://localhost:3001/api/putData', {
       id: id,
-      message: message,
+      message: data.CompanyName,
+      job : {
+        id:id,
+        CompanyName : data.CompanyName,
+        logo : data.logo,
+        address :{
+          street : data.address.street,
+          city   : data.address.city,
+          country: data.address.country,
+        },
+        link: data.link,
+        jobs: data.jobs,
+        about: data.about,
+      }
     });
     return
 }
@@ -32,7 +45,7 @@ export const deleteDataFromDB = async (id) => {
 export const updateDataInDB = async (id, messageUpdate) => {
     axios.post('http://localhost:3001/api/updateData', {
         id: id,
-        update: { message: messageUpdate },
+        update: messageUpdate,
       });
       return
 }

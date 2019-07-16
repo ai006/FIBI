@@ -3,6 +3,7 @@ import express, { Router } from 'express';
 
 //import router from './router';
 import Data from '../data';
+import Jobs from '../Schema';
 
 //initialize the router
 const router = Router();
@@ -11,18 +12,28 @@ const router = Router();
 // this method adds new data in our database
 router.post('/putData', (req, res) => {
     let data = new Data();
-  
-    const { id, message } = req.body;
-  
-    if ((!id && id !== 0) || !message) {
+    let Job = new Jobs();
+    const { id, message, job } = req.body;
+    console.log(id)
+    if ((!id && id !== 0) || !job) {
       return res.json({
         success: false,
         error: 'INVALID INPUTS',
       });
     }
-    data.message = message;
-    data.id = id;
-    data.save((err) => {
+    console.log(job.address)
+    Job.id = job.id;
+    Job.CompanyName = job.CompanyName;
+    Job.logo = job.logo;
+    Job.address.street = job.address.street;
+    Job.address.city = job.address.city;
+    Job.address.country = job.address.country;
+    Job.link = job.link;
+    Job.jobs = job.jobs;
+    Job.about = job.about;
+
+   
+    Job.save((err) => {
       if (err) return res.json({ success: false, error: err });
       return res.json({ success: true });
     });
