@@ -55,7 +55,7 @@ export default class UpdateData extends Component {
                  <InputForm type={"text"} name="jobs" value={this.state.jobs} handleChange={this.UpdateChange} placeholder={"update jobs"}/>
                  <textarea  style={{width:'200px',padding:'10px'}} rows = "4" name= "about" value={this.state.about} onChange={this.UpdateChange} placeholder={"update about company"}/>
              </div>
-                <button onClick={() => this.updateDataToDB(this.state)}>ADD</button>
+                <button onClick={() => this.updateDataToDB(this.state)}>UPDATE</button>
              </div>
          </div>
         )
