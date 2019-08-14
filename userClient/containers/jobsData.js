@@ -34,6 +34,7 @@ class JobsData extends Component {
     //   alert('Please select show time');
     // } else {
       // Close popup
+      
       this.closeMovie();
       // Navigate away to Confirmation route
 

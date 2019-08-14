@@ -5,12 +5,14 @@ import { defaultStyles } from './styles';
 
 export default class Confirmation extends Component {
 
-  static propTypes = {
-    code: PropTypes.string.isRequired,
-  }
+  static navigationOptions = ({ navigation }) => {
+    return {
+      headerTitle: navigation.getParam('code'),
+    };
+  };
 
   render() {
-    const { code } = this.props;
+    const code = this.props.navigation.getParam('code')
     return (
       <View style={styles.container}>
         <Text style={styles.header}>Your confirmation code</Text>
@@ -18,7 +20,7 @@ export default class Confirmation extends Component {
         <TouchableOpacity
           style={styles.buttonContainer}
           // Go back when pressed
-          onPress={() => this.props.navigator.pop() }
+          onPress={() => this.props.navigation.pop() }
         >
           <Text style={styles.button}>Done</Text>
         </TouchableOpacity>
