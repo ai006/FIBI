@@ -4,13 +4,14 @@ import { Provider } from 'react-redux';
 
 import store from './store';
 import { fetchJobsData } from './api';
-import JobsData from './containers/jobsData';
+import AppNavigator from './ScreenContainer'
+
 
 export default class App extends React.Component {
 
   componentDidMount(){
     store.dispatch(fetchJobsData());
- //  setInterval(this.printReduxStorage,10000)
+    //setInterval(this.printReduxStorage,10000)
   }
  
   printReduxStorage = () => {
@@ -19,13 +20,9 @@ export default class App extends React.Component {
 
   render() {
     return (
-         <View style={styles.container}>
-        
-             <Text style={styles.textColor}>WeSponsor</Text>
-              <Provider store={store}>
-                <JobsData />
-              </Provider>
-        </View>
+        <Provider store={store}>
+          <AppNavigator/>
+        </Provider>           
     )
   }
 }
