@@ -8,10 +8,19 @@ import MoviePopup from '../MoviePopUp';
 
 
 class JobsData extends Component {
+
+  static navigationOptions = ({ navigation }) => {
+    return {
+      headerTitle: 'Jobs',
+     };
+  };
+
   constructor(props){
     super(props);
     this.state = {
       popupIsOpen: false,
+      chosenTime: null,
+      chosenDay:0,
     }
   }
 
@@ -25,14 +34,28 @@ class JobsData extends Component {
   closeMovie = () => {
     this.setState({
       popupIsOpen: false,
+      chosenDay: 0,
+      chosenTime:null,
     }); 
+  }
+
+  chooseDay = (day) => {
+    this.setState({
+      chosenDay: day,
+    });
+  }
+
+  chooseTime = (time) => {
+    this.setState({
+      chosenTime: time,
+    });
   }
 
   bookTicket = () => {
     // Make sure they selected time 
-    // if (!this.state.chosenTime) {
-    //   alert('Please select show time');
-    // } else {
+    //  if (!this.state.chosenTime) {
+    //    alert('Please select show time');
+    //  } //else {
       // Close popup
       
       this.closeMovie();
@@ -41,6 +64,8 @@ class JobsData extends Component {
       this.props.navigation.push('Confirm', {
         // Generate random string
         code: Math.random().toString(36).substring(6).toUpperCase(),
+        job: this.state.jobClicked
+
       });
     //}
   }
@@ -68,7 +93,10 @@ class JobsData extends Component {
         <ScrollView contentContainerStyle={styles.scrollContent} >
             { data.map((job,index) => <MoviePoster job={job} onOpen={this.openMovie}  key={index}/>)}  
         </ScrollView>
-         <MoviePopup jobClicked={this.state.jobClicked} isOpen={this.state.popupIsOpen} onClose={this.closeMovie} onBook={this.bookTicket}/>
+         <MoviePopup jobClicked={this.state.jobClicked} isOpen={this.state.popupIsOpen} 
+                     onClose={this.closeMovie} chosenDay={this.state.chosenDay}
+                     chosenTime={this.state.chosenTime} onChooseDay={this.chooseDay}
+                     onChooseTime={this.chooseTime} onBook={this.bookTicket}/>
       </View> 
     );
   }

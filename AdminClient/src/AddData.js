@@ -41,7 +41,6 @@ export default class AddData extends Component {
 
     render(){
         return(
-            
             <div> 
                 <h3 className='colorBlue'>Add data</h3> 
                 <div>
