@@ -9,12 +9,14 @@ const JobSchema = new Schema(
     CompanyName: String,
     logo: String,
     address: {
-        street: String,
         city: String,
+        cityArr: Array,
         country: String,
+        countryArr: Array,
     },
     link: String,
     jobs: String,
+    jobsArr: Array,
     about: String,
 },
   { timestamps: true }

@@ -5,7 +5,7 @@ import {StyleSheet} from 'react-native';
   export const getStyles = {
       imageContainer: {
         maxWidth: 110,              // limit width
-        marginRight: 10,
+        marginTop: 10,
       },
       movieContainer: {
         flexDirection: 'row',       // arrange image and movie info in a row

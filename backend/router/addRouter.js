@@ -11,25 +11,27 @@ const router = Router();
 // this is our create method
 // this method adds new data in our database
 router.post('/putData', (req, res) => {
-    let data = new Data();
+
     let Job = new Jobs();
-    const { id, message, job } = req.body;
-    console.log(id)
+    const { id, job } = req.body;
     if ((!id && id !== 0) || !job) {
       return res.json({
         success: false,
         error: 'INVALID INPUTS',
       });
     }
-    console.log(job.address)
+    console.log(job)
     Job.id = job.id;
     Job.CompanyName = job.CompanyName;
     Job.logo = job.logo;
-    Job.address.street = job.address.street;
+    //Job.address.street = job.address.street;
     Job.address.city = job.address.city;
+    Job.address.cityArr = job.address.cityArr;
     Job.address.country = job.address.country;
+    Job.address.countryArr = job.address.countryArr;
     Job.link = job.link;
     Job.jobs = job.jobs;
+    Job.jobsArr = job.jobsArr;
     Job.about = job.about;
 
    
@@ -38,6 +40,5 @@ router.post('/putData', (req, res) => {
       return res.json({ success: true });
     });
   });
-
 
   export default router;

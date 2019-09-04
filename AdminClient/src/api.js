@@ -13,18 +13,19 @@ export const fetchData = async () => {
 export const addDataToDB = async (id, data) => {
     axios.post('http://localhost:3001/api/putData', {
       id: id,
-      message: data.CompanyName,
       job : {
         id:id,
         CompanyName : data.CompanyName,
         logo : data.logo,
         address :{
-          street : data.address.street,
           city   : data.address.city,
+          cityArr: data.address.cityArr,
           country: data.address.country,
+          countryArr: data.address.countryArr,
         },
         link: data.link,
         jobs: data.jobs,
+        jobsArr: data.jobsArr,
         about: data.about,
       }
     });

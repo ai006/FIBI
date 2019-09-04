@@ -6,7 +6,8 @@ import { Animated, Dimensions, Image, LayoutAnimation, PanResponder, StyleSheet,
 import { defaultStyles } from './styles';
 import {getStyles} from './DynamicStyle';
 import Options from './Options';
-import {countries, hiring} from './model';
+
+
 
 const { width, height } = Dimensions.get('window'); // Get screen dimensions
 const defaultHeight = height * 0.67;                // Set default popup height to 67% of screen height
@@ -73,8 +74,8 @@ export default class MoviePopup extends Component {
 
   render() {
     const {jobClicked, chosenDay, chosenTime, onChooseDay, onChooseTime, onBook} = this.props;
-    const { CompanyName, link, logo, days, times } = jobClicked || {}; // Pull out movie data
-   
+    const { CompanyName, link, logo, address,jobsArr } = jobClicked || {}; // Pull out movie data
+    const {countryArr} = address || [];
     if (!this.state.visible) {  // Render nothing if not visible
       return null;
     }
@@ -113,7 +114,7 @@ export default class MoviePopup extends Component {
               <Text style={styles.sectionHeader}>Countries</Text>
               {/* TODO: Add day options here */}
               <Options
-                values={countries}
+                values={countryArr}
                 chosen={chosenDay}
                 onChoose={onChooseDay}
               />
@@ -121,7 +122,7 @@ export default class MoviePopup extends Component {
               <Text style={styles.sectionHeader}>Jobs</Text>
               {/* TODO: Add show time options here */}
               <Options
-                values={hiring}
+                values={jobsArr}
                 chosen={chosenTime}
                 onChoose={onChooseTime}
               />

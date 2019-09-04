@@ -1,17 +1,24 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import {ScrollView, Dimensions, StyleSheet, Text, View, ActivityIndicator } from 'react-native';
+import { Searchbar } from 'react-native-paper';
+
 
 import MoviePoster from './MoviePoster';
 import Constants from 'expo-constants';
-import MoviePopup from '../MoviePopUp';
-
+//import MoviePopup from '../MoviePopUp';
+import MoviePopUp from './MoviePopup';
 
 class JobsData extends Component {
 
   static navigationOptions = ({ navigation }) => {
     return {
       headerTitle: 'Jobs',
+      headerTitleStyle: {
+          textAlign: "center",
+          flex: 1,
+          color: 'green'
+      },
      };
   };
 
@@ -19,8 +26,7 @@ class JobsData extends Component {
     super(props);
     this.state = {
       popupIsOpen: false,
-      chosenTime: null,
-      chosenDay:0,
+      Query: '',
     }
   }
 
@@ -34,51 +40,23 @@ class JobsData extends Component {
   closeMovie = () => {
     this.setState({
       popupIsOpen: false,
-      chosenDay: 0,
-      chosenTime:null,
     }); 
   }
 
-  chooseDay = (day) => {
-    this.setState({
-      chosenDay: day,
-    });
-  }
-
-  chooseTime = (time) => {
-    this.setState({
-      chosenTime: time,
-    });
-  }
-
   bookTicket = () => {
-    // Make sure they selected time 
-    //  if (!this.state.chosenTime) {
-    //    alert('Please select show time');
-    //  } //else {
-      // Close popup
-      
       this.closeMovie();
-      // Navigate away to Confirmation route
-
-      this.props.navigation.push('Confirm', {
-        // Generate random string
-        code: Math.random().toString(36).substring(6).toUpperCase(),
+      this.props.navigation.push('Confirm', {   // Navigate away to Confirmation route
         job: this.state.jobClicked
-
       });
-    //}
   }
-
 
   render(){
-
+    const { Query } = this.state;
     const {data,status,pending} = this.props;
     //console.log(data)
     // if(!data) {
     //   return (
     //    <Text>No Data</Text>
-       
     //   )
     // }
     if(pending){
@@ -89,15 +67,21 @@ class JobsData extends Component {
         )
     }
     return (
+      <View>
+      <Searchbar
+          placeholder="Search   'Paris'  or  'USA'  or  'IT'"
+          onChangeText={query => { this.setState({ Query: query }); }}
+          value={Query}
+          style={{marginTop:0.5}}
+      />
       <View style={styles.container}>
         <ScrollView contentContainerStyle={styles.scrollContent} >
             { data.map((job,index) => <MoviePoster job={job} onOpen={this.openMovie}  key={index}/>)}  
         </ScrollView>
-         <MoviePopup jobClicked={this.state.jobClicked} isOpen={this.state.popupIsOpen} 
-                     onClose={this.closeMovie} chosenDay={this.state.chosenDay}
-                     chosenTime={this.state.chosenTime} onChooseDay={this.chooseDay}
-                     onChooseTime={this.chooseTime} onBook={this.bookTicket}/>
+        <MoviePopUp jobClicked={this.state.jobClicked} isOpen={this.state.popupIsOpen}
+          onClose={this.closeMovie} onBook={this.bookTicket}/>
       </View> 
+      </View>
     );
   }
 }
@@ -124,6 +108,5 @@ const styles = StyleSheet.create({
     flexWrap: 'wrap',       // allow multiple rows
   },
 })
-
 
 export default connect(mapStateToProps,null)(JobsData);

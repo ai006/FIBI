@@ -7,6 +7,7 @@ import AddData from './AddData'
 import UpdateData from './UpdateData'
 import ListJob from './ListJob'
 import './Styles.css'
+import {updateValue} from './updater'
 
 
 class App extends Component {
@@ -50,6 +51,7 @@ class App extends Component {
   }
 
   putDataToDB = (message) => {
+    //console.log(message)
     let currentIds = this.state.data.map((data) => data.id);//gets all IDs in data and adds to array
     let idToBeAdded = 0;
     while (currentIds.includes(idToBeAdded)) {
@@ -57,15 +59,14 @@ class App extends Component {
     }
     addDataToDB(idToBeAdded,message)
   };
-
+  
   deleteFromDB = (idTodelete) => {
     let tempIdToDelete = parseInt(idTodelete)
     let objIdToDelete = null;
     this.state.data.forEach((dat) => {
-      if (dat.id === tempIdToDelete) {
+    if (dat.id === tempIdToDelete) {
         objIdToDelete = dat._id;
-      }
-    });
+    }});
     deleteDataFromDB(objIdToDelete)
   };
 
@@ -74,26 +75,12 @@ class App extends Component {
      let objIdToUpdate = null;
      let oldData = {};
      let tempIdToUpdate = parseInt(update.id);
-    this.state.data.forEach((dat) => {
-      if (dat.id === tempIdToUpdate) {
+     this.state.data.forEach((dat) => {
+     if (dat.id === tempIdToUpdate) {
         objIdToUpdate = dat._id;
         oldData =  dat;
-      }
-    });
-    if(Object.keys(oldData).length > 0){ //check if oldData is found
-      for(let key in update){
-        if(key === "address" ){
-          for(let addr in update[key]){
-            if(update[key][addr] === ""){
-              update[key][addr] = oldData[key][addr];
-            }
-          }
-        }else if(update[key] === ""){
-          update[key] = oldData[key];
-        }
-      }
-      updateDataInDB(objIdToUpdate,update)
-    }
+      }}); 
+     updateDataInDB(objIdToUpdate,updateValue(oldData,update))
   };
 
   render() {

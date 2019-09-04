@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 
-import InputForm from './InputForm'
-import './Styles.css'
+import InputForm from './InputForm';
+import './Styles.css';
+import {changeToArray} from './strToArray';
 
 export default class AddData extends Component {
 
@@ -11,32 +12,46 @@ export default class AddData extends Component {
             CompanyName: '',
             logo:'',
             address:{
-                street:'',
                 city:'',
+                cityArr: [],
                 country:'',
+                countryArr: [],
             },
             link:'',
             jobs:'',
+            jobsArr:[],
             about:'',
         };
         console.log("In constructor")
     }
    
-
+    //function is automatically called to update property/object value when a user
+    // updates text in the input for CompanyName, logo, link, jobs and about
     UpdateChange = (event) => {
         this.setState({[event.target.name]: event.target.value})
     }
 
+    //function is automatically called to update property/object value when a user
+    // updates text in the input for city and country
     UpdateAddress = (property,event) => {
         const address = {...this.state.address};
         address[property] = event.target.value;
         this.setState({address:address})
     }
 
-    
-
-    putDataToDB = (message) => {
-      this.props.add(message)
+    //function to send the state or all the data to function "putDataToDB"
+    //"putDataToDB" is found in the file APP.js
+    putDataToDB = () => {
+      changeToArray(this.state);                                                 
+      this.props.add(this.state);
+      this.setState(                //after sending data reset arrays 
+          {
+            jobsArr:[],  
+            address:{...this.state.address,
+                cityArr:[],
+                countryArr:[],
+          }
+    })
     }
 
     render(){
@@ -46,14 +61,14 @@ export default class AddData extends Component {
                 <div>
                     <InputForm type={"text"} name="CompanyName" value={this.state.CompanyName} handleChange={this.UpdateChange} placeholder={"Company name"}/>
                     <InputForm type={"text"} name="logo" value={this.state.logo} handleChange={this.UpdateChange} placeholder={"logo"}/>
-                    <InputForm type={"text"} name="street" value={this.state.address.street} handleChange={this.UpdateAddress.bind(this,'street')} placeholder={"street"}/>
+                    {/* <InputForm type={"text"} name="street" value={this.state.address.street} handleChange={this.UpdateAddress.bind(this,'street')} placeholder={"street"}/> */}
                     <InputForm type={"text"} name="city" value={this.state.address.city} handleChange={this.UpdateAddress.bind(this,'city')} placeholder={"city"}/>
                     <InputForm type={"text"} name="country" value={this.state.address.country} handleChange={this.UpdateAddress.bind(this,'country')} placeholder={"country"}/>
                     <InputForm type={"text"} name="link" value={this.state.address.link} handleChange={this.UpdateChange} placeholder={"link"}/>
-                    <InputForm type={"text"} name="jobs" value={this.state.address.jobs} handleChange={this.UpdateChange} placeholder={"jobs"}/>
+                    <InputForm type={"text"} name="jobs" value={this.state.jobs} handleChange={this.UpdateChange} placeholder={"jobs"}/>
                     <textarea  style={{width:'200px',padding:'10px'}} rows = "4" name= "about" value={this.state.about} onChange={this.UpdateChange} placeholder={"about company"}/>
                 </div>
-                <button onClick={() => this.putDataToDB(this.state)}>
+                <button onClick={() => this.putDataToDB()}>
                     ADD
                 </button>
             </div>
