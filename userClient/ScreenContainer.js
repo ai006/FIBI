@@ -12,12 +12,14 @@ import {
   import JobsDataScreen from './containers/jobsData';
   import TwitterScreen from './TwitterScreen';
   import Confirmation from './confirmation';
+  import ViewSearchResults from './containers/ViewSearchResult';
 
 
 const JobsStack = createStackNavigator(    
     {
         JobsData: JobsDataScreen, 
-        Confirm : Confirmation
+        Confirm : Confirmation,
+        ViewResult : ViewSearchResults,
     },
     {
         initialRouteName: "JobsData",

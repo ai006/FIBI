@@ -1,26 +1,18 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 import {ScrollView, Dimensions, StyleSheet, Text, View, ActivityIndicator } from 'react-native';
-import { Searchbar } from 'react-native-paper';
-
 
 import MoviePoster from './MoviePoster';
 import Constants from 'expo-constants';
 //import MoviePopup from '../MoviePopUp';
 import MoviePopUp from './MoviePopup';
-import {searchRedux} from '../search';
 
-class JobsData extends Component {
+
+export default class ViewSearchResults extends Component {
 
   static navigationOptions = ({ navigation }) => {
     return {
-      headerTitle: 'Jobs',
-      headerTitleStyle: {
-          textAlign: "center",
-          flex: 1,
-          color: 'green'
-      },
-     };
+         headerTitle: 'Search Results :  ' + navigation.getParam('userSearched'),
+    };
   };
 
   constructor(props){
@@ -52,50 +44,12 @@ class JobsData extends Component {
       });
   }
 
-  searchData = (data) => {
-    this.setState({
-      searching:true,
-    })
-    searchResult = searchRedux(data,this.state.Query);
-    this.setState({
-      searching:false,
-    })
-    this.props.navigation.push('ViewResult', {
-        arrayResult: searchResult,
-        userSearched: this.state.Query
-    });
-  }
-
   render(){
-    const { Query } = this.state;
-    const {data,status,pending} = this.props;
-    //console.log(data)
-    // if(!data) {
-    //   return (
-    //    <Text>No Data</Text>
-    //   )
-    // }
-    if(pending){
-        return (
-          <View style={[styles.container, styles.horizontal]}>
-            <ActivityIndicator size="large" color="#0000ff" />
-          </View>
-        )
-    }
+   
+    //const {data} = this.props;
+    const data = this.props.navigation.getParam('arrayResult');
     return (
       <View>
-        <Searchbar
-            placeholder="Search   'Paris'  or  'USA'  or  'IT'"
-            onChangeText={query => { this.setState({ Query: query }); }}
-            value={Query}
-            style={{marginTop:2,backgroundColor:'#F0F0F0'}}
-            onIconPress={ () => this.searchData(data)}
-        />
-        {this.state.searching ?
-          <View style={styles.loading}>
-            <ActivityIndicator size='large' color='green' />
-          </View>:null
-        }
         <View style={styles.container}>
           <ScrollView contentContainerStyle={styles.scrollContent} >
               { data.map((job,index) => <MoviePoster job={job} onOpen={this.openMovie}  key={index}/>)}  
@@ -108,14 +62,6 @@ class JobsData extends Component {
     );
   }
 }
-
-const mapStateToProps = state => {
-  return {
-    data:  state.data.jobs,      //array of jobs
-    status: state.data.error,    //string of error message if an error occurs during fetch
-    pending: state.data.pending, //boolean true during fetching of API data and false before and after fetching  
-  };
-};
 
 const styles = StyleSheet.create({
   container: {
@@ -143,5 +89,3 @@ const styles = StyleSheet.create({
     // alignItems: 'center',
   },
 })
-
-export default connect(mapStateToProps,null)(JobsData);
