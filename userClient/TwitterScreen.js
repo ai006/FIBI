@@ -18,7 +18,7 @@ export default class TwitterScreen extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.text}>twitter coming soon!</Text>
+        <Text style={styles.text}>coming soon!</Text>
       </View>
     );
   }
@@ -30,6 +30,7 @@ const styles = StyleSheet.create({
     flex: 1
   },
   text: {
-    textAlign: "center"
+    textAlign: "center",
+    fontSize: 30,
   }
 });

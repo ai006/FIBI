@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import {ScrollView, Dimensions, StyleSheet, Text, View, ActivityIndicator } from 'react-native';
+import {ScrollView, Dimensions,TouchableOpacity, StyleSheet, Text, View, ActivityIndicator } from 'react-native';
 import { Searchbar } from 'react-native-paper';
+import Ionicons from "react-native-vector-icons/Ionicons";
+import { Platform } from "react-native";
+//import { Icon } from 'react-native-elements';
 
 
 import MoviePoster from './MoviePoster';
@@ -15,12 +18,25 @@ class JobsData extends Component {
   static navigationOptions = ({ navigation }) => {
     return {
       headerTitle: 'Jobs',
+      headerRight: (
+       <TouchableOpacity onPress={()=> navigation.navigate('AddJob')}>
+         <Ionicons
+            name={Platform.OS === "ios" ? "ios-add" : "md-add"}
+            size={40}
+            color={'green'}
+            style={{marginRight:20}}
+          />
+        </TouchableOpacity> 
+      ),
       headerTitleStyle: {
           textAlign: "center",
-          flex: 1,
-          color: 'green'
+          justifyContent: 'center',
+          alignItems: 'center',
+          flex:1,
+          color: 'green',
+          fontSize: 25,
       },
-     };
+    };
   };
 
   constructor(props){
@@ -83,12 +99,12 @@ class JobsData extends Component {
         )
     }
     return (
-      <View>
+      <View >
         <Searchbar
             placeholder="Search   'Paris'  or  'USA'  or  'IT'"
             onChangeText={query => { this.setState({ Query: query }); }}
             value={Query}
-            style={{marginTop:2,backgroundColor:'#F0F0F0'}}
+            style={{marginTop:2,backgroundColor:'#ecf0f1'}}
             onIconPress={ () => this.searchData(data)}
         />
         {this.state.searching ?
@@ -97,7 +113,7 @@ class JobsData extends Component {
           </View>:null
         }
         <View style={styles.container}>
-          <ScrollView contentContainerStyle={styles.scrollContent} >
+          <ScrollView contentContainerStyle={styles.scrollContent} showsVerticalScrollIndicator={false} >
               { data.map((job,index) => <MoviePoster job={job} onOpen={this.openMovie}  key={index}/>)}  
           </ScrollView>
           <MoviePopUp jobClicked={this.state.jobClicked} isOpen={this.state.popupIsOpen}
@@ -142,6 +158,9 @@ const styles = StyleSheet.create({
     // justifyContent: 'center',
     // alignItems: 'center',
   },
+  ScreenBackground: {
+    backgroundColor: '#ecf0f1',
+  }
 })
 
 export default connect(mapStateToProps,null)(JobsData);

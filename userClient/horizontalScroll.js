@@ -1,28 +1,30 @@
 import React, { Component} from 'react';
-import {Text, View} from 'react-native';
+import {StyleSheet,Text, View} from 'react-native';
+import { Card } from 'react-native-paper';
 
 export default class HorizontalScroll extends Component {
 
   render() {
     return (
-            <View 
-                style={{    //to change the way the horizontal scrollview should be done here
-                        height:50,
-                        width:130, 
-                        alignItems: 'center', 
-                        marginLeft:20,
-                        borderRadius:15,
-                        borderWidth: 1,
-                        borderColor:'#673AB7',
-                        backgroundColor:'white',
-                        flex: 1,
-                        justifyContent: 'center'
-                        }}
-                         >
-                <Text style={{color: 'purple', }}>
+            <View> 
+              <Card style={styles.card}>
+                <Text style={{color: 'white',flex:1 }}>
                      {this.props.name}
                 </Text>
+              </Card>
             </View>
     );
   }
 }
+
+const styles = StyleSheet.create({
+  card:{
+    height:50,
+    width:130,
+    borderRadius:8,
+    marginLeft:20, 
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: '#41ab4e'
+  },
+});

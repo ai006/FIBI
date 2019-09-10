@@ -61,7 +61,7 @@ export default class MoviePopup extends Component {
               </View>
               <View style={styles.footer}>
                 <TouchableHighlight
-                  underlayColor="#9575CD"
+                  underlayColor='green'
                   style={styles.buttonContainer}
                   onPress={onBook}
                 >
@@ -130,7 +130,7 @@ const styles = StyleSheet.create({
     padding: 10,
   },
   buttonContainer: {
-    backgroundColor: '#673AB7',
+    backgroundColor: 'green',
     borderRadius: 100,
     paddingVertical: 10,
     paddingHorizontal: 15,

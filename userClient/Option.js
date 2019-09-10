@@ -19,7 +19,7 @@ export default class Options extends Component {
     return (
       <TouchableOpacity activeOpacity={1}>
         <View style={styles.container}>
-          <Text style={{ color:  colorSelected }}>
+          <Text style={{ color:  'green' }}>
             {value}
           </Text>
         </View>
@@ -31,7 +31,7 @@ export default class Options extends Component {
 const styles = StyleSheet.create({
   container: {
     alignItems: 'center',
-    borderColor: colorSelected,
+    borderColor: 'green',
     borderWidth: 1,
     borderRadius: 10,
     padding: 10,

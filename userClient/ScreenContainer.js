@@ -13,13 +13,15 @@ import {
   import TwitterScreen from './TwitterScreen';
   import Confirmation from './confirmation';
   import ViewSearchResults from './containers/ViewSearchResult';
-
+  import UserAddJob from './UserAddJob';
 
 const JobsStack = createStackNavigator(    
     {
-        JobsData: JobsDataScreen, 
-        Confirm : Confirmation,
-        ViewResult : ViewSearchResults,
+        JobsData  : JobsDataScreen, 
+        Confirm   : Confirmation,
+        ViewResult: ViewSearchResults,
+        AddJob    : UserAddJob,
+        
     },
     {
         initialRouteName: "JobsData",
@@ -39,11 +41,12 @@ JobsStack.navigationOptions = {
 const MainTabs = createBottomTabNavigator(
     {
       jobs: JobsStack,
-      Twitter: TwitterScreen
+      Chats: TwitterScreen
     },
     {
       tabBarOptions: { //color of active tab
-        activeTintColor: "#a41034"
+        //activeTintColor: "#a41034"
+        activeTintColor: 'green'
       }
     }
 );
