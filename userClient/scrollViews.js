@@ -7,10 +7,9 @@ export default class ScrollViews extends Component {
 
   render() {
     return (
-            <View style={{marginTop: 10}}>
-                <Text style={{flex:1,marginBottom:5,fontWeight: '500',marginLeft:20}}>{this.props.group}</Text>
+            <View style={{marginTop: 10, flex:1}}>
+                <Text style={{flex:1,color:'#a5acad', fontWeight: '500',marginLeft:20}}>{this.props.group}</Text>
                 <ScrollView 
-
                     horizontal= {true}
                     showsHorizontalScrollIndicator={false}
                     >

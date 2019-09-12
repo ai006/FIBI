@@ -32,7 +32,7 @@ export default class Confirmation extends Component {
     //console.log(link)
     return (
       <View style={styles.container}>
-        
+        <ScrollView>
           <Card style={styles.card}>
             <View style={[styles.horizontalArrangement,styles.placeCenter]}>
                 <Image style={styles.imageStyle} source={{uri: job.logo}}/>
@@ -46,23 +46,21 @@ export default class Confirmation extends Component {
                 </View>
             </View>
           </Card>
-          <Card style={[styles.containerCard,styles.card]}>
+          <Card style={styles.containerCard}>
             <ScrollViews name={job.jobsArr} group={<Text>Hiring</Text>}/>
-          </Card>
-
-          
-         {/*   <ScrollViews name={job.address.countryArr} group={<Text>Country</Text>}/>
+            <ScrollViews name={job.address.countryArr} group={<Text>Country</Text>}/>
             <ScrollViews name={job.address.cityArr} group={<Text>City</Text>}/>
-
-          <View style={{marginLeft:20, marginTop:20, marginRight:20,}}>
-            <Text style={{fontWeight: '500',color:'#e0e04f'}}>About</Text>
-            <Text style={{backgroundColor:'#a0e04f',fontSize: 16,fontWeight: '200',marginTop:5}}>{job.about}</Text>
-          </View>
-
-          <TouchableOpacity style={styles.buttonContainer} onPress={() => this.props.navigation.pop()}>
-            <Text style={styles.button}>Done</Text>
-          </TouchableOpacity> */}
-        
+          </Card>
+          <Card >
+            <Text>About</Text>
+            <Text style={{fontSize: 16,fontWeight: '200',marginTop:5}}>{job.about}</Text>
+          </Card>
+          <Card  style={styles.containerCard}>
+            <TouchableOpacity style={styles.buttonContainer} onPress={() => this.props.navigation.pop()}>
+              <Text style={styles.button}>Done</Text>
+            </TouchableOpacity>
+          </Card>
+        </ScrollView>    
       </View>
     );
   }
@@ -74,11 +72,13 @@ const styles = StyleSheet.create({
     backgroundColor: '#ecf0f1',
   },
   containerCard: {
-    flex: 1,
+    
+    height: height*0.45,
+    margin: 10,
   },
   card: {
     margin: 10,
-    height: 150,
+    height: height*0.25,
   },
   horizontalArrangement: {
     flexDirection : 'row',
@@ -111,7 +111,7 @@ const styles = StyleSheet.create({
   },
   buttonContainer: {
     alignItems: 'center',
-    backgroundColor: '#673AB7',
+    backgroundColor: 'green',
     borderRadius: 100,
     margin: 20,
     paddingVertical: 10,
