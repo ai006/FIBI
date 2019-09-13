@@ -4,6 +4,7 @@ import {ScrollView, Dimensions,TouchableOpacity, StyleSheet, Text, View, Activit
 import { Searchbar } from 'react-native-paper';
 import Ionicons from "react-native-vector-icons/Ionicons";
 import { Platform } from "react-native";
+import { Card } from 'react-native-paper';
 //import { Icon } from 'react-native-elements';
 
 
@@ -113,8 +114,8 @@ class JobsData extends Component {
           </View>:null
         }
         <View style={styles.container}>
-          <ScrollView contentContainerStyle={styles.scrollContent} showsVerticalScrollIndicator={false} >
-              { data.map((job,index) => <MoviePoster job={job} onOpen={this.openMovie}  key={index}/>)}  
+          <ScrollView style={{marginBottom: 60,}} contentContainerStyle={styles.scrollContent} showsVerticalScrollIndicator={false} >
+              { data.map((job,index) => <MoviePoster job={job} onOpen={this.openMovie}  key={index}/>)}
           </ScrollView>
           <MoviePopUp jobClicked={this.state.jobClicked} isOpen={this.state.popupIsOpen}
             onClose={this.closeMovie} onBook={this.bookTicket}/>
@@ -145,6 +146,9 @@ const styles = StyleSheet.create({
   scrollContent: {
     flexDirection: 'row',   // arrange posters in rows
     flexWrap: 'wrap',       // allow multiple rows
+  },
+  BottomPad: {
+    paddingBottom: 20,
   },
   loading: {
     //position: 'absolute',

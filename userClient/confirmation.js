@@ -37,7 +37,7 @@ export default class Confirmation extends Component {
             <View style={[styles.horizontalArrangement,styles.placeCenter]}>
                 <Image style={styles.imageStyle} source={{uri: job.logo}}/>
                 <View style={{flex : 1, justifyContent: 'center', alignItems: 'center',}}>
-                  <Text style={styles.textStyle}>{job.CompanyName}</Text>
+                  <Text style={[styles.textStyle,styles.textColor]}>{job.CompanyName}</Text>
                   <TouchableOpacity>
                     <View style={{alignItems:'center'}}>
                       <Text onPress={ ()=> Linking.openURL(link) } style={{color:'blue',textDecorationLine: 'underline',fontSize:20}}>{job.link}</Text>
@@ -51,11 +51,11 @@ export default class Confirmation extends Component {
             <ScrollViews name={job.address.countryArr} group={<Text>Country</Text>}/>
             <ScrollViews name={job.address.cityArr} group={<Text>City</Text>}/>
           </Card>
-          <Card >
-            <Text>About</Text>
-            <Text style={{fontSize: 16,fontWeight: '200',marginTop:5}}>{job.about}</Text>
+          <Card style={{margin:10}}>
+            <Text style={{margin:10,color:'#a5acad',fontWeight: '500'}}>About</Text>
+            <Text style={{fontSize: 16,fontWeight: '500',margin:10}}>{job.about}</Text>
           </Card>
-          <Card  style={styles.containerCard}>
+          <Card>
             <TouchableOpacity style={styles.buttonContainer} onPress={() => this.props.navigation.pop()}>
               <Text style={styles.button}>Done</Text>
             </TouchableOpacity>
@@ -94,6 +94,9 @@ const styles = StyleSheet.create({
   textStyle: {
     fontSize: 40,
     flex: 1,
+  },
+  textColor:{
+    color:'#a5acad'
   },
   placeCenter:{
     justifyContent: 'center', 

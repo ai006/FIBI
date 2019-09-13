@@ -41,8 +41,10 @@ const styles = StyleSheet.create({
     flex: 1,                          // take up all available space
   },
   image: {
-    borderRadius: 10,                 // rounded corners
-    ...StyleSheet.absoluteFillObject, // fill up all space in a container
+    borderRadius: 5,                 // rounded corners
+    //...StyleSheet.absoluteFillObject, // fill up all space in a container
+    flex:1,
+    resizeMode:'contain',
   },
   title: {
     ...defaultStyles.text,
