@@ -26,10 +26,41 @@ export default class UserAddJob extends Component {
     };
   };
 
+  constructor(props){
+      super(props);
+      this.state = {
+            AddedJob: {
+                    CompanyName:'',
+                    Job:'',
+                    city:'',
+                    country: '',
+                    link: '',
+                    about: '',
+            },
+            nameFocused: false,
+            jobFocused: false,
+            cityFocused: false,
+            countryFocused: false,
+            linkFocused: false,
+            aboutFocused: false,
+      };
+  }
+
+  //used to switch the visibility of the place holder on and off
+  onNameFocus = () => this.setState({nameFocused: true})
+  onNameBlur = () => this.setState({nameFocused: false})
+
+
+
+
+
+
+
+
+
   render() {
-    
+    const {nameFocused} = this.state;
     return (
-     
         <View style={styles.ScreenBackground}>
             <KeyboardAvoidingView behavior="padding" keyboardVerticalOffset = {Header.HEIGHT+50} style = {{ flex: 1 }}>
                 <ScrollView  showsVerticalScrollIndicator={false}>
@@ -51,6 +82,8 @@ export default class UserAddJob extends Component {
                             <Fumi
                                 label={'Company Name'} iconClass={FontAwesomeIcon} iconName={'building'}
                                 iconColor={'green'} iconSize={20} iconWidth={40} inputPadding={16}
+                                placeholder={nameFocused? "e.g. walmart": ''} onFocus={this.onNameFocus}
+                                onBlur={this.onNameBlur}
                             />
                         </View>
                         <View style={styles.container}>
