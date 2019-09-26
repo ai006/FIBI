@@ -51,12 +51,25 @@ export default class UserAddJob extends Component {
   onNameBlur = () => this.setState({nameFocused: false})
 
 
+  UpdateJob = (value) => {
+    const { AddedJob } = { ...this.state };
+    const currentState = AddedJob;
+    console.log(value);
+    // const { name, value } = event.target;
+    // currentState[name] = value;
+  
+    // this.setState({ AddedJob: currentState });
+  }
+  
+//   UpdateJob  = (property, event) => {
+//       const AddedJob = {...this.state.AddedJob};
+//       AddedJob[property] = event.target.value;
+//       this.setState({AddedJob:AddedJob})
+//   }
 
-
-
-
-
-
+  SendJobToDB = () => {
+      console.log(this.state.AddedJob);
+  }
 
   render() {
     const {nameFocused} = this.state;
@@ -83,7 +96,8 @@ export default class UserAddJob extends Component {
                                 label={'Company Name'} iconClass={FontAwesomeIcon} iconName={'building'}
                                 iconColor={'green'} iconSize={20} iconWidth={40} inputPadding={16}
                                 placeholder={nameFocused? "e.g. walmart": ''} onFocus={this.onNameFocus}
-                                onBlur={this.onNameBlur}
+                                onBlur={this.onNameBlur} value={this.state.AddedJob.CompanyName}
+                                onChangeText={this.UpdateJob.apply(value)} name= "CompanyName"
                             />
                         </View>
                         <View style={styles.container}>
