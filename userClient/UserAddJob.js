@@ -8,6 +8,7 @@ import { Platform } from "react-native";
 import { Header } from 'react-navigation';
 
 import { defaultStyles } from './styles';
+import { sendAddedJob } from './api';
 
 const {height, width} = Dimensions.get('window')
 
@@ -31,7 +32,7 @@ export default class UserAddJob extends Component {
       this.state = {
             AddedJob: {
                     CompanyName:'',
-                    Job:'',
+                    job:'',
                     city:'',
                     country: '',
                     link: '',
@@ -50,31 +51,43 @@ export default class UserAddJob extends Component {
   onNameFocus = () => this.setState({nameFocused: true})
   onNameBlur = () => this.setState({nameFocused: false})
 
+  onJobFocus = () => this.setState({jobFocused:true})
+  onJobBlur = () => this.setState({jobFocused: false})
 
-  UpdateJob = (value) => {
-    const { AddedJob } = { ...this.state };
-    const currentState = AddedJob;
-    console.log(value);
-    // const { name, value } = event.target;
-    // currentState[name] = value;
-  
-    // this.setState({ AddedJob: currentState });
+  onCityFocus = () => this.setState({cityFocused: true})
+  onCityBlur = () => this.setState({cityFocused: false})
+
+  onCountryFocus = () => this.setState({countryFocused:true})
+  onCountryBlur = () => this.setState({countryFocused: false})
+
+  onLinkFocus = () => this.setState({linkFocused: true})
+  onLinkBlur = () => this.setState({linkFocused: false})
+
+  onAboutFocus = () => this.setState({aboutFocused:true})
+  onAboutBlur = () => this.setState({aboutFocused: false})
+
+  componentDidMount(){
+    //setInterval(this.printState,10000)
   }
-  
-//   UpdateJob  = (property, event) => {
-//       const AddedJob = {...this.state.AddedJob};
-//       AddedJob[property] = event.target.value;
-//       this.setState({AddedJob:AddedJob})
-//   }
 
+  printState = () => {
+    console.log(this.state.AddedJob);
+  }
+
+  //used to send 
   SendJobToDB = () => {
-      console.log(this.state.AddedJob);
+      if(this.state.CompanyName !== '' && this.state.job !== '')
+      {
+        sendAddedJob(this.state.AddedJob);
+        this.props.navigation.pop()
+      }
   }
 
   render() {
-    const {nameFocused} = this.state;
+    const {nameFocused, jobFocused, linkFocused, aboutFocused, countryFocused, cityFocused} = this.state;
     return (
         <View style={styles.ScreenBackground}>
+            
             <KeyboardAvoidingView behavior="padding" keyboardVerticalOffset = {Header.HEIGHT+50} style = {{ flex: 1 }}>
                 <ScrollView  showsVerticalScrollIndicator={false}>
                 <View style={styles.FirstContainer}>
@@ -96,46 +109,67 @@ export default class UserAddJob extends Component {
                                 label={'Company Name'} iconClass={FontAwesomeIcon} iconName={'building'}
                                 iconColor={'green'} iconSize={20} iconWidth={40} inputPadding={16}
                                 placeholder={nameFocused? "e.g. walmart": ''} onFocus={this.onNameFocus}
-                                onBlur={this.onNameBlur} value={this.state.AddedJob.CompanyName}
-                                onChangeText={this.UpdateJob.apply(value)} name= "CompanyName"
+                                onBlur={this.onNameBlur} 
+                                onChangeText={(text) => this.setState(
+                                    {...this.state,AddedJob : {...this.state.AddedJob, CompanyName : text}})}
                             />
                         </View>
                         <View style={styles.container}>
                             <Fumi
                                 label={'Job'} iconClass={FontAwesomeIcon} iconName={'suitcase'}
                                 iconColor={'green'} iconSize={20} iconWidth={40} inputPadding={16}
+                                placeholder={jobFocused? "e.g. Marketing": ''} onFocus={this.onJobFocus}
+                                onBlur={this.onJobBlur} 
+                                onChangeText={(text) => this.setState(
+                                    {...this.state,AddedJob : {...this.state.AddedJob,job : text}})}
                             />
                         </View>
                         <View style={styles.container}>
                             <Fumi
                                 label={'link'} iconClass={FontAwesomeIcon} iconName={'link'}
                                 iconColor={'green'} iconSize={20} iconWidth={40} inputPadding={16}
+                                placeholder={linkFocused? "e.g. www.amazon.com": ''} onFocus={this.onLinkFocus}
+                                onBlur={this.onLinkBlur} 
+                                onChangeText={(text) => this.setState(
+                                    {...this.state,AddedJob : {...this.state.AddedJob, link : text}})}
                             />
                         </View>
                         <View style={styles.container}>
                             <Fumi
                                 label={'City'} iconClass={FontAwesomeIcon} iconName={'industry'}
                                 iconColor={'green'} iconSize={20} iconWidth={40} inputPadding={16}
+                                placeholder={cityFocused? "e.g. London": ''} onFocus={this.onCityFocus}
+                                onBlur={this.onCityBlur} 
+                                onChangeText={(text) => this.setState(
+                                    {...this.state,AddedJob : {...this.state.AddedJob, city : text}})}
                             />
                         </View>
                         <View style={styles.container}>
                             <Fumi
                                 label={'Country'} iconClass={FontAwesomeIcon} iconName={'globe'}
                                 iconColor={'green'} iconSize={20} iconWidth={40} inputPadding={16}
+                                placeholder={countryFocused? "e.g. USA": ''} onFocus={this.onCountryFocus}
+                                onBlur={this.onCountryBlur} 
+                                onChangeText={(text) => this.setState(
+                                    {...this.state,AddedJob : {...this.state.AddedJob, country : text}})}
                             />
                         </View>
                         <View style={styles.container}>
                             <Fumi
                                 label={'About'} iconClass={FontAwesomeIcon} iconName={'align-left'}
                                 multiline={true}
-                                iconColor={'green'} iconSize={20} iconWidth={40} inputPadding={16} 
+                                iconColor={'green'} iconSize={20} iconWidth={40} inputPadding={16}
+                                placeholder={aboutFocused? "e.g. They fix bridges and roads": ''} onFocus={this.onAboutFocus}
+                                onBlur={this.onAboutBlur} 
+                                onChangeText={(text) => this.setState(
+                                    {...this.state,AddedJob : {...this.state.AddedJob, about : text}})} 
                                 
                             />
                         </View>
                     </Card>
                 </View>
                 <Card>
-                <TouchableOpacity style={styles.buttonContainer} onPress={() => this.props.navigation.pop()}>
+                <TouchableOpacity style={styles.buttonContainer} onPress={this.SendJobToDB}>
                     <Text style={styles.button}>Done</Text>
                 </TouchableOpacity>
                 </Card>

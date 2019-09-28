@@ -2,7 +2,7 @@
 import express, { Router } from 'express';
 
 //import router from './router';
-import Data from '../data';
+// import Data from '../data';
 import Jobs from '../Schema';
 
 //initialize the router
