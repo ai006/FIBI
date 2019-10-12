@@ -4,7 +4,7 @@ import Constants from 'expo-constants';
 import { Card } from 'react-native-paper';
 import FontAwesomeIcon from 'react-native-vector-icons/FontAwesome';
 import { Fumi } from 'react-native-textinput-effects';
-import { Platform } from "react-native";
+import { Platform,Alert } from "react-native";
 import { Header } from 'react-navigation';
 
 import { defaultStyles } from './styles';
@@ -75,12 +75,25 @@ export default class UserAddJob extends Component {
   }
 
   //used to send 
-  SendJobToDB = () => {
-      if(this.state.CompanyName !== '' && this.state.job !== '')
-      {
-        sendAddedJob(this.state.AddedJob);
-        this.props.navigation.pop()
-      }
+  SendJobToDB = async () => {
+
+    if( this.state.AddedJob.job !== ''){                        //checks if user has added type of job and name of job
+      
+        status = await sendAddedJob(this.state.AddedJob)       //wait for the repsonse from server (function sendAddedJob in file api)
+        if(status){                                            //if server received job go back to the main view
+            this.props.navigation.pop()
+        }
+    }
+    else{
+        Alert.alert(                                          //alert user of missing companyname and job title   
+            'status: incomplete',   
+            'Please add the company name and the type of job :)',
+            [
+              {text: 'OK', onPress: () => console.log('OK Pressed')},
+            ],
+            {cancelable: false},
+          );
+    }
   }
 
   render() {
