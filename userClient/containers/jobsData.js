@@ -114,7 +114,7 @@ class JobsData extends Component {
           </View>:null
         }
         <View style={styles.container}>
-          <ScrollView style={{marginBottom: 60,}} contentContainerStyle={styles.scrollContent} showsVerticalScrollIndicator={false} >
+          <ScrollView style={{marginBottom: 100,}} contentContainerStyle={styles.scrollContent} showsVerticalScrollIndicator={false} >
               { data.map((job,index) => <MoviePoster job={job} onOpen={this.openMovie}  key={index}/>)}
           </ScrollView>
           <MoviePopUp jobClicked={this.state.jobClicked} isOpen={this.state.popupIsOpen}

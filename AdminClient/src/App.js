@@ -87,6 +87,7 @@ class App extends Component {
     const { data } = this.state;
     return (
       <div>
+        <div><h3>Images</h3></div>
         <div className='arrangeRow'>
           <div className='container'><AddData add={this.putDataToDB}/></div>
           <div className='container'><DeleteData delete={this.deleteFromDB}/></div>
