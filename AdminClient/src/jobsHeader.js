@@ -25,10 +25,14 @@ class Jobs extends Component {
   componentDidMount() {
     console.log("Fetching data...");
     this.getDataFromDb();
-    if (!this.state.intervalIsSet) {
-      let interval = setInterval(this.getDataFromDb, 1000);
-      this.setState({ intervalIsSet: interval }); //any int assigned to a bool not 0 is true
-    }
+
+    /*
+     The code below calls the server every second
+    */
+    // if (!this.state.intervalIsSet) {
+    //   let interval = setInterval(this.getDataFromDb, 1000);
+    //   this.setState({ intervalIsSet: interval }); //any int assigned to a bool not 0 is true
+    // }
   }
 
   componentWillUnmount() {
@@ -83,10 +87,15 @@ class Jobs extends Component {
      updateDataInDB(objIdToUpdate,updateValue(oldData,update))
   };
 
+
   render() {
     const { data } = this.state;
     return (
       <div>
+        <div>
+         <h3>button to fetch the most up to date jobs from server</h3>
+         <button onClick={this.getDataFromDb}>call server</button>
+        </div>
         <div className='arrangeRow'>
           <div className='container'><AddData add={this.putDataToDB}/></div>
           <div className='container'><DeleteData delete={this.deleteFromDB}/></div>
