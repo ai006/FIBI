@@ -12,6 +12,9 @@ import ScrollViews from './scrollViews';
 
 const {height, width} = Dimensions.get('window')
 
+
+/* This class shows the page of the job with more detailes
+ that was clicked. */
 export default class Confirmation extends Component {
 
   static navigationOptions = ({ navigation }) => {
@@ -83,7 +86,7 @@ const styles = StyleSheet.create({
   horizontalArrangement: {
     flexDirection : 'row',
   },
-  imageStyle: {
+  imageStyle: {     //css style for image shown in the confirmation page
     height:125,
     width:125,
     resizeMode: 'contain',

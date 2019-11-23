@@ -9,6 +9,8 @@ const { width, height } = Dimensions.get('window');
 // How many posters we want to have in each row and column
 const cols = 3, rows = 3;
 
+/* This class is the jobs poster, it is the first page opened 
+when you start the app. The jobs are arranged in 3 columns */
 export default class MoviePoster extends Component {
 
   static propTypes = {
@@ -32,9 +34,9 @@ export default class MoviePoster extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    marginLeft: 10,
-    marginBottom: 10,
-    height: (height - 20 - 20) / rows - 10,
+    marginLeft: 10,                           //how left the images to the left of each other
+    marginBottom: 5,                          //space between images going down each column
+    height: (height - 20 - 20 ) / rows - 10,
     width: (width - 10) / cols - 10,
   },
   imageContainer: {

@@ -2,9 +2,9 @@ import {fetchJobsPending, fetchJobsError, fetchJobSuccess} from './actions/index
 import { Alert} from 'react-native'
 
 
-const API_URL = 'http://10.0.2.2:3001/api/getData';
+const API_URL = 'https://desolate-tor-37189.herokuapp.com/api/getData';
 
-const API_URL_USER = 'http://10.0.2.2:3001/api/userAddedJob';
+const API_URL_USER = 'https://desolate-tor-37189.herokuapp.com/api/userAddedJob';
 
 
 //function used to call and fetch the jobs data from the server

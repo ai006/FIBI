@@ -27,6 +27,7 @@ export default class MoviePopup extends Component {
     const {jobClicked, chosenDay, chosenTime, onChooseDay, onChooseTime, onBook} = this.props;
     const { CompanyName, link, logo, address,jobsArr } = jobClicked || {}; // Pull out movie data
     const {countryArr} = address || [];
+    
      return (
         <Modal
           isVisible={this.props.isOpen}
@@ -37,6 +38,9 @@ export default class MoviePopup extends Component {
           <View style={styles.container}>
             <View style={styles.scrollableModal}>
               <View style={[styles.movieContainer,getStyles.movieContainer]}>
+                {/* <View style={[styles.imageContainer, getStyles.imageContainer]}>
+                  <Image source={{ uri: logo }} style={styles.image} />
+                </View> */}
                 <View style={[styles.imageContainer, getStyles.imageContainer]}>
                   <Image source={{ uri: logo }} style={styles.image} />
                 </View>
@@ -106,7 +110,10 @@ const styles = StyleSheet.create({
   image: {
     marginLeft:10,
     borderRadius: 10,                   // rounded corners
-    ...StyleSheet.absoluteFillObject,   // fill up all space in a container
+    //...StyleSheet.absoluteFillObject,   // fill up all space in a container
+    height:125,
+    width:125,
+    
   },
   movieInfo: {
     backgroundColor: 'transparent',     // looks nicier when switching to/from expanded mode

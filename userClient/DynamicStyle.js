@@ -9,10 +9,11 @@ import {StyleSheet} from 'react-native';
       },
       movieContainer: {
         flexDirection: 'row',       // arrange image and movie info in a row
+        
       },
       movieInfo: {
         flex: 1,
-        justifyContent: 'center',   // center vertically
+        justifyContent: 'flex-end',   // center vertically
       },
       title: {},
   }

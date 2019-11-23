@@ -11,7 +11,11 @@ export default class ViewSearchResults extends Component {
 
   static navigationOptions = ({ navigation }) => {
     return {
-         headerTitle: 'Search Results :  ' + navigation.getParam('userSearched'),
+         headerTitle: 'Results :  ' + navigation.getParam('userSearched'),
+         headerTitleStyle: {
+          color: 'green',
+          fontSize: 25,
+        },
     };
   };
 

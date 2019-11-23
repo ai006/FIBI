@@ -136,7 +136,7 @@ const mapStateToProps = state => {
 
 const styles = StyleSheet.create({
   container: {
-    paddingTop: Constants.statusBarHeight,
+    paddingTop: 0,                   //space between the search bar and images of jobs
   },
   horizontal: {
     flexDirection: 'row',
