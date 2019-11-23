@@ -3,7 +3,7 @@ import axios from 'axios';
 // our first get method that uses our backend api to
 // fetch data from our data base
 export const fetchData = async () => {
-    const response = await fetch('http://localhost:3001/api/getData')
+    const response = await fetch('https://desolate-tor-37189.herokuapp.com/api/getData')
     const {data} = await response.json()
     return data
 }
@@ -11,7 +11,7 @@ export const fetchData = async () => {
 // our put method that uses our backend api
 // to create new query into our data base
 export const addDataToDB = async (id, data) => {
-    axios.post('http://localhost:3001/api/putData', {
+    axios.post('https://desolate-tor-37189.herokuapp.com/api/putData', {
       id: id,
       job : {
         id:id,
@@ -35,7 +35,7 @@ export const addDataToDB = async (id, data) => {
 // our delete method that uses our backend api
   // to remove existing database information
 export const deleteDataFromDB = async (id) => {
-    axios.delete('http://localhost:3001/api/deleteData', {
+    axios.delete('https://desolate-tor-37189.herokuapp.com/api/deleteData', {
         data: {id: id,},
     });
     return
@@ -44,7 +44,7 @@ export const deleteDataFromDB = async (id) => {
   // our update method that uses our backend api
   // to overwrite existing data base information
 export const updateDataInDB = async (id, messageUpdate) => {
-    axios.post('http://localhost:3001/api/updateData', {
+    axios.post('https://desolate-tor-37189.herokuapp.com/api/updateData', {
         id: id,
         update: messageUpdate,
       });
