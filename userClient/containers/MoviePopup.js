@@ -5,7 +5,7 @@ import PropTypes from 'prop-types' ;
 
 import Options from '../Options';
 import { defaultStyles } from '../styles'
-import {getStyles} from '../DynamicStyle';
+// import {getStyles} from '../DynamicStyle';
 
 const { width, height } = Dimensions.get('window'); // Get screen dimensions
 const defaultHeight = height * 0.67;                // Set default popup height to 67% of screen height
@@ -37,15 +37,12 @@ export default class MoviePopup extends Component {
 
           <View style={styles.container}>
             <View style={styles.scrollableModal}>
-              <View style={[styles.movieContainer,getStyles.movieContainer]}>
-                {/* <View style={[styles.imageContainer, getStyles.imageContainer]}>
-                  <Image source={{ uri: logo }} style={styles.image} />
-                </View> */}
-                <View style={[styles.imageContainer, getStyles.imageContainer]}>
+              <View style={styles.movieContainer}>
+                <View style={styles.imageContainer}>
                   <Image source={{ uri: logo }} style={styles.image} />
                 </View>
-                <View style={[styles.movieInfo, getStyles.movieInfo]}>
-                  <Text style={[styles.title, getStyles.title]}>{CompanyName}</Text>
+                <View style={styles.infoContainer}>
+                  <Text style={styles.title}>{CompanyName}</Text>
                   <Text style={styles.genre}>{link}</Text>
                 </View>
               </View>
@@ -101,23 +98,35 @@ const styles = StyleSheet.create({
   },
   // Movie container
   movieContainer: {
-    flex: 1,                            // take up all available space
+    flex: 1,  
+    flexDirection: 'row',                          // take up all available space
+    // alignItems:'center', 
+    //justifyContent:'center',
+    
     marginBottom: 20,
   },
   imageContainer: {
-    flex: 1,                            // take up all available space
+    flex:1,
+    maxWidth: 110,              // limit width
+    marginTop: 20,              // take up all available space
+    marginLeft: 10,
+    alignItems:'center',
   },
   image: {
     marginLeft:10,
     borderRadius: 10,                   // rounded corners
-    //...StyleSheet.absoluteFillObject,   // fill up all space in a container
     height:125,
     width:125,
     
   },
-  movieInfo: {
+  //info container sets up how the info 
+  //is placed next to the image during the pop up
+  infoContainer: {
+    flex: 1,
     backgroundColor: 'transparent',     // looks nicier when switching to/from expanded mode
-    marginLeft: 10,
+    alignItems:'flex-start',
+    justifyContent:'center',
+    marginLeft:30,
   },
   title: {
     ...defaultStyles.text,
@@ -148,13 +157,6 @@ const styles = StyleSheet.create({
     color: '#FFFFFF',
     fontSize: 18,
   },
-  containerPop: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: 'white',
-  },
-
   pushRight: {
      marginLeft:10,
   },
@@ -165,24 +167,5 @@ const styles = StyleSheet.create({
   scrollableModal: {
     height: defaultHeight,
     backgroundColor: 'white',
-  },
-  scrollableModalContent1: {
-    flex:1,
-    backgroundColor: '#87BBE0',
-    
-  },
-  scrollableModalText1: {
-    fontSize: 20,
-    color: 'white',
-  },
-  scrollableModalContent2: {
-    height: 100,
-    backgroundColor: '#A9DCD3',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  scrollableModalText2: {
-    fontSize: 20,
-    color: 'white',
   },
 });

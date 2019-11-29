@@ -32,22 +32,23 @@ export default class Confirmation extends Component {
     const job = this.props.navigation.getParam('job');
     let link = job.link.toString()
     link = 'https://'.concat(link);
-    //console.log(link)
     return (
       <View style={styles.container}>
         <ScrollView>
           <Card style={styles.card}>
             <View style={[styles.horizontalArrangement,styles.placeCenter]}>
                 <Image style={styles.imageStyle} source={{uri: job.logo}}/>
-                <View style={{flex : 1, justifyContent: 'center', alignItems: 'center',}}>
+                <View style={{flex : 1, justifyContent: 'flex-start', alignItems: 'center',}}>
                   <Text style={[styles.textStyle,styles.textColor]}>{job.CompanyName}</Text>
-                  <TouchableOpacity>
-                    <View style={{alignItems:'center'}}>
-                      <Text onPress={ ()=> Linking.openURL(link) } style={{color:'blue',textDecorationLine: 'underline',fontSize:20}}>{job.link}</Text>
-                    </View>
-                  </TouchableOpacity>
                 </View>
             </View>
+          </Card>
+          <Card style={styles.linkContainer}>
+            <TouchableOpacity style={styles.linkStyle}>
+                <View >
+                  <Text onPress={ ()=> Linking.openURL(link) } style={{color:'blue',textDecorationLine: 'underline',fontSize:20}}>{job.link}</Text>
+                </View>
+            </TouchableOpacity>
           </Card>
           <Card style={styles.containerCard}>
             <ScrollViews name={job.jobsArr} group={<Text>Hiring</Text>}/>
@@ -82,6 +83,15 @@ const styles = StyleSheet.create({
   card: {
     margin: 10,
     height: height*0.25,
+  },
+  linkContainer:{
+    margin: 10,
+    height: height * 0.09,
+  },
+  linkStyle:{
+    flex: 1,
+    alignItems:'center',
+    justifyContent:'center',
   },
   horizontalArrangement: {
     flexDirection : 'row',
