@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { StyleSheet,Text,TouchableOpacity,View} from 'react-native';
 import PropTypes from 'prop-types' ;
+import { Card } from 'react-native-paper';
+
 
 import { defaultStyles } from './styles';
 
@@ -17,27 +19,46 @@ export default class Options extends Component {
   render() {
     const {value} = this.props;
     return (
-      <TouchableOpacity activeOpacity={1}>
-        <View style={styles.container}>
-          <Text style={{ color:  'green' }}>
-            {value}
-          </Text>
-        </View>
-      </TouchableOpacity>
+      <View style={{height: 60}}>
+        <Card style={[styles.card,styles.shadow]}>
+          <TouchableOpacity activeOpacity={1}>
+            <View >
+              <Text style={{ color:  'green' }}>
+                {value}
+              </Text>
+            </View>
+          </TouchableOpacity>
+        </Card>
+      </View>
+      
     );
   }
 }
 
 const styles = StyleSheet.create({
-  container: {
-    alignItems: 'center',
-    borderColor: 'green',
-    borderWidth: 1,
-    borderRadius: 10,
-    padding: 10,
-    marginRight: 10,
-  },
+ 
   text: {
     ...defaultStyles.text,
-  }
+  },
+  card:{
+    alignItems: 'center',
+     borderColor: 'white',
+    borderWidth: 1,
+    borderRadius: 10,
+    // height:40,
+    //width:100,
+    padding: 10,
+    marginRight: 10, 
+    backgroundColor: '#fcfcfc'
+  },
+  shadow: {
+    shadowColor: "#000",
+    shadowOffset: {
+	    width: 0,
+	    height: 4,
+    },
+    shadowOpacity: 0.30,
+    shadowRadius: 4.65,
+    elevation: 8,
+  },
 });

@@ -1,5 +1,6 @@
 
-
+//this routine is used to update data from the old 
+//JSON with new data that was entered by the user 
 export const updateValue= (oldData,update) => {
  if(Object.keys(oldData).length > 0){
     //check if oldData is found

@@ -12,6 +12,7 @@ export default class UpdateData extends Component {
             id: '',
             CompanyName: '',
             logo: '',
+            educationLevel:'',
             address:{
                 city:'',
                 cityArr: [],
@@ -56,6 +57,7 @@ export default class UpdateData extends Component {
                  <InputForm type={"text"} name="id" value={this.state.id} handleChange={this.UpdateChange} placeholder={"ID of job to update"}/>
                  <InputForm type={"text"} name="CompanyName" value={this.state.CompanyName} handleChange={this.UpdateChange} placeholder={"update Company name"}/>
                  <InputForm type={"text"} name="logo" value={this.state.logo} handleChange={this.UpdateChange} placeholder={"update logo"}/>
+                 <InputForm type={"text"} name="educationLevel" value={this.state.educationLevel} handleChange={this.UpdateChange} placeholder={"update education level"}/>
                  <InputForm type={"text"} name="city" value={this.state.address.city} handleChange={this.UpdateAddress.bind(this,'city')} placeholder={"update city"}/>
                  <InputForm type={"text"} name="country" value={this.state.address.country} handleChange={this.UpdateAddress.bind(this,'country')} placeholder={"update country"}/>
                  <InputForm type={"text"} name="link" value={this.state.link} handleChange={this.UpdateChange} placeholder={"update link"}/>

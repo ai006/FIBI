@@ -6,6 +6,8 @@ import FontAwesomeIcon from 'react-native-vector-icons/FontAwesome';
 import { Fumi } from 'react-native-textinput-effects';
 import { Platform,Alert } from "react-native";
 import { Header } from 'react-navigation';
+import { Dropdown } from 'react-native-material-dropdown';
+
 
 import { defaultStyles } from './styles';
 import { sendAddedJob } from './api';
@@ -37,6 +39,7 @@ export default class UserAddJob extends Component {
                     country: '',
                     link: '',
                     about: '',
+                    educationLevel:'',
             },
             nameFocused: false,
             jobFocused: false,
@@ -76,8 +79,10 @@ export default class UserAddJob extends Component {
 
   //used to send 
   SendJobToDB = async () => {
+    //this.printState();
 
-    if( this.state.AddedJob.job !== ''){                        //checks if user has added type of job and name of job
+     //checks if user has added type of job and name of job
+    if( this.state.AddedJob.job !== '' && this.state.AddedJob.CompanyName !== '' && this.state.AddedJob.educationLevel !== ''){                       
       
         status = await sendAddedJob(this.state.AddedJob)       //wait for the repsonse from server (function sendAddedJob in file api)
         if(status){                                            //if server received job go back to the main view
@@ -87,7 +92,7 @@ export default class UserAddJob extends Component {
     else{
         Alert.alert(                                          //alert user of missing companyname and job title   
             'status: incomplete',   
-            'Please add the company name and the type of job :)',
+            'Please add the company name, type of job, and education level :)',
             [
               {text: 'OK', onPress: () => console.log('OK Pressed')},
             ],
@@ -98,13 +103,14 @@ export default class UserAddJob extends Component {
 
   render() {
     const {nameFocused, jobFocused, linkFocused, aboutFocused, countryFocused, cityFocused} = this.state;
+    let data = [{ value: "Bachelor's degree",}, { value: "Master's degree",}, {value: "Doctoral degree", }];
     return (
         <View style={styles.ScreenBackground}>
             
             <KeyboardAvoidingView behavior="padding" keyboardVerticalOffset = {Header.HEIGHT+50} style = {{ flex: 1 }}>
                 <ScrollView  showsVerticalScrollIndicator={false}>
                 <View style={styles.FirstContainer}>
-                    <Card style={styles.about}>
+                    <Card style={[styles.about,styles.shadow]}>
                         <View style={[styles.card,styles.container]}>
                             <Text style={styles.paragraph}>
                                 The only way that this app can be helpful for the user, is if we have 
@@ -116,7 +122,7 @@ export default class UserAddJob extends Component {
                     </Card>
                 </View>
                 <View style={styles.FirstContainer}>
-                    <Card>
+                    <Card style={styles.shadow}>
                         <View style={styles.container}>
                             <Fumi
                                 label={'Company Name'} iconClass={FontAwesomeIcon} iconName={'building'}
@@ -137,6 +143,7 @@ export default class UserAddJob extends Component {
                                     {...this.state,AddedJob : {...this.state.AddedJob,job : text}})}
                             />
                         </View>
+                       
                         <View style={styles.container}>
                             <Fumi
                                 label={'link'} iconClass={FontAwesomeIcon} iconName={'link'}
@@ -179,12 +186,26 @@ export default class UserAddJob extends Component {
                                 
                             />
                         </View>
+                        <View>
+                            <Dropdown
+                                label='Education level'
+                                selectedItemColor = 'green'
+                                textColor = 'green'
+                                labelFontSize = {12}
+                                containerStyle={{ marginTop: 5, marginLeft: 10, marginRight:10}}
+                                fontSize= {20}
+                                data={data}
+                                onChangeText={(value) => this.setState(
+                                    {...this.state,AddedJob : {...this.state.AddedJob, educationLevel : value}}
+                                    )}
+                            />
+                        </View>
                     </Card>
                 </View>
-                <Card>
-                <TouchableOpacity style={styles.buttonContainer} onPress={this.SendJobToDB}>
-                    <Text style={styles.button}>Done</Text>
-                </TouchableOpacity>
+                <Card style={styles.shadow}>
+                    <TouchableOpacity style={styles.buttonContainer} onPress={this.SendJobToDB}>
+                        <Text style={styles.button}>Done</Text>
+                    </TouchableOpacity>
                 </Card>
                 </ScrollView>
                 </KeyboardAvoidingView>
@@ -209,6 +230,16 @@ const styles = StyleSheet.create({
         justifyContent: 'center', 
         alignItems: 'center',
     },
+    shadow: {
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 0,
+            height: 4,
+        },
+        shadowOpacity: 0.30,
+        shadowRadius: 4.65,
+        elevation: 8,
+      },
     about: {
       height : 150,
     },

@@ -10,6 +10,11 @@ import './Styles.css'
 import {updateValue} from './updater'
 
 
+/* This class holds all the functions which are used to call the 
+server.
+it holds all the data from jobs in an array
+This is also the first function which is called  */
+
 class Jobs extends Component {
   // initialize our state
   state = {
@@ -22,6 +27,9 @@ class Jobs extends Component {
     objectToUpdate: null,
   };
 
+
+  //as soon as the component mounts fetch all the jobs from the server
+  //this.getDataFromDb() is the function used to call the database
   componentDidMount() {
     console.log("Fetching data...");
     this.getDataFromDb();
@@ -35,6 +43,7 @@ class Jobs extends Component {
     // }
   }
 
+  //When the component is unmounting clear everything
   componentWillUnmount() {
     console.log("unmounted interval...")
     if (this.state.intervalIsSet) {
@@ -44,26 +53,33 @@ class Jobs extends Component {
     }
   }
 
+  //routine which calls the function fetchData from api.js
+  //which is used to fetch jobs from the database
   getDataFromDb = async () => {
       const data  = await fetchData()
       this.setState({data:data})
       // this.printData()
   }
 
+  //function to print the jobs in the database
   printData= () => {
     console.log(this.state.data)
   }
 
+  //fuction which calls the routine addDataToDB from api.js
+  //which is used to add a job to the database
   putDataToDB = (message) => {
     //console.log(message)
-    let currentIds = this.state.data.map((data) => data.id);//gets all IDs in data and adds to array
+    let currentIds = this.state.data.map((data) => data.id);  //gets all IDs in database to find an unused ID
     let idToBeAdded = 0;
     while (currentIds.includes(idToBeAdded)) {
       idToBeAdded++;
     }
     addDataToDB(idToBeAdded,message)
   };
-  
+
+  //function which calls the routine deleteDataFromDB from api.js
+  //which is used to delete a job from the database
   deleteFromDB = (idTodelete) => {
     let tempIdToDelete = parseInt(idTodelete)
     let objIdToDelete = null;
@@ -74,7 +90,10 @@ class Jobs extends Component {
     deleteDataFromDB(objIdToDelete)
   };
 
-  
+  //function calls the routine updateDataInDB from api.js
+  //which is used to update some info from a job in the database
+  //the function updateValue() is used to update the JSON of
+  //the old job with JSON of the new job
   updateDB = (update) => {
      let objIdToUpdate = null;
      let oldData = {};

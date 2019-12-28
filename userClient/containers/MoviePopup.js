@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
-import {Dimensions, Image, StyleSheet,Text, TouchableHighlight, View } from 'react-native';
+import {Dimensions, Image, StyleSheet,Text,TouchableOpacity, TouchableHighlight, View } from 'react-native';
 import Modal from 'react-native-modal';
 import PropTypes from 'prop-types' ;
 
 import Options from '../Options';
-import { defaultStyles } from '../styles'
+import { defaultStyles } from '../styles';
+import ScrollViews from '../scrollViews';
 // import {getStyles} from '../DynamicStyle';
 
 const { width, height } = Dimensions.get('window'); // Get screen dimensions
@@ -46,19 +47,13 @@ export default class MoviePopup extends Component {
                   <Text style={styles.genre}>{link}</Text>
                 </View>
               </View>
-              <View>
+              <View >
                 <Text style={[styles.pushRight,styles.sectionHeader]}>Countries</Text>
-                <Options
-                  values={countryArr}
-                  chosen={chosenDay}
-                  onChoose={onChooseDay}
-                />
+                  <Options  values={countryArr} />
                 <Text style={[styles.pushRight,styles.sectionHeader]}>Jobs</Text>
-                <Options
-                  values={jobsArr}
-                  chosen={chosenTime}
-                  onChoose={onChooseTime}
-                />
+                  <Options values={jobsArr}/>
+                  {/* <ScrollViews  name={countryArr} group={<Text>Countries</Text>}/>
+                  <ScrollViews  name={jobsArr} group={<Text>Jobs</Text>}/> */}
               </View>
               <View style={styles.footer}>
                 <TouchableHighlight
@@ -103,7 +98,7 @@ const styles = StyleSheet.create({
     // alignItems:'center', 
     //justifyContent:'center',
     
-    marginBottom: 20,
+    marginBottom: 0,
   },
   imageContainer: {
     flex:1,

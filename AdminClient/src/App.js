@@ -7,7 +7,7 @@ import imagesComponent from './images';
 import jobsToVetComponent from './jobsToVet';
 
 
-/*first executed page on admin clien
+/*first executed page on admin client
 the default page is from jobsComponent which shows
 all the jobs in the database. it also has links to 
 the images and jobs added by user to be vetted*/

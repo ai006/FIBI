@@ -3,6 +3,7 @@ import { Dimensions, ScrollView, StyleSheet, View} from 'react-native';
 import PropTypes from 'prop-types' ;
 
 import Option from './Option';
+import HorizontalScroll from './horizontalScroll';
 
 const { width } = Dimensions.get('window');
 const optionWith = (width - 0) / 3 - 10;

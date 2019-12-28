@@ -1,16 +1,19 @@
 import React, { Component } from 'react';
 import './Styles.css'
 
+
+//class used to delete a job from the database
 export default class DeleteData extends Component {
 
     constructor(props){
         super(props);
         this.state = {
-            id: '',
+            id: '',                       //id of job to delete
         };
         console.log("In constructor")
     }
    
+    //function for handling input from user
     handleIdChange = event => {
         this.setState({id: event.target.value})
     }
@@ -21,6 +24,7 @@ export default class DeleteData extends Component {
       this.props.delete(idTodelete)
     };
 
+    //display an input box to enter the ID number
     render(){
         return(
             <div>

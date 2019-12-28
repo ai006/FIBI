@@ -7,10 +7,12 @@ export default class HorizontalScroll extends Component {
   render() {
     return (
             <View> 
-              <Card style={styles.card}>
-                <Text style={{color: 'white',flex:1 }}>
-                     {this.props.name}
-                </Text>
+              <Card style={[styles.card,styles.shadow]}>
+                
+              <View style={{flex:1,justifyContent: "center",alignItems: "center"}}>
+                  <Text style={{textAlignVertical: "center",textAlign: "center",color: 'green',
+                                 fontWeight: '400',fontSize:15}}>{this.props.name}</Text>
+              </View>
               </Card>
             </View>
     );
@@ -23,8 +25,16 @@ const styles = StyleSheet.create({
     width:130,
     borderRadius:8,
     marginLeft:20, 
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: '#41ab4e'
+    backgroundColor: '#fcfcfc'
+  },
+  shadow: {
+    shadowColor: "#000",
+    shadowOffset: {
+	    width: 0,
+	    height: 4,
+    },
+    shadowOpacity: 0.30,
+    shadowRadius: 4.65,
+    elevation: 8,
   },
 });

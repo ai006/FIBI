@@ -1,10 +1,16 @@
 import {fetchJobsPending, fetchJobsError, fetchJobSuccess} from './actions/index';
 import { Alert} from 'react-native'
 
+//URL address used to fetch/call the server on heroku to fetch jobs
+// const API_URL = 'https://desolate-tor-37189.herokuapp.com/api/getData';
 
-const API_URL = 'https://desolate-tor-37189.herokuapp.com/api/getData';
+//the IP 10.2.2 is the default IP address used to connect android devices to your local host
+const API_URL = 'http://10.0.2.2:3001/api/getData';
 
-const API_URL_USER = 'https://desolate-tor-37189.herokuapp.com/api/userAddedJob';
+
+//URL address used to send data of new job to Heroku server 
+//const API_URL_USER = 'https://desolate-tor-37189.herokuapp.com/api/userAddedJob';
+const API_URL_USER = 'http://10.0.2.2:3001/api/userAddedJob';
 
 
 //function used to call and fetch the jobs data from the server

@@ -1,12 +1,9 @@
 import React, { Component} from 'react';
-import PropTypes from 'prop-types';
 import {StyleSheet, Text, Image, TouchableOpacity, ScrollView, View, Dimensions,Linking} from 'react-native';
-import Constants from 'expo-constants';
 import { Card } from 'react-native-paper';
-import { Container } from 'native-base';
+
 
 import { defaultStyles } from './styles';
-import HorizontalScroll from './horizontalScroll';
 import ScrollViews from './scrollViews';
 
 
@@ -35,7 +32,7 @@ export default class Confirmation extends Component {
     return (
       <View style={styles.container}>
         <ScrollView>
-          <Card style={styles.card}>
+          <Card style={[styles.shadow,styles.card,styles.cardBackgroundColor]}>
             <View style={[styles.horizontalArrangement,styles.placeCenter]}>
                 <Image style={styles.imageStyle} source={{uri: job.logo}}/>
                 <View style={{flex : 1, justifyContent: 'flex-start', alignItems: 'center',}}>
@@ -43,23 +40,29 @@ export default class Confirmation extends Component {
                 </View>
             </View>
           </Card>
-          <Card style={styles.linkContainer}>
+          <Card style={[styles.shadow,styles.linkContainer, styles.cardBackgroundColor]}>
+                <View style={[styles.linkStyle,styles.horizontalArrangement]}>
+                  <Text style={{color:'#a5acad', fontWeight: '200',fontSize:20}}>Education level : </Text>
+                  <Text style={{color:'green',fontSize:20}}>{job.educationLevel}</Text>
+                </View>
+          </Card>
+          <Card style={[styles.shadow,styles.linkContainer,styles.cardBackgroundColor]}>
             <TouchableOpacity style={styles.linkStyle}>
                 <View >
                   <Text onPress={ ()=> Linking.openURL(link) } style={{color:'blue',textDecorationLine: 'underline',fontSize:20}}>{job.link}</Text>
                 </View>
             </TouchableOpacity>
           </Card>
-          <Card style={styles.containerCard}>
+          <Card style={[styles.shadow,styles.containerCard,styles.cardBackgroundColor]}>
             <ScrollViews name={job.jobsArr} group={<Text>Hiring</Text>}/>
             <ScrollViews name={job.address.countryArr} group={<Text>Country</Text>}/>
             <ScrollViews name={job.address.cityArr} group={<Text>City</Text>}/>
           </Card>
-          <Card style={{margin:10}}>
+          <Card style={[styles.shadow,{margin:10},styles.cardBackgroundColor]}>
             <Text style={{margin:10,color:'#a5acad',fontWeight: '500'}}>About</Text>
             <Text style={{fontSize: 16,fontWeight: '500',margin:10}}>{job.about}</Text>
           </Card>
-          <Card>
+          <Card style={[styles.shadow,styles.cardBackgroundColor]}>
             <TouchableOpacity style={styles.buttonContainer} onPress={() => this.props.navigation.pop()}>
               <Text style={styles.button}>Done</Text>
             </TouchableOpacity>
@@ -73,12 +76,26 @@ export default class Confirmation extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#ecf0f1',
+    marginTop: 10,
+    backgroundColor: '#fcfcfc',//'white',//'#ecf0f1',
   },
   containerCard: {
     
     height: height*0.45,
     margin: 10,
+  },
+  cardBackgroundColor: {
+    backgroundColor: '#fdfdfd',//'white',//'#fcfcfc'
+  },
+  shadow: {
+    shadowColor: "#000",
+    shadowOffset: {
+	    width: 0,
+	    height: 4,
+    },
+    shadowOpacity: 0.30,
+    shadowRadius: 4.65,
+    elevation: 8,
   },
   card: {
     margin: 10,

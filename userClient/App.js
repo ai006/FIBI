@@ -4,8 +4,8 @@ import { Provider } from 'react-redux';
 
 import store from './store';
 import { fetchJobsData } from './api';
-import AppNavigator from './ScreenContainer'
-
+import AppNavigator from './ScreenContainer';
+//import InitialNavigator from './initialNavigation';
 
 export default class App extends React.Component {
 

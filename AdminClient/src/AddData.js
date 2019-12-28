@@ -3,7 +3,10 @@ import React, { Component } from 'react';
 import InputForm from './InputForm';
 import './Styles.css';
 import {changeToArray} from './strToArray';
+ 
 
+//This is the class which is used to add data 
+//the variables in the constructor hold data entered by the user
 export default class AddData extends Component {
 
     constructor(props){
@@ -11,6 +14,7 @@ export default class AddData extends Component {
         this.state = {
             CompanyName: '',
             logo:'',
+            educationLevel:'',
             address:{
                 city:'',
                 cityArr: [],
@@ -61,7 +65,7 @@ export default class AddData extends Component {
                 <div>
                     <InputForm type={"text"} name="CompanyName" value={this.state.CompanyName} handleChange={this.UpdateChange} placeholder={"Company name"}/>
                     <InputForm type={"text"} name="logo" value={this.state.logo} handleChange={this.UpdateChange} placeholder={"logo"}/>
-                    {/* <InputForm type={"text"} name="street" value={this.state.address.street} handleChange={this.UpdateAddress.bind(this,'street')} placeholder={"street"}/> */}
+                    <InputForm type={"text"} name="educationLevel" value={this.state.educationLevel} handleChange={this.UpdateChange} placeholder={"education level"}/>
                     <InputForm type={"text"} name="city" value={this.state.address.city} handleChange={this.UpdateAddress.bind(this,'city')} placeholder={"city"}/>
                     <InputForm type={"text"} name="country" value={this.state.address.country} handleChange={this.UpdateAddress.bind(this,'country')} placeholder={"country"}/>
                     <InputForm type={"text"} name="link" value={this.state.address.link} handleChange={this.UpdateChange} placeholder={"link"}/>

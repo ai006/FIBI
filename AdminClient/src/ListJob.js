@@ -6,7 +6,7 @@ const ListJob = props => (
         <span style={{ color: 'blue' }}> id: </span> {props.id} <br />
         <span style={{ color: 'blue' }}> company: </span>{props.CompanyName} <br />
         <span style={{ color: 'blue' }}> logo: </span> {props.logo} <br />
-        {/* <span style={{ color: 'blue' }}> street: </span>{props.address.street} <br /> */}
+        <span style={{ color: 'blue' }}> education level: </span>{props.educationLevel} <br />
         <span style={{ color: 'blue' }}> city: </span> {props.address.city} <br />
         <span style={{ color: 'blue' }}> country: </span>{props.address.country} <br />
         <span style={{ color: 'blue' }}> link: </span> {props.link} <br />

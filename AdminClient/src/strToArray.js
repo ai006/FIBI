@@ -1,5 +1,6 @@
 
-
+//function to change form a string to an array
+//splitting is done using the "," as the delimeter
 export const changeToArray= (obj) => {
     const jobTemp = obj.jobs.split(',');;                   //jobTemp is an array string of jobs
     const cityTemp = obj.address.city.split(',');           //cityTemp is an array string of cities
