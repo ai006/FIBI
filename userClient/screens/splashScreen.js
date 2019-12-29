@@ -1,23 +1,20 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, Image } from 'react-native';
+
+import store from '../store';
+import { fetchJobsData } from '../api';
+
+
 
 class SplashScreen extends React.Component {
-    
-  performTimeConsumingTask = async() => {
-    return new Promise((resolve) =>
-      setTimeout(
-        () => { resolve('result') },
-        2000
-      )
-    )
-  }
 
   async componentDidMount() {
     // Preload data from an external API
     // Preload data using AsyncStorage
-    const data = await this.performTimeConsumingTask();
+    await store.dispatch(fetchJobsData());
 
-    if (data !== null) {
+    if(store.getState() !== null){
+
       this.props.navigation.navigate('App');
     }
   }
@@ -25,8 +22,17 @@ class SplashScreen extends React.Component {
   render() {
     return (
       <View style={styles.viewStyles}>
-        <Text style={styles.textStyles}>
-          Blitz Reading
+           <View>
+        <Image
+          style={{width: 200, height: 200}}
+          source={require('../assets/logo_small.jpg')}
+        />
+        </View>
+        <Text style={[styles.placeCenter,styles.textStyles]}>
+            F I B I
+        </Text>
+        <Text style={[styles.placeCenter,styles.subTextStyle]}>
+            For Internationals By Internationals
         </Text>
       </View>
     );
@@ -38,13 +44,22 @@ const styles = {
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: 'orange'
+    backgroundColor: 'white'
   },
   textStyles: {
-    color: 'white',
+    color: 'green',
     fontSize: 40,
     fontWeight: 'bold'
-  }
+  },
+  subTextStyle: {
+      color: 'green',
+      fontSize: 20,
+      fontWeight: '400',
+  },
+  placeCenter:{
+    justifyContent: 'center', 
+    alignItems: 'center',
+  },
 }
 
 export default SplashScreen;

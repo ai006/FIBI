@@ -11,6 +11,7 @@ import {
 
   import JobsDataScreen from './containers/jobsData';
   import TwitterScreen from './TwitterScreen';
+  import UniversityScreen from './screens/universityScreen';
   import Confirmation from './confirmation';
   import ViewSearchResults from './containers/ViewSearchResult';
   import UserAddJob from './UserAddJob';
@@ -40,8 +41,9 @@ JobsStack.navigationOptions = {
 
 const MainTabs = createBottomTabNavigator(
     {
-      jobs: JobsStack,
-      Chats: TwitterScreen
+      Jobs: JobsStack,
+      Advice: TwitterScreen,
+      University: UniversityScreen,
     },
     {
       tabBarOptions: { //color of active tab

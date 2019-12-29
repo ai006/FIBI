@@ -5,11 +5,11 @@ import { Platform } from "react-native";
 
 import Ionicons from "react-native-vector-icons/Ionicons";
 
-export default class TwitterScreen extends React.Component {
+export default class UniversityScreen extends React.Component {
   static navigationOptions = {
     tabBarIcon: ({ focused, tintColor }) => (
     <Ionicons
-        name={Platform.OS === "ios" ? "ios-people" : "md-people"}
+        name={Platform.OS === "ios" ? "ios-school" : "md-school"}
         size={25}
         color={tintColor}
       />
@@ -18,7 +18,7 @@ export default class TwitterScreen extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.text}>coming soon!</Text>
+        <Text style={styles.text}>coming soon Too!</Text>
       </View>
     );
   }
