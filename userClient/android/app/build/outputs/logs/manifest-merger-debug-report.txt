@@ -1,0 +1,480 @@
+-- Merging decision tree log ---
+manifest
+ADDED from C:\Users\thier\Desktop\sites\weSponsor\userClient\android\app\src\main\AndroidManifest.xml:1:1-48:12
+INJECTED from C:\Users\thier\Desktop\sites\weSponsor\userClient\android\app\src\main\AndroidManifest.xml:1:1-48:12
+INJECTED from C:\Users\thier\Desktop\sites\weSponsor\userClient\android\app\src\main\AndroidManifest.xml:1:1-48:12
+INJECTED from C:\Users\thier\Desktop\sites\weSponsor\userClient\android\app\src\main\AndroidManifest.xml:1:1-48:12
+MERGED from [:react-native-screens] C:\Users\thier\Desktop\sites\weSponsor\userClient\node_modules\react-native-screens\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-11:12
+MERGED from [:react-native-reanimated] C:\Users\thier\Desktop\sites\weSponsor\userClient\node_modules\react-native-reanimated\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-11:12
+MERGED from [:react-native-gesture-handler] C:\Users\thier\Desktop\sites\weSponsor\userClient\node_modules\react-native-gesture-handler\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-11:12
+MERGED from [:expo-permissions] C:\Users\thier\Desktop\sites\weSponsor\userClient\node_modules\expo-permissions\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-11:12
+MERGED from [com.facebook.react:react-native:0.59.10] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\react-native-0.59.10.aar\97f485d323950a37f76691e2482c98f3\AndroidManifest.xml:2:1-13:12
+MERGED from [com.android.support:appcompat-v7:28.0.0] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\appcompat-v7-28.0.0.aar\42ad4dde5ad2120ceaf51525691212ac\AndroidManifest.xml:17:1-22:12
+MERGED from [:unimodules-react-native-adapter] C:\Users\thier\Desktop\sites\weSponsor\userClient\node_modules\@unimodules\react-native-adapter\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-11:12
+MERGED from [:expo-app-loader-provider] C:\Users\thier\Desktop\sites\weSponsor\userClient\node_modules\expo-app-loader-provider\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-11:12
+MERGED from [:expo-constants] C:\Users\thier\Desktop\sites\weSponsor\userClient\node_modules\expo-constants\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-11:12
+MERGED from [:expo-file-system] C:\Users\thier\Desktop\sites\weSponsor\userClient\node_modules\react-native-unimodules\node_modules\expo-file-system\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-30:12
+MERGED from [:expo-font] C:\Users\thier\Desktop\sites\weSponsor\userClient\node_modules\expo-font\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-11:12
+MERGED from [:expo-keep-awake] C:\Users\thier\Desktop\sites\weSponsor\userClient\node_modules\expo-keep-awake\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-11:12
+MERGED from [:expo-linear-gradient] C:\Users\thier\Desktop\sites\weSponsor\userClient\node_modules\expo-linear-gradient\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-11:12
+MERGED from [:expo-location] C:\Users\thier\Desktop\sites\weSponsor\userClient\node_modules\expo-location\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-21:12
+MERGED from [:expo-sqlite] C:\Users\thier\Desktop\sites\weSponsor\userClient\node_modules\expo-sqlite\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-11:12
+MERGED from [:expo-web-browser] C:\Users\thier\Desktop\sites\weSponsor\userClient\node_modules\expo-web-browser\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-11:12
+MERGED from [:unimodules-barcode-scanner-interface] C:\Users\thier\Desktop\sites\weSponsor\userClient\node_modules\unimodules-barcode-scanner-interface\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-11:12
+MERGED from [:unimodules-camera-interface] C:\Users\thier\Desktop\sites\weSponsor\userClient\node_modules\unimodules-camera-interface\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-11:12
+MERGED from [:unimodules-constants-interface] C:\Users\thier\Desktop\sites\weSponsor\userClient\node_modules\unimodules-constants-interface\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-11:12
+MERGED from [:unimodules-face-detector-interface] C:\Users\thier\Desktop\sites\weSponsor\userClient\node_modules\unimodules-face-detector-interface\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-11:12
+MERGED from [:unimodules-file-system-interface] C:\Users\thier\Desktop\sites\weSponsor\userClient\node_modules\unimodules-file-system-interface\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-11:12
+MERGED from [:unimodules-font-interface] C:\Users\thier\Desktop\sites\weSponsor\userClient\node_modules\unimodules-font-interface\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-11:12
+MERGED from [:unimodules-permissions-interface] C:\Users\thier\Desktop\sites\weSponsor\userClient\node_modules\unimodules-permissions-interface\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-11:12
+MERGED from [:unimodules-task-manager-interface] C:\Users\thier\Desktop\sites\weSponsor\userClient\node_modules\unimodules-task-manager-interface\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-11:12
+MERGED from [:unimodules-core] C:\Users\thier\Desktop\sites\weSponsor\userClient\node_modules\@unimodules\core\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-11:12
+MERGED from [:unimodules-image-loader-interface] C:\Users\thier\Desktop\sites\weSponsor\userClient\node_modules\unimodules-image-loader-interface\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-11:12
+MERGED from [:unimodules-sensors-interface] C:\Users\thier\Desktop\sites\weSponsor\userClient\node_modules\unimodules-sensors-interface\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-11:12
+MERGED from [com.android.support:transition:28.0.0] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\transition-28.0.0.aar\4532dd3729ac1e99fdac4cb29a8fad62\AndroidManifest.xml:17:1-22:12
+MERGED from [com.github.bumptech.glide:glide:4.9.0] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\glide-4.9.0.aar\5462f452f83383717dc3b7b70fea3bb6\AndroidManifest.xml:2:1-12:12
+MERGED from [com.google.android.gms:play-services-location:16.0.0] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\play-services-location-16.0.0.aar\14965d986d32ce376816cf7b6f41a4a1\AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.android.gms:play-services-base:16.0.1] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\play-services-base-16.0.1.aar\42404a923334f836525e9bd96fb24f34\AndroidManifest.xml:17:1-29:12
+MERGED from [com.google.android.gms:play-services-places-placereport:16.0.0] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\play-services-places-placereport-16.0.0.aar\77aebd30b1f32fc7c3fdb647b4681d31\AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.gms:play-services-tasks:16.0.1] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\play-services-tasks-16.0.1.aar\69801a6ba350635353642b6df8edece3\AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.android.gms:play-services-basement:16.0.1] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\play-services-basement-16.0.1.aar\95518a58519cbb41dbab07a92a0f2c22\AndroidManifest.xml:17:1-28:12
+MERGED from [com.android.support:support-v4:28.0.0] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\support-v4-28.0.0.aar\475d6df3cc6ae3bf63371c6633a31c60\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-fragment:28.0.0] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\support-fragment-28.0.0.aar\13e3d6e0e519fd60980ca1a2073a3593\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:animated-vector-drawable:28.0.0] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-28.0.0.aar\114b1751c701f746b1f408b19286885e\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:customtabs:28.0.0] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\customtabs-28.0.0.aar\13be3002c1d44c621a966bbbf7def5c5\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-ui:28.0.0] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\support-core-ui-28.0.0.aar\41fb8ebfd1e3e3ed25cb560725ee3f04\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-utils:28.0.0] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\support-core-utils-28.0.0.aar\9557930af42dac5eab7d39e3d7df0a16\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-vector-drawable:28.0.0] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-28.0.0.aar\74f6d93a42291b8d0dfbbb2b1f8d7878\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:loader:28.0.0] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\loader-28.0.0.aar\36794e3483e5169cd2449b2befaab1d7\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-media-compat:28.0.0] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\support-media-compat-28.0.0.aar\0c8c93e99deef5fd47885dfe6a566e8b\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:viewpager:28.0.0] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\viewpager-28.0.0.aar\a267d36af3c2e3a315b29c633d501690\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:coordinatorlayout:28.0.0] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\coordinatorlayout-28.0.0.aar\d939797c91e988cfe7eb016ef62da367\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:drawerlayout:28.0.0] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\drawerlayout-28.0.0.aar\70065cc3d50a4c30aace055cb938f5b4\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:slidingpanelayout:28.0.0] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\slidingpanelayout-28.0.0.aar\75fb9924499f2ea5ce2572aae56aedbd\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:customview:28.0.0] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\customview-28.0.0.aar\97f03d5a88c20539bef9eecd8a8ec544\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:swiperefreshlayout:28.0.0] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\swiperefreshlayout-28.0.0.aar\d462764d9b2086f62ee13f0f71679813\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:asynclayoutinflater:28.0.0] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\asynclayoutinflater-28.0.0.aar\0779e1e66a05c54718a404b0a6838035\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-compat:28.0.0] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\support-compat-28.0.0.aar\2f99b7b16f493c17f005f82b06320035\AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\versionedparcelable-28.0.0.aar\ed72646f54912d58e472948919d62711\AndroidManifest.xml:17:1-25:12
+MERGED from [com.android.support:cursoradapter:28.0.0] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\cursoradapter-28.0.0.aar\44497af05af3d69b8f927260e5f01224\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:runtime:1.1.1] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\runtime-1.1.1.aar\9232596f902dbb4ef8b0d6b86cee62c7\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:documentfile:28.0.0] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\documentfile-28.0.0.aar\ec87121190a4f5042e174c5ade25ca99\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:localbroadcastmanager:28.0.0] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\localbroadcastmanager-28.0.0.aar\e1fbbfb11ce5f4ae4c555d005bc6a5df\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:print:28.0.0] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\print-28.0.0.aar\5624cc4106a18bb320bdf84d0a23cf4c\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:viewmodel:1.1.1] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.1.aar\ec9688475e272a96b81767289a7b88c9\AndroidManifest.xml:17:1-22:12
+MERGED from [com.github.bumptech.glide:gifdecoder:4.9.0] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\gifdecoder-4.9.0.aar\a9568317d5a6c0fbfb6e8cb4a76b97f0\AndroidManifest.xml:2:1-11:12
+MERGED from [com.android.support:interpolator:28.0.0] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\interpolator-28.0.0.aar\331f0ed47d035302498863c517dcd2f1\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:livedata:1.1.1] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\livedata-1.1.1.aar\9a2051ca4288898b9078d7074d307e99\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:livedata-core:1.1.1] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.1.aar\75a1f001e5ecda0fa7a168ba50006ca6\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.core:runtime:1.1.1] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\runtime-1.1.1.aar\3876be0b1c68026c9448b37b51a5b59a\AndroidManifest.xml:17:1-22:12
+MERGED from [com.facebook.fresco:fresco:1.10.0] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\fresco-1.10.0.aar\705404949823d3507a2c485e63d65d9a\AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.fresco:imagepipeline-okhttp3:1.10.0] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\imagepipeline-okhttp3-1.10.0.aar\90de404a83f9c3f71d6a8951d6ff0d7c\AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.fresco:drawee:1.10.0] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\drawee-1.10.0.aar\83213e6aa04237e49830ae23221aa2f3\AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.fresco:imagepipeline:1.10.0] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\imagepipeline-1.10.0.aar\1fe9f42671ca2f4b742f49737126ea62\AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.fresco:imagepipeline-base:1.10.0] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\imagepipeline-base-1.10.0.aar\47582f86e062e8606ccd9293b1ae1abe\AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.soloader:soloader:0.6.0] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\soloader-0.6.0.aar\847630298fb5821aaaa8ea757a762656\AndroidManifest.xml:2:1-13:12
+MERGED from [io.nlopez.smartlocation:library:3.2.11] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\library-3.2.11.aar\f1bff68a7bdcca55bd01bf33802985ec\AndroidManifest.xml:2:1-30:12
+MERGED from [com.facebook.fresco:fbcore:1.10.0] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\fbcore-1.10.0.aar\6fc86e94eea01863814533dd3c53318f\AndroidManifest.xml:2:1-9:12
+INJECTED from C:\Users\thier\Desktop\sites\weSponsor\userClient\android\app\src\main\AndroidManifest.xml:1:1-48:12
+INJECTED from C:\Users\thier\Desktop\sites\weSponsor\userClient\android\app\src\main\AndroidManifest.xml:1:1-48:12
+INJECTED from C:\Users\thier\Desktop\sites\weSponsor\userClient\android\app\src\main\AndroidManifest.xml:1:1-48:12
+	package
+		ADDED from C:\Users\thier\Desktop\sites\weSponsor\userClient\android\app\src\main\AndroidManifest.xml:2:5-23
+		INJECTED from C:\Users\thier\Desktop\sites\weSponsor\userClient\android\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\thier\Desktop\sites\weSponsor\userClient\android\app\src\main\AndroidManifest.xml
+	android:versionName
+		INJECTED from C:\Users\thier\Desktop\sites\weSponsor\userClient\android\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\thier\Desktop\sites\weSponsor\userClient\android\app\src\main\AndroidManifest.xml:1:1-48:12
+		INJECTED from C:\Users\thier\Desktop\sites\weSponsor\userClient\android\app\src\main\AndroidManifest.xml
+	android:versionCode
+		INJECTED from C:\Users\thier\Desktop\sites\weSponsor\userClient\android\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\thier\Desktop\sites\weSponsor\userClient\android\app\src\main\AndroidManifest.xml:1:1-48:12
+		INJECTED from C:\Users\thier\Desktop\sites\weSponsor\userClient\android\app\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from C:\Users\thier\Desktop\sites\weSponsor\userClient\android\app\src\main\AndroidManifest.xml:1:11-69
+uses-permission#android.permission.INTERNET
+ADDED from C:\Users\thier\Desktop\sites\weSponsor\userClient\android\app\src\main\AndroidManifest.xml:4:5-67
+MERGED from [:expo-file-system] C:\Users\thier\Desktop\sites\weSponsor\userClient\node_modules\react-native-unimodules\node_modules\expo-file-system\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:12:5-67
+MERGED from [:expo-file-system] C:\Users\thier\Desktop\sites\weSponsor\userClient\node_modules\react-native-unimodules\node_modules\expo-file-system\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:12:5-67
+	android:name
+		ADDED from C:\Users\thier\Desktop\sites\weSponsor\userClient\android\app\src\main\AndroidManifest.xml:4:22-64
+uses-permission#android.permission.SYSTEM_ALERT_WINDOW
+ADDED from C:\Users\thier\Desktop\sites\weSponsor\userClient\android\app\src\main\AndroidManifest.xml:5:5-77
+	android:name
+		ADDED from C:\Users\thier\Desktop\sites\weSponsor\userClient\android\app\src\main\AndroidManifest.xml:5:22-75
+uses-permission#android.permission.MANAGE_DOCUMENTS
+ADDED from C:\Users\thier\Desktop\sites\weSponsor\userClient\android\app\src\main\AndroidManifest.xml:8:5-75
+	android:name
+		ADDED from C:\Users\thier\Desktop\sites\weSponsor\userClient\android\app\src\main\AndroidManifest.xml:8:22-72
+uses-permission#android.permission.READ_INTERNAL_STORAGE
+ADDED from C:\Users\thier\Desktop\sites\weSponsor\userClient\android\app\src\main\AndroidManifest.xml:9:5-80
+	android:name
+		ADDED from C:\Users\thier\Desktop\sites\weSponsor\userClient\android\app\src\main\AndroidManifest.xml:9:22-77
+uses-permission#android.permission.READ_PHONE_STATE
+ADDED from C:\Users\thier\Desktop\sites\weSponsor\userClient\android\app\src\main\AndroidManifest.xml:10:5-75
+	android:name
+		ADDED from C:\Users\thier\Desktop\sites\weSponsor\userClient\android\app\src\main\AndroidManifest.xml:10:22-72
+uses-permission#android.permission.USE_FINGERPRINT
+ADDED from C:\Users\thier\Desktop\sites\weSponsor\userClient\android\app\src\main\AndroidManifest.xml:11:5-74
+	android:name
+		ADDED from C:\Users\thier\Desktop\sites\weSponsor\userClient\android\app\src\main\AndroidManifest.xml:11:22-71
+uses-permission#android.permission.VIBRATE
+ADDED from C:\Users\thier\Desktop\sites\weSponsor\userClient\android\app\src\main\AndroidManifest.xml:12:5-66
+	android:name
+		ADDED from C:\Users\thier\Desktop\sites\weSponsor\userClient\android\app\src\main\AndroidManifest.xml:12:22-63
+uses-permission#android.permission.MODIFY_AUDIO_SETTINGS
+ADDED from C:\Users\thier\Desktop\sites\weSponsor\userClient\android\app\src\main\AndroidManifest.xml:13:5-80
+	android:name
+		ADDED from C:\Users\thier\Desktop\sites\weSponsor\userClient\android\app\src\main\AndroidManifest.xml:13:22-77
+uses-permission#android.permission.ACCESS_COARSE_LOCATION
+ADDED from C:\Users\thier\Desktop\sites\weSponsor\userClient\android\app\src\main\AndroidManifest.xml:16:5-81
+MERGED from [:expo-location] C:\Users\thier\Desktop\sites\weSponsor\userClient\node_modules\expo-location\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:11:5-81
+MERGED from [:expo-location] C:\Users\thier\Desktop\sites\weSponsor\userClient\node_modules\expo-location\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:11:5-81
+MERGED from [io.nlopez.smartlocation:library:3.2.11] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\library-3.2.11.aar\f1bff68a7bdcca55bd01bf33802985ec\AndroidManifest.xml:12:5-81
+MERGED from [io.nlopez.smartlocation:library:3.2.11] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\library-3.2.11.aar\f1bff68a7bdcca55bd01bf33802985ec\AndroidManifest.xml:12:5-81
+	android:name
+		ADDED from C:\Users\thier\Desktop\sites\weSponsor\userClient\android\app\src\main\AndroidManifest.xml:16:22-78
+uses-permission#android.permission.ACCESS_FINE_LOCATION
+ADDED from C:\Users\thier\Desktop\sites\weSponsor\userClient\android\app\src\main\AndroidManifest.xml:17:5-79
+MERGED from [:expo-location] C:\Users\thier\Desktop\sites\weSponsor\userClient\node_modules\expo-location\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:12:5-79
+MERGED from [:expo-location] C:\Users\thier\Desktop\sites\weSponsor\userClient\node_modules\expo-location\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:12:5-79
+MERGED from [io.nlopez.smartlocation:library:3.2.11] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\library-3.2.11.aar\f1bff68a7bdcca55bd01bf33802985ec\AndroidManifest.xml:14:5-79
+MERGED from [io.nlopez.smartlocation:library:3.2.11] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\library-3.2.11.aar\f1bff68a7bdcca55bd01bf33802985ec\AndroidManifest.xml:14:5-79
+	android:name
+		ADDED from C:\Users\thier\Desktop\sites\weSponsor\userClient\android\app\src\main\AndroidManifest.xml:17:22-76
+uses-permission#android.permission.CAMERA
+ADDED from C:\Users\thier\Desktop\sites\weSponsor\userClient\android\app\src\main\AndroidManifest.xml:18:5-65
+	android:name
+		ADDED from C:\Users\thier\Desktop\sites\weSponsor\userClient\android\app\src\main\AndroidManifest.xml:18:22-62
+uses-permission#android.permission.READ_CONTACTS
+ADDED from C:\Users\thier\Desktop\sites\weSponsor\userClient\android\app\src\main\AndroidManifest.xml:19:5-72
+	android:name
+		ADDED from C:\Users\thier\Desktop\sites\weSponsor\userClient\android\app\src\main\AndroidManifest.xml:19:22-69
+uses-permission#android.permission.READ_CALENDAR
+ADDED from C:\Users\thier\Desktop\sites\weSponsor\userClient\android\app\src\main\AndroidManifest.xml:20:5-72
+	android:name
+		ADDED from C:\Users\thier\Desktop\sites\weSponsor\userClient\android\app\src\main\AndroidManifest.xml:20:22-69
+uses-permission#android.permission.WRITE_CALENDAR
+ADDED from C:\Users\thier\Desktop\sites\weSponsor\userClient\android\app\src\main\AndroidManifest.xml:21:5-73
+	android:name
+		ADDED from C:\Users\thier\Desktop\sites\weSponsor\userClient\android\app\src\main\AndroidManifest.xml:21:22-70
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+ADDED from C:\Users\thier\Desktop\sites\weSponsor\userClient\android\app\src\main\AndroidManifest.xml:22:5-80
+MERGED from [:expo-file-system] C:\Users\thier\Desktop\sites\weSponsor\userClient\node_modules\react-native-unimodules\node_modules\expo-file-system\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:14:5-80
+MERGED from [:expo-file-system] C:\Users\thier\Desktop\sites\weSponsor\userClient\node_modules\react-native-unimodules\node_modules\expo-file-system\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:14:5-80
+	android:name
+		ADDED from C:\Users\thier\Desktop\sites\weSponsor\userClient\android\app\src\main\AndroidManifest.xml:22:22-77
+uses-permission#android.permission.RECORD_AUDIO
+ADDED from C:\Users\thier\Desktop\sites\weSponsor\userClient\android\app\src\main\AndroidManifest.xml:23:5-71
+	android:name
+		ADDED from C:\Users\thier\Desktop\sites\weSponsor\userClient\android\app\src\main\AndroidManifest.xml:23:22-68
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from C:\Users\thier\Desktop\sites\weSponsor\userClient\android\app\src\main\AndroidManifest.xml:24:5-81
+MERGED from [:expo-file-system] C:\Users\thier\Desktop\sites\weSponsor\userClient\node_modules\react-native-unimodules\node_modules\expo-file-system\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:13:5-81
+MERGED from [:expo-file-system] C:\Users\thier\Desktop\sites\weSponsor\userClient\node_modules\react-native-unimodules\node_modules\expo-file-system\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:13:5-81
+	android:name
+		ADDED from C:\Users\thier\Desktop\sites\weSponsor\userClient\android\app\src\main\AndroidManifest.xml:24:22-78
+uses-permission#android.permission.WRITE_SETTINGS
+ADDED from C:\Users\thier\Desktop\sites\weSponsor\userClient\android\app\src\main\AndroidManifest.xml:25:5-73
+	android:name
+		ADDED from C:\Users\thier\Desktop\sites\weSponsor\userClient\android\app\src\main\AndroidManifest.xml:25:22-70
+application
+ADDED from C:\Users\thier\Desktop\sites\weSponsor\userClient\android\app\src\main\AndroidManifest.xml:28:5-46:19
+MERGED from [com.facebook.react:react-native:0.59.10] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\react-native-0.59.10.aar\97f485d323950a37f76691e2482c98f3\AndroidManifest.xml:11:5-20
+MERGED from [com.facebook.react:react-native:0.59.10] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\react-native-0.59.10.aar\97f485d323950a37f76691e2482c98f3\AndroidManifest.xml:11:5-20
+MERGED from [:expo-file-system] C:\Users\thier\Desktop\sites\weSponsor\userClient\node_modules\react-native-unimodules\node_modules\expo-file-system\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:17:5-28:19
+MERGED from [:expo-file-system] C:\Users\thier\Desktop\sites\weSponsor\userClient\node_modules\react-native-unimodules\node_modules\expo-file-system\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:17:5-28:19
+MERGED from [:expo-location] C:\Users\thier\Desktop\sites\weSponsor\userClient\node_modules\expo-location\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:15:5-19:19
+MERGED from [:expo-location] C:\Users\thier\Desktop\sites\weSponsor\userClient\node_modules\expo-location\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:15:5-19:19
+MERGED from [com.github.bumptech.glide:glide:4.9.0] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\glide-4.9.0.aar\5462f452f83383717dc3b7b70fea3bb6\AndroidManifest.xml:10:5-20
+MERGED from [com.github.bumptech.glide:glide:4.9.0] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\glide-4.9.0.aar\5462f452f83383717dc3b7b70fea3bb6\AndroidManifest.xml:10:5-20
+MERGED from [com.google.android.gms:play-services-location:16.0.0] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\play-services-location-16.0.0.aar\14965d986d32ce376816cf7b6f41a4a1\AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-location:16.0.0] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\play-services-location-16.0.0.aar\14965d986d32ce376816cf7b6f41a4a1\AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-base:16.0.1] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\play-services-base-16.0.1.aar\42404a923334f836525e9bd96fb24f34\AndroidManifest.xml:22:5-27:19
+MERGED from [com.google.android.gms:play-services-base:16.0.1] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\play-services-base-16.0.1.aar\42404a923334f836525e9bd96fb24f34\AndroidManifest.xml:22:5-27:19
+MERGED from [com.google.android.gms:play-services-places-placereport:16.0.0] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\play-services-places-placereport-16.0.0.aar\77aebd30b1f32fc7c3fdb647b4681d31\AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.gms:play-services-places-placereport:16.0.0] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\play-services-places-placereport-16.0.0.aar\77aebd30b1f32fc7c3fdb647b4681d31\AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.gms:play-services-tasks:16.0.1] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\play-services-tasks-16.0.1.aar\69801a6ba350635353642b6df8edece3\AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-tasks:16.0.1] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\play-services-tasks-16.0.1.aar\69801a6ba350635353642b6df8edece3\AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-basement:16.0.1] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\play-services-basement-16.0.1.aar\95518a58519cbb41dbab07a92a0f2c22\AndroidManifest.xml:22:5-26:19
+MERGED from [com.google.android.gms:play-services-basement:16.0.1] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\play-services-basement-16.0.1.aar\95518a58519cbb41dbab07a92a0f2c22\AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:support-compat:28.0.0] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\support-compat-28.0.0.aar\2f99b7b16f493c17f005f82b06320035\AndroidManifest.xml:22:5-94
+MERGED from [com.android.support:support-compat:28.0.0] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\support-compat-28.0.0.aar\2f99b7b16f493c17f005f82b06320035\AndroidManifest.xml:22:5-94
+MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\versionedparcelable-28.0.0.aar\ed72646f54912d58e472948919d62711\AndroidManifest.xml:22:5-23:19
+MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\versionedparcelable-28.0.0.aar\ed72646f54912d58e472948919d62711\AndroidManifest.xml:22:5-23:19
+MERGED from [com.github.bumptech.glide:gifdecoder:4.9.0] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\gifdecoder-4.9.0.aar\a9568317d5a6c0fbfb6e8cb4a76b97f0\AndroidManifest.xml:9:5-20
+MERGED from [com.github.bumptech.glide:gifdecoder:4.9.0] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\gifdecoder-4.9.0.aar\a9568317d5a6c0fbfb6e8cb4a76b97f0\AndroidManifest.xml:9:5-20
+MERGED from [com.facebook.soloader:soloader:0.6.0] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\soloader-0.6.0.aar\847630298fb5821aaaa8ea757a762656\AndroidManifest.xml:11:5-20
+MERGED from [com.facebook.soloader:soloader:0.6.0] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\soloader-0.6.0.aar\847630298fb5821aaaa8ea757a762656\AndroidManifest.xml:11:5-20
+MERGED from [io.nlopez.smartlocation:library:3.2.11] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\library-3.2.11.aar\f1bff68a7bdcca55bd01bf33802985ec\AndroidManifest.xml:18:5-28:19
+MERGED from [io.nlopez.smartlocation:library:3.2.11] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\library-3.2.11.aar\f1bff68a7bdcca55bd01bf33802985ec\AndroidManifest.xml:18:5-28:19
+	android:appComponentFactory
+		ADDED from [com.android.support:support-compat:28.0.0] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\support-compat-28.0.0.aar\2f99b7b16f493c17f005f82b06320035\AndroidManifest.xml:22:18-91
+	android:label
+		ADDED from C:\Users\thier\Desktop\sites\weSponsor\userClient\android\app\src\main\AndroidManifest.xml:30:7-39
+	android:roundIcon
+		ADDED from C:\Users\thier\Desktop\sites\weSponsor\userClient\android\app\src\main\AndroidManifest.xml:32:7-52
+	android:icon
+		ADDED from C:\Users\thier\Desktop\sites\weSponsor\userClient\android\app\src\main\AndroidManifest.xml:31:7-41
+	android:allowBackup
+		ADDED from C:\Users\thier\Desktop\sites\weSponsor\userClient\android\app\src\main\AndroidManifest.xml:33:7-34
+	android:theme
+		ADDED from C:\Users\thier\Desktop\sites\weSponsor\userClient\android\app\src\main\AndroidManifest.xml:34:7-38
+	android:name
+		ADDED from C:\Users\thier\Desktop\sites\weSponsor\userClient\android\app\src\main\AndroidManifest.xml:29:7-38
+activity#com.fibi.MainActivity
+ADDED from C:\Users\thier\Desktop\sites\weSponsor\userClient\android\app\src\main\AndroidManifest.xml:35:7-44:18
+	android:label
+		ADDED from C:\Users\thier\Desktop\sites\weSponsor\userClient\android\app\src\main\AndroidManifest.xml:37:9-41
+	android:windowSoftInputMode
+		ADDED from C:\Users\thier\Desktop\sites\weSponsor\userClient\android\app\src\main\AndroidManifest.xml:39:9-51
+	android:configChanges
+		ADDED from C:\Users\thier\Desktop\sites\weSponsor\userClient\android\app\src\main\AndroidManifest.xml:38:9-79
+	android:name
+		ADDED from C:\Users\thier\Desktop\sites\weSponsor\userClient\android\app\src\main\AndroidManifest.xml:36:9-37
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from C:\Users\thier\Desktop\sites\weSponsor\userClient\android\app\src\main\AndroidManifest.xml:40:9-43:25
+action#android.intent.action.MAIN
+ADDED from C:\Users\thier\Desktop\sites\weSponsor\userClient\android\app\src\main\AndroidManifest.xml:41:13-65
+	android:name
+		ADDED from C:\Users\thier\Desktop\sites\weSponsor\userClient\android\app\src\main\AndroidManifest.xml:41:21-62
+category#android.intent.category.LAUNCHER
+ADDED from C:\Users\thier\Desktop\sites\weSponsor\userClient\android\app\src\main\AndroidManifest.xml:42:13-73
+	android:name
+		ADDED from C:\Users\thier\Desktop\sites\weSponsor\userClient\android\app\src\main\AndroidManifest.xml:42:23-70
+activity#com.facebook.react.devsupport.DevSettingsActivity
+ADDED from C:\Users\thier\Desktop\sites\weSponsor\userClient\android\app\src\main\AndroidManifest.xml:45:7-84
+	android:name
+		ADDED from C:\Users\thier\Desktop\sites\weSponsor\userClient\android\app\src\main\AndroidManifest.xml:45:17-81
+uses-sdk
+INJECTED from C:\Users\thier\Desktop\sites\weSponsor\userClient\android\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from C:\Users\thier\Desktop\sites\weSponsor\userClient\android\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\thier\Desktop\sites\weSponsor\userClient\android\app\src\main\AndroidManifest.xml
+MERGED from [:react-native-screens] C:\Users\thier\Desktop\sites\weSponsor\userClient\node_modules\react-native-screens\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-screens] C:\Users\thier\Desktop\sites\weSponsor\userClient\node_modules\react-native-screens\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-reanimated] C:\Users\thier\Desktop\sites\weSponsor\userClient\node_modules\react-native-reanimated\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-reanimated] C:\Users\thier\Desktop\sites\weSponsor\userClient\node_modules\react-native-reanimated\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-gesture-handler] C:\Users\thier\Desktop\sites\weSponsor\userClient\node_modules\react-native-gesture-handler\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-gesture-handler] C:\Users\thier\Desktop\sites\weSponsor\userClient\node_modules\react-native-gesture-handler\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [:expo-permissions] C:\Users\thier\Desktop\sites\weSponsor\userClient\node_modules\expo-permissions\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [:expo-permissions] C:\Users\thier\Desktop\sites\weSponsor\userClient\node_modules\expo-permissions\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [com.facebook.react:react-native:0.59.10] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\react-native-0.59.10.aar\97f485d323950a37f76691e2482c98f3\AndroidManifest.xml:7:5-9:41
+MERGED from [com.facebook.react:react-native:0.59.10] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\react-native-0.59.10.aar\97f485d323950a37f76691e2482c98f3\AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.support:appcompat-v7:28.0.0] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\appcompat-v7-28.0.0.aar\42ad4dde5ad2120ceaf51525691212ac\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:28.0.0] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\appcompat-v7-28.0.0.aar\42ad4dde5ad2120ceaf51525691212ac\AndroidManifest.xml:20:5-44
+MERGED from [:unimodules-react-native-adapter] C:\Users\thier\Desktop\sites\weSponsor\userClient\node_modules\@unimodules\react-native-adapter\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [:unimodules-react-native-adapter] C:\Users\thier\Desktop\sites\weSponsor\userClient\node_modules\@unimodules\react-native-adapter\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [:expo-app-loader-provider] C:\Users\thier\Desktop\sites\weSponsor\userClient\node_modules\expo-app-loader-provider\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [:expo-app-loader-provider] C:\Users\thier\Desktop\sites\weSponsor\userClient\node_modules\expo-app-loader-provider\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [:expo-constants] C:\Users\thier\Desktop\sites\weSponsor\userClient\node_modules\expo-constants\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [:expo-constants] C:\Users\thier\Desktop\sites\weSponsor\userClient\node_modules\expo-constants\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [:expo-file-system] C:\Users\thier\Desktop\sites\weSponsor\userClient\node_modules\react-native-unimodules\node_modules\expo-file-system\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:8:5-10:41
+MERGED from [:expo-file-system] C:\Users\thier\Desktop\sites\weSponsor\userClient\node_modules\react-native-unimodules\node_modules\expo-file-system\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:8:5-10:41
+MERGED from [:expo-font] C:\Users\thier\Desktop\sites\weSponsor\userClient\node_modules\expo-font\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [:expo-font] C:\Users\thier\Desktop\sites\weSponsor\userClient\node_modules\expo-font\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [:expo-keep-awake] C:\Users\thier\Desktop\sites\weSponsor\userClient\node_modules\expo-keep-awake\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [:expo-keep-awake] C:\Users\thier\Desktop\sites\weSponsor\userClient\node_modules\expo-keep-awake\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [:expo-linear-gradient] C:\Users\thier\Desktop\sites\weSponsor\userClient\node_modules\expo-linear-gradient\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [:expo-linear-gradient] C:\Users\thier\Desktop\sites\weSponsor\userClient\node_modules\expo-linear-gradient\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [:expo-location] C:\Users\thier\Desktop\sites\weSponsor\userClient\node_modules\expo-location\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [:expo-location] C:\Users\thier\Desktop\sites\weSponsor\userClient\node_modules\expo-location\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [:expo-sqlite] C:\Users\thier\Desktop\sites\weSponsor\userClient\node_modules\expo-sqlite\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [:expo-sqlite] C:\Users\thier\Desktop\sites\weSponsor\userClient\node_modules\expo-sqlite\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [:expo-web-browser] C:\Users\thier\Desktop\sites\weSponsor\userClient\node_modules\expo-web-browser\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [:expo-web-browser] C:\Users\thier\Desktop\sites\weSponsor\userClient\node_modules\expo-web-browser\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [:unimodules-barcode-scanner-interface] C:\Users\thier\Desktop\sites\weSponsor\userClient\node_modules\unimodules-barcode-scanner-interface\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [:unimodules-barcode-scanner-interface] C:\Users\thier\Desktop\sites\weSponsor\userClient\node_modules\unimodules-barcode-scanner-interface\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [:unimodules-camera-interface] C:\Users\thier\Desktop\sites\weSponsor\userClient\node_modules\unimodules-camera-interface\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [:unimodules-camera-interface] C:\Users\thier\Desktop\sites\weSponsor\userClient\node_modules\unimodules-camera-interface\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [:unimodules-constants-interface] C:\Users\thier\Desktop\sites\weSponsor\userClient\node_modules\unimodules-constants-interface\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [:unimodules-constants-interface] C:\Users\thier\Desktop\sites\weSponsor\userClient\node_modules\unimodules-constants-interface\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [:unimodules-face-detector-interface] C:\Users\thier\Desktop\sites\weSponsor\userClient\node_modules\unimodules-face-detector-interface\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [:unimodules-face-detector-interface] C:\Users\thier\Desktop\sites\weSponsor\userClient\node_modules\unimodules-face-detector-interface\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [:unimodules-file-system-interface] C:\Users\thier\Desktop\sites\weSponsor\userClient\node_modules\unimodules-file-system-interface\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [:unimodules-file-system-interface] C:\Users\thier\Desktop\sites\weSponsor\userClient\node_modules\unimodules-file-system-interface\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [:unimodules-font-interface] C:\Users\thier\Desktop\sites\weSponsor\userClient\node_modules\unimodules-font-interface\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [:unimodules-font-interface] C:\Users\thier\Desktop\sites\weSponsor\userClient\node_modules\unimodules-font-interface\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [:unimodules-permissions-interface] C:\Users\thier\Desktop\sites\weSponsor\userClient\node_modules\unimodules-permissions-interface\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [:unimodules-permissions-interface] C:\Users\thier\Desktop\sites\weSponsor\userClient\node_modules\unimodules-permissions-interface\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [:unimodules-task-manager-interface] C:\Users\thier\Desktop\sites\weSponsor\userClient\node_modules\unimodules-task-manager-interface\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [:unimodules-task-manager-interface] C:\Users\thier\Desktop\sites\weSponsor\userClient\node_modules\unimodules-task-manager-interface\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [:unimodules-core] C:\Users\thier\Desktop\sites\weSponsor\userClient\node_modules\@unimodules\core\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [:unimodules-core] C:\Users\thier\Desktop\sites\weSponsor\userClient\node_modules\@unimodules\core\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [:unimodules-image-loader-interface] C:\Users\thier\Desktop\sites\weSponsor\userClient\node_modules\unimodules-image-loader-interface\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [:unimodules-image-loader-interface] C:\Users\thier\Desktop\sites\weSponsor\userClient\node_modules\unimodules-image-loader-interface\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [:unimodules-sensors-interface] C:\Users\thier\Desktop\sites\weSponsor\userClient\node_modules\unimodules-sensors-interface\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [:unimodules-sensors-interface] C:\Users\thier\Desktop\sites\weSponsor\userClient\node_modules\unimodules-sensors-interface\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.support:transition:28.0.0] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\transition-28.0.0.aar\4532dd3729ac1e99fdac4cb29a8fad62\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:28.0.0] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\transition-28.0.0.aar\4532dd3729ac1e99fdac4cb29a8fad62\AndroidManifest.xml:20:5-44
+MERGED from [com.github.bumptech.glide:glide:4.9.0] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\glide-4.9.0.aar\5462f452f83383717dc3b7b70fea3bb6\AndroidManifest.xml:6:5-8:41
+MERGED from [com.github.bumptech.glide:glide:4.9.0] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\glide-4.9.0.aar\5462f452f83383717dc3b7b70fea3bb6\AndroidManifest.xml:6:5-8:41
+MERGED from [com.google.android.gms:play-services-location:16.0.0] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\play-services-location-16.0.0.aar\14965d986d32ce376816cf7b6f41a4a1\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-location:16.0.0] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\play-services-location-16.0.0.aar\14965d986d32ce376816cf7b6f41a4a1\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-base:16.0.1] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\play-services-base-16.0.1.aar\42404a923334f836525e9bd96fb24f34\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-base:16.0.1] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\play-services-base-16.0.1.aar\42404a923334f836525e9bd96fb24f34\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-places-placereport:16.0.0] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\play-services-places-placereport-16.0.0.aar\77aebd30b1f32fc7c3fdb647b4681d31\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-places-placereport:16.0.0] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\play-services-places-placereport-16.0.0.aar\77aebd30b1f32fc7c3fdb647b4681d31\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-tasks:16.0.1] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\play-services-tasks-16.0.1.aar\69801a6ba350635353642b6df8edece3\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-tasks:16.0.1] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\play-services-tasks-16.0.1.aar\69801a6ba350635353642b6df8edece3\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-basement:16.0.1] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\play-services-basement-16.0.1.aar\95518a58519cbb41dbab07a92a0f2c22\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-basement:16.0.1] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\play-services-basement-16.0.1.aar\95518a58519cbb41dbab07a92a0f2c22\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:28.0.0] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\support-v4-28.0.0.aar\475d6df3cc6ae3bf63371c6633a31c60\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:28.0.0] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\support-v4-28.0.0.aar\475d6df3cc6ae3bf63371c6633a31c60\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:28.0.0] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\support-fragment-28.0.0.aar\13e3d6e0e519fd60980ca1a2073a3593\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:28.0.0] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\support-fragment-28.0.0.aar\13e3d6e0e519fd60980ca1a2073a3593\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:28.0.0] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-28.0.0.aar\114b1751c701f746b1f408b19286885e\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:28.0.0] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-28.0.0.aar\114b1751c701f746b1f408b19286885e\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:customtabs:28.0.0] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\customtabs-28.0.0.aar\13be3002c1d44c621a966bbbf7def5c5\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:customtabs:28.0.0] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\customtabs-28.0.0.aar\13be3002c1d44c621a966bbbf7def5c5\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:28.0.0] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\support-core-ui-28.0.0.aar\41fb8ebfd1e3e3ed25cb560725ee3f04\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:28.0.0] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\support-core-ui-28.0.0.aar\41fb8ebfd1e3e3ed25cb560725ee3f04\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:28.0.0] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\support-core-utils-28.0.0.aar\9557930af42dac5eab7d39e3d7df0a16\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:28.0.0] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\support-core-utils-28.0.0.aar\9557930af42dac5eab7d39e3d7df0a16\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:28.0.0] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-28.0.0.aar\74f6d93a42291b8d0dfbbb2b1f8d7878\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:28.0.0] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-28.0.0.aar\74f6d93a42291b8d0dfbbb2b1f8d7878\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:loader:28.0.0] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\loader-28.0.0.aar\36794e3483e5169cd2449b2befaab1d7\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:loader:28.0.0] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\loader-28.0.0.aar\36794e3483e5169cd2449b2befaab1d7\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:28.0.0] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\support-media-compat-28.0.0.aar\0c8c93e99deef5fd47885dfe6a566e8b\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:28.0.0] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\support-media-compat-28.0.0.aar\0c8c93e99deef5fd47885dfe6a566e8b\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:viewpager:28.0.0] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\viewpager-28.0.0.aar\a267d36af3c2e3a315b29c633d501690\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:viewpager:28.0.0] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\viewpager-28.0.0.aar\a267d36af3c2e3a315b29c633d501690\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:coordinatorlayout:28.0.0] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\coordinatorlayout-28.0.0.aar\d939797c91e988cfe7eb016ef62da367\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:coordinatorlayout:28.0.0] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\coordinatorlayout-28.0.0.aar\d939797c91e988cfe7eb016ef62da367\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:drawerlayout:28.0.0] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\drawerlayout-28.0.0.aar\70065cc3d50a4c30aace055cb938f5b4\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:drawerlayout:28.0.0] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\drawerlayout-28.0.0.aar\70065cc3d50a4c30aace055cb938f5b4\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:slidingpanelayout:28.0.0] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\slidingpanelayout-28.0.0.aar\75fb9924499f2ea5ce2572aae56aedbd\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:slidingpanelayout:28.0.0] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\slidingpanelayout-28.0.0.aar\75fb9924499f2ea5ce2572aae56aedbd\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:customview:28.0.0] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\customview-28.0.0.aar\97f03d5a88c20539bef9eecd8a8ec544\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:customview:28.0.0] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\customview-28.0.0.aar\97f03d5a88c20539bef9eecd8a8ec544\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:swiperefreshlayout:28.0.0] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\swiperefreshlayout-28.0.0.aar\d462764d9b2086f62ee13f0f71679813\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:swiperefreshlayout:28.0.0] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\swiperefreshlayout-28.0.0.aar\d462764d9b2086f62ee13f0f71679813\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:asynclayoutinflater:28.0.0] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\asynclayoutinflater-28.0.0.aar\0779e1e66a05c54718a404b0a6838035\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:asynclayoutinflater:28.0.0] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\asynclayoutinflater-28.0.0.aar\0779e1e66a05c54718a404b0a6838035\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:28.0.0] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\support-compat-28.0.0.aar\2f99b7b16f493c17f005f82b06320035\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:28.0.0] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\support-compat-28.0.0.aar\2f99b7b16f493c17f005f82b06320035\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\versionedparcelable-28.0.0.aar\ed72646f54912d58e472948919d62711\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\versionedparcelable-28.0.0.aar\ed72646f54912d58e472948919d62711\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cursoradapter:28.0.0] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\cursoradapter-28.0.0.aar\44497af05af3d69b8f927260e5f01224\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cursoradapter:28.0.0] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\cursoradapter-28.0.0.aar\44497af05af3d69b8f927260e5f01224\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.1] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\runtime-1.1.1.aar\9232596f902dbb4ef8b0d6b86cee62c7\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.1] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\runtime-1.1.1.aar\9232596f902dbb4ef8b0d6b86cee62c7\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:documentfile:28.0.0] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\documentfile-28.0.0.aar\ec87121190a4f5042e174c5ade25ca99\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:documentfile:28.0.0] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\documentfile-28.0.0.aar\ec87121190a4f5042e174c5ade25ca99\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:localbroadcastmanager:28.0.0] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\localbroadcastmanager-28.0.0.aar\e1fbbfb11ce5f4ae4c555d005bc6a5df\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:localbroadcastmanager:28.0.0] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\localbroadcastmanager-28.0.0.aar\e1fbbfb11ce5f4ae4c555d005bc6a5df\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:print:28.0.0] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\print-28.0.0.aar\5624cc4106a18bb320bdf84d0a23cf4c\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:print:28.0.0] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\print-28.0.0.aar\5624cc4106a18bb320bdf84d0a23cf4c\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.1] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.1.aar\ec9688475e272a96b81767289a7b88c9\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.1] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.1.aar\ec9688475e272a96b81767289a7b88c9\AndroidManifest.xml:20:5-44
+MERGED from [com.github.bumptech.glide:gifdecoder:4.9.0] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\gifdecoder-4.9.0.aar\a9568317d5a6c0fbfb6e8cb4a76b97f0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.github.bumptech.glide:gifdecoder:4.9.0] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\gifdecoder-4.9.0.aar\a9568317d5a6c0fbfb6e8cb4a76b97f0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support:interpolator:28.0.0] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\interpolator-28.0.0.aar\331f0ed47d035302498863c517dcd2f1\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:interpolator:28.0.0] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\interpolator-28.0.0.aar\331f0ed47d035302498863c517dcd2f1\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata:1.1.1] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\livedata-1.1.1.aar\9a2051ca4288898b9078d7074d307e99\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata:1.1.1] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\livedata-1.1.1.aar\9a2051ca4288898b9078d7074d307e99\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.1] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.1.aar\75a1f001e5ecda0fa7a168ba50006ca6\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.1] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.1.aar\75a1f001e5ecda0fa7a168ba50006ca6\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.1] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\runtime-1.1.1.aar\3876be0b1c68026c9448b37b51a5b59a\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.1] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\runtime-1.1.1.aar\3876be0b1c68026c9448b37b51a5b59a\AndroidManifest.xml:20:5-44
+MERGED from [com.facebook.fresco:fresco:1.10.0] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\fresco-1.10.0.aar\705404949823d3507a2c485e63d65d9a\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:fresco:1.10.0] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\fresco-1.10.0.aar\705404949823d3507a2c485e63d65d9a\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline-okhttp3:1.10.0] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\imagepipeline-okhttp3-1.10.0.aar\90de404a83f9c3f71d6a8951d6ff0d7c\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline-okhttp3:1.10.0] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\imagepipeline-okhttp3-1.10.0.aar\90de404a83f9c3f71d6a8951d6ff0d7c\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:drawee:1.10.0] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\drawee-1.10.0.aar\83213e6aa04237e49830ae23221aa2f3\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:drawee:1.10.0] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\drawee-1.10.0.aar\83213e6aa04237e49830ae23221aa2f3\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline:1.10.0] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\imagepipeline-1.10.0.aar\1fe9f42671ca2f4b742f49737126ea62\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline:1.10.0] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\imagepipeline-1.10.0.aar\1fe9f42671ca2f4b742f49737126ea62\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline-base:1.10.0] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\imagepipeline-base-1.10.0.aar\47582f86e062e8606ccd9293b1ae1abe\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline-base:1.10.0] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\imagepipeline-base-1.10.0.aar\47582f86e062e8606ccd9293b1ae1abe\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.soloader:soloader:0.6.0] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\soloader-0.6.0.aar\847630298fb5821aaaa8ea757a762656\AndroidManifest.xml:7:5-9:41
+MERGED from [com.facebook.soloader:soloader:0.6.0] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\soloader-0.6.0.aar\847630298fb5821aaaa8ea757a762656\AndroidManifest.xml:7:5-9:41
+MERGED from [io.nlopez.smartlocation:library:3.2.11] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\library-3.2.11.aar\f1bff68a7bdcca55bd01bf33802985ec\AndroidManifest.xml:8:5-10:41
+MERGED from [io.nlopez.smartlocation:library:3.2.11] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\library-3.2.11.aar\f1bff68a7bdcca55bd01bf33802985ec\AndroidManifest.xml:8:5-10:41
+MERGED from [com.facebook.fresco:fbcore:1.10.0] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\fbcore-1.10.0.aar\6fc86e94eea01863814533dd3c53318f\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:fbcore:1.10.0] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\fbcore-1.10.0.aar\6fc86e94eea01863814533dd3c53318f\AndroidManifest.xml:5:5-7:41
+INJECTED from C:\Users\thier\Desktop\sites\weSponsor\userClient\android\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\thier\Desktop\sites\weSponsor\userClient\android\app\src\main\AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from C:\Users\thier\Desktop\sites\weSponsor\userClient\android\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\thier\Desktop\sites\weSponsor\userClient\android\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\thier\Desktop\sites\weSponsor\userClient\android\app\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from C:\Users\thier\Desktop\sites\weSponsor\userClient\android\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\thier\Desktop\sites\weSponsor\userClient\android\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\thier\Desktop\sites\weSponsor\userClient\android\app\src\main\AndroidManifest.xml
+uses-permission#android.permission.STORAGE
+ADDED from [:expo-file-system] C:\Users\thier\Desktop\sites\weSponsor\userClient\node_modules\react-native-unimodules\node_modules\expo-file-system\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:15:5-66
+	android:name
+		ADDED from [:expo-file-system] C:\Users\thier\Desktop\sites\weSponsor\userClient\node_modules\react-native-unimodules\node_modules\expo-file-system\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:15:22-63
+provider#expo.modules.filesystem.FileSystemFileProvider
+ADDED from [:expo-file-system] C:\Users\thier\Desktop\sites\weSponsor\userClient\node_modules\react-native-unimodules\node_modules\expo-file-system\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:18:9-27:20
+	android:grantUriPermissions
+		ADDED from [:expo-file-system] C:\Users\thier\Desktop\sites\weSponsor\userClient\node_modules\react-native-unimodules\node_modules\expo-file-system\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:22:13-47
+	android:authorities
+		ADDED from [:expo-file-system] C:\Users\thier\Desktop\sites\weSponsor\userClient\node_modules\react-native-unimodules\node_modules\expo-file-system\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:20:13-74
+	android:exported
+		ADDED from [:expo-file-system] C:\Users\thier\Desktop\sites\weSponsor\userClient\node_modules\react-native-unimodules\node_modules\expo-file-system\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:21:13-37
+	tools:replace
+		ADDED from [:expo-file-system] C:\Users\thier\Desktop\sites\weSponsor\userClient\node_modules\react-native-unimodules\node_modules\expo-file-system\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:23:13-48
+	android:name
+		ADDED from [:expo-file-system] C:\Users\thier\Desktop\sites\weSponsor\userClient\node_modules\react-native-unimodules\node_modules\expo-file-system\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:19:13-74
+meta-data#android.support.FILE_PROVIDER_PATHS
+ADDED from [:expo-file-system] C:\Users\thier\Desktop\sites\weSponsor\userClient\node_modules\react-native-unimodules\node_modules\expo-file-system\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:24:13-26:70
+	android:resource
+		ADDED from [:expo-file-system] C:\Users\thier\Desktop\sites\weSponsor\userClient\node_modules\react-native-unimodules\node_modules\expo-file-system\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:26:17-67
+	android:name
+		ADDED from [:expo-file-system] C:\Users\thier\Desktop\sites\weSponsor\userClient\node_modules\react-native-unimodules\node_modules\expo-file-system\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:25:17-67
+uses-permission#android.permission.FOREGROUND_SERVICE
+ADDED from [:expo-location] C:\Users\thier\Desktop\sites\weSponsor\userClient\node_modules\expo-location\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:13:5-77
+	android:name
+		ADDED from [:expo-location] C:\Users\thier\Desktop\sites\weSponsor\userClient\node_modules\expo-location\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:13:22-74
+service#expo.modules.location.services.LocationTaskService
+ADDED from [:expo-location] C:\Users\thier\Desktop\sites\weSponsor\userClient\node_modules\expo-location\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:16:9-18:40
+	android:exported
+		ADDED from [:expo-location] C:\Users\thier\Desktop\sites\weSponsor\userClient\node_modules\expo-location\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:18:13-37
+	android:name
+		ADDED from [:expo-location] C:\Users\thier\Desktop\sites\weSponsor\userClient\node_modules\expo-location\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:17:13-78
+activity#com.google.android.gms.common.api.GoogleApiActivity
+ADDED from [com.google.android.gms:play-services-base:16.0.1] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\play-services-base-16.0.1.aar\42404a923334f836525e9bd96fb24f34\AndroidManifest.xml:23:9-26:75
+	android:exported
+		ADDED from [com.google.android.gms:play-services-base:16.0.1] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\play-services-base-16.0.1.aar\42404a923334f836525e9bd96fb24f34\AndroidManifest.xml:25:13-37
+	android:theme
+		ADDED from [com.google.android.gms:play-services-base:16.0.1] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\play-services-base-16.0.1.aar\42404a923334f836525e9bd96fb24f34\AndroidManifest.xml:26:13-72
+	android:name
+		ADDED from [com.google.android.gms:play-services-base:16.0.1] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\play-services-base-16.0.1.aar\42404a923334f836525e9bd96fb24f34\AndroidManifest.xml:24:13-79
+meta-data#com.google.android.gms.version
+ADDED from [com.google.android.gms:play-services-basement:16.0.1] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\play-services-basement-16.0.1.aar\95518a58519cbb41dbab07a92a0f2c22\AndroidManifest.xml:23:9-25:69
+	android:value
+		ADDED from [com.google.android.gms:play-services-basement:16.0.1] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\play-services-basement-16.0.1.aar\95518a58519cbb41dbab07a92a0f2c22\AndroidManifest.xml:25:13-66
+	android:name
+		ADDED from [com.google.android.gms:play-services-basement:16.0.1] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\play-services-basement-16.0.1.aar\95518a58519cbb41dbab07a92a0f2c22\AndroidManifest.xml:24:13-58
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from [io.nlopez.smartlocation:library:3.2.11] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\library-3.2.11.aar\f1bff68a7bdcca55bd01bf33802985ec\AndroidManifest.xml:13:5-79
+	android:name
+		ADDED from [io.nlopez.smartlocation:library:3.2.11] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\library-3.2.11.aar\f1bff68a7bdcca55bd01bf33802985ec\AndroidManifest.xml:13:22-76
+uses-permission#com.google.android.providers.gsf.permission.READ_GSERVICES
+ADDED from [io.nlopez.smartlocation:library:3.2.11] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\library-3.2.11.aar\f1bff68a7bdcca55bd01bf33802985ec\AndroidManifest.xml:15:5-98
+	android:name
+		ADDED from [io.nlopez.smartlocation:library:3.2.11] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\library-3.2.11.aar\f1bff68a7bdcca55bd01bf33802985ec\AndroidManifest.xml:15:22-95
+uses-permission#com.google.android.gms.permission.ACTIVITY_RECOGNITION
+ADDED from [io.nlopez.smartlocation:library:3.2.11] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\library-3.2.11.aar\f1bff68a7bdcca55bd01bf33802985ec\AndroidManifest.xml:16:5-94
+	android:name
+		ADDED from [io.nlopez.smartlocation:library:3.2.11] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\library-3.2.11.aar\f1bff68a7bdcca55bd01bf33802985ec\AndroidManifest.xml:16:22-91
+service#io.nlopez.smartlocation.activity.providers.ActivityGooglePlayServicesProvider$ActivityRecognitionService
+ADDED from [io.nlopez.smartlocation:library:3.2.11] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\library-3.2.11.aar\f1bff68a7bdcca55bd01bf33802985ec\AndroidManifest.xml:19:9-21:40
+	android:exported
+		ADDED from [io.nlopez.smartlocation:library:3.2.11] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\library-3.2.11.aar\f1bff68a7bdcca55bd01bf33802985ec\AndroidManifest.xml:21:13-37
+	android:name
+		ADDED from [io.nlopez.smartlocation:library:3.2.11] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\library-3.2.11.aar\f1bff68a7bdcca55bd01bf33802985ec\AndroidManifest.xml:20:13-132
+service#io.nlopez.smartlocation.geofencing.providers.GeofencingGooglePlayServicesProvider$GeofencingService
+ADDED from [io.nlopez.smartlocation:library:3.2.11] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\library-3.2.11.aar\f1bff68a7bdcca55bd01bf33802985ec\AndroidManifest.xml:22:9-24:40
+	android:exported
+		ADDED from [io.nlopez.smartlocation:library:3.2.11] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\library-3.2.11.aar\f1bff68a7bdcca55bd01bf33802985ec\AndroidManifest.xml:24:13-37
+	android:name
+		ADDED from [io.nlopez.smartlocation:library:3.2.11] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\library-3.2.11.aar\f1bff68a7bdcca55bd01bf33802985ec\AndroidManifest.xml:23:13-127
+service#io.nlopez.smartlocation.geocoding.providers.AndroidGeocodingProvider$AndroidGeocodingService
+ADDED from [io.nlopez.smartlocation:library:3.2.11] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\library-3.2.11.aar\f1bff68a7bdcca55bd01bf33802985ec\AndroidManifest.xml:25:9-27:40
+	android:exported
+		ADDED from [io.nlopez.smartlocation:library:3.2.11] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\library-3.2.11.aar\f1bff68a7bdcca55bd01bf33802985ec\AndroidManifest.xml:27:13-37
+	android:name
+		ADDED from [io.nlopez.smartlocation:library:3.2.11] C:\Users\thier\.gradle\caches\transforms-1\files-1.1\library-3.2.11.aar\f1bff68a7bdcca55bd01bf33802985ec\AndroidManifest.xml:26:13-120

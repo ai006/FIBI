@@ -113,10 +113,10 @@ export default class UserAddJob extends Component {
                     <Card style={[styles.about,styles.shadow]}>
                         <View style={[styles.card,styles.container]}>
                             <Text style={styles.paragraph}>
-                                The only way that this app can be helpful for the user, is if we have 
-                                a large enough database of jobs that sponsor. This page was made so that 
-                                you the user can contribute to our database which can help someone else. In turn
-                                Please add to our database or tell your friends about it. 
+                            The only way that this app can be helpful is if we have a large
+                            enough database of jobs that sponsor international students. 
+                            That being said, this page is here for you to contribute to our database.
+                             You might just be helping someone find their new job. Thank you :)
                             </Text>
                         </View>
                     </Card>
