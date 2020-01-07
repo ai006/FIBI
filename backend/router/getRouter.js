@@ -1,14 +1,16 @@
-import express, { Router } from 'express';
+const express = require('express');
 
-import Jobs from '../Schema';
+
+//import Jobs from the database
+const Jobs = require('../Schema');
 
 //initialize the router
-const router = Router();
+const router = express.Router();
 
 
 
 // this is our get method
-// this method fetches all available data in our database
+// this method fetches all available jobs from the database
 router.get('/getData', (req, res) => {
     Jobs.find((err, data) => {
       if (err) return res.json({ success: false, error: err });
@@ -16,4 +18,4 @@ router.get('/getData', (req, res) => {
     });
   });
 
-export default router;
+module.exports = router;  //same as export default router;

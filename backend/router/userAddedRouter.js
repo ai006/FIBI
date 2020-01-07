@@ -1,12 +1,11 @@
 
-import express, { Router } from 'express';
+const express = require('express');
 
-//import router from './router';
-// import Data from '../data';
-import userAddedJobs from '../userAddedSchema'
+
+const userAddedJobs = require('../userAddedSchema');
 
 //initialize the router
-const router = Router();
+const router =express.Router();
 
 /* this is our create method, this method adds 
 new data sent by the user to our database.
@@ -25,8 +24,9 @@ router.post('/userAddedJob', (req, res) => {
        });
     }
 
-    job.id = data.id;                     //update the job schema 
+    job.id = data.id;                     //update the user added database
     job.CompanyName = data.CompanyName;
+    job.educationLevel = data.educationLevel;
     job.city = data.city;
     job.country = data.country;
     job.link = data.link;
@@ -39,4 +39,5 @@ router.post('/userAddedJob', (req, res) => {
     });
   });
 
-  export default router;
+  //export default router;
+  module.exports = router;  

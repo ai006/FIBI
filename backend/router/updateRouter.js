@@ -1,9 +1,11 @@
-import express, { Router } from 'express';
+const express = require('express');
 
-import Jobs from '../Schema';
+
+//import Jobs from '../Schema';
+const Jobs = require('../Schema');
 
 //initialize the router
-const router = Router();
+const router = express.Router();
 
 // this is our update method
 // this method overwrites existing data in our database
@@ -15,4 +17,5 @@ router.post('/updateData', (req, res) => {
     });
   });
 
-export default router;
+ 
+module.exports = router;  //export default router;

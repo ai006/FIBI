@@ -1,12 +1,20 @@
-import mongoose from 'mongoose';
-import express from 'express';
-import cors from 'cors';
-import bodyParser from 'body-parser';
-import logger from 'morgan';
+const mongoose = require('mongoose');
+const express = require('express');
+const cors = require('cors');
+const bodyParser = require('body-parser');
+const logger = require('morgan');
 
-import router from './router/mainRouter'; //taken form file router.js
 
-const API_PORT = 3001; //port to listen on
+//taken form file router.js
+const router = require('./router/mainRouter');  
+
+
+let API_PORT = process.env.PORT;      //get the port environment variable
+if(API_PORT == null || API_PORT == ""){ 
+      API_PORT = 3001;              //port to listen to if evironment is not set
+}
+
+//const API_PORT = 3001; //port to listen on
 const app = express();
 app.use(cors());
 
@@ -15,14 +23,21 @@ const dbRoute =
   'mongodb+srv://ai006:Qwerty1234@wesponsorapp-8krvn.mongodb.net/test?retryWrites=true&w=majority';
 
 // connects our back end code with the database
-mongoose.connect(dbRoute, { useNewUrlParser: true });
+//mongoose.connect(dbRoute, { useNewUrlParser: true },{useUnifiedTopology: true});
+mongoose.connect(dbRoute, {useUnifiedTopology: true,useNewUrlParser: true,})
+  .then(() => console.log('DB Connected!'))
+  .catch(err => {
+          console.log(`DB Connection Error: ${err.message}`);
+  });
+
+
 mongoose.set('useNewUrlParser', true);
 mongoose.set('useFindAndModify', false);
 mongoose.set('useCreateIndex', true);
 
 let db = mongoose.connection;
 
-db.once('open', () => console.log('connected to the database'));
+db.once('open', () => console.log('connection to the database fully secured'));
 
 // checks if connection with the database is successful
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));

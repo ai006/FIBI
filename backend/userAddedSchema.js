@@ -1,13 +1,14 @@
-// /backend/data.js
+// /backend/userAddedSchema.js
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-// this will be our data base's data structure 
-//for the jobs that the user adds to be vetted later
+//The JSON format for user added jobs 
+//similar to the Job schema from /backend/Schema.js
 const addedJobSchema = new Schema(
 {
     id: Number,
     CompanyName: String,
+    educationLevel: String,   //education level (PhD, masters, or bachelors)
     city: String,
     country: String,
     link: String,

@@ -1,30 +1,31 @@
+// /backend/router/router.js
 
-import express, { Router } from 'express';
+const express = require('express');
 
-//import router from './router';
-// import Data from '../data';
-import Jobs from '../Schema';
+//import jobs from Schema.js
+const Jobs = require('../Schema')
 
 //initialize the router
-const router = Router();
+const router = express.Router();
+
 
 // this is our create method
 // this method adds new data in our database
 router.post('/putData', (req, res) => {
 
     let Job = new Jobs();
-    const { id, job } = req.body;
-    if ((!id && id !== 0) || !job) {
+    const { id, job } = req.body;         //get ID and job details from post request from the AdminClient
+    if ((!id && id !== 0) || !job) {      //check to make sure the new ID is not found in the database
       return res.json({
         success: false,
         error: 'INVALID INPUTS',
       });
     }
-    console.log(job)
+    console.log(job)                      //assigning the details of the job sent from the POST request to the schema
     Job.id = job.id;
     Job.CompanyName = job.CompanyName;
     Job.logo = job.logo;
-    //Job.address.street = job.address.street;
+    Job.educationLevel = job.educationLevel;
     Job.address.city = job.address.city;
     Job.address.cityArr = job.address.cityArr;
     Job.address.country = job.address.country;
@@ -35,10 +36,11 @@ router.post('/putData', (req, res) => {
     Job.about = job.about;
 
    
-    Job.save((err) => {
+    Job.save((err) => {                     //saving the new the job into the database
       if (err) return res.json({ success: false, error: err });
       return res.json({ success: true });
     });
   });
 
-  export default router;
+  //export default router;
+  module.exports = router;
