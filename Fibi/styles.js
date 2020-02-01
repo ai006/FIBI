@@ -1,6 +1,7 @@
+import {Platform, StyleSheet} from 'react-native';
 
 export const defaultStyles = {
     text: {
-      fontFamily: 'serif',
+      fontFamily:Platform.OS === 'ios'? 'Avenir': 'serif',
     }
 };
