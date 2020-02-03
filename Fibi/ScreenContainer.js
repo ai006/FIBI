@@ -30,11 +30,12 @@ const JobsStack = createStackNavigator(
 
 JobsStack.navigationOptions = {
      tabBarIcon: ({ focused, tintColor }) => (
-      <Ionicons
-        name={Platform.OS === "ios" ? "ios-archive-outline" : "md-filing"}
-        size={25}
-        color={tintColor}
-      />
+      // <Ionicons
+      //   name={Platform.OS === "ios" ? "ios-albums-outline" : "md-filing"}
+      //   size={25}
+      //   color={tintColor}
+      // />
+      <Icon ios='ios-menu' android="md-menu" style={{fontSize: 25, color: tintColor }}/>
     )
   };
 
