@@ -22,7 +22,7 @@ export default class Options extends Component {
       <View style={{height: 60}}>
         <Card style={[styles.card,styles.shadow]}>
           <TouchableOpacity activeOpacity={1}>
-            <View >
+            <View>
               <Text style={{ color:  'green' }}>
                 {value}
               </Text>

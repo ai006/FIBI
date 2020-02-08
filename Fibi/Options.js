@@ -4,6 +4,7 @@ import PropTypes from 'prop-types' ;
 
 import Option from './Option';
 import HorizontalScroll from './horizontalScroll';
+import { TouchableWithoutFeedback, TouchableHighlight } from 'react-native-gesture-handler';
 
 const { width } = Dimensions.get('window');
 const optionWith = (width - 0) / 3 - 10;
@@ -25,6 +26,7 @@ export default class Options extends Component {
           showsVerticalScrollIndicator={false}
         >
           {values.map((value, index) =>
+      
             <View style={{ width: optionWith }} key={index}>
               <Option value={value}/>
             </View>
@@ -37,8 +39,8 @@ export default class Options extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: 10,
-    marginBottom: 20,
+    marginTop: 2, //space between contries title and countries in cardview
+    marginBottom: 10,
   },
   options: {
     flexDirection: 'row',

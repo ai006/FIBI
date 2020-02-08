@@ -101,13 +101,14 @@ class JobsData extends Component {
     }
     return (
       <View >
-        <Searchbar
-            placeholder="Search   'Paris'  or  'USA'  or  'IT'"
-            onChangeText={query => { this.setState({ Query: query }); }}
-            value={Query}
-            style={{marginTop:2,backgroundColor:'#ecf0f1'}}
-            onIconPress={ () => this.searchData(data)}
-        />
+          <Searchbar //android and ios have display differently
+              placeholder = {Platform.OS === "ios" ? "Search  'Texas' or  'IT'" :
+                "Search  'Texas'  or  'USA'  or  'IT'"}
+              onChangeText={query => { this.setState({ Query: query }); }}
+              value={Query}
+              style={{marginTop:2,backgroundColor:'#ecf0f1'}}
+              onIconPress={ () => this.searchData(data)}
+          />
         {this.state.searching ?
           <View style={styles.loading}>
             <ActivityIndicator size='large' color='green' />

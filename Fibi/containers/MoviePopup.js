@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Dimensions, Image, StyleSheet,Text,TouchableOpacity, TouchableHighlight, View } from 'react-native';
+import {Dimensions, Image, StyleSheet,Text,TouchableOpacity, ScrollView, Platform, TouchableHighlight, View } from 'react-native';
 import Modal from 'react-native-modal';
 import PropTypes from 'prop-types' ;
 
@@ -9,7 +9,10 @@ import ScrollViews from '../scrollViews';
 // import {getStyles} from '../DynamicStyle';
 
 const { width, height } = Dimensions.get('window'); // Get screen dimensions
-const defaultHeight = height * 0.67;                // Set default popup height to 67% of screen height
+//const defaultHeight = height * 0.67;                // Set default popup height to 67% of screen height
+
+const screenDivider = Platform.OS === "ios" ? 0.75 : 0.67;
+const defaultHeight = height * screenDivider;
 
 export default class MoviePopup extends Component {
   
@@ -34,7 +37,9 @@ export default class MoviePopup extends Component {
           isVisible={this.props.isOpen}
           onSwipeComplete={this.props.onClose}
           swipeDirection="down"
-          style={styles.bottomModal}>
+          style={styles.bottomModal}
+          propagateSwipe={Platform.OS === "ios" ? true : null}
+         >
 
           <View style={styles.container}>
             <View style={styles.scrollableModal}>
@@ -47,23 +52,25 @@ export default class MoviePopup extends Component {
                   <Text style={styles.genre}>{link}</Text>
                 </View>
               </View>
-              <View >
-                <Text style={[styles.pushRight,styles.sectionHeader]}>Countries</Text>
-                  <Options  values={countryArr} />
-                <Text style={[styles.pushRight,styles.sectionHeader]}>Jobs</Text>
-                  <Options values={jobsArr}/>
-                  {/* <ScrollViews  name={countryArr} group={<Text>Countries</Text>}/>
-                  <ScrollViews  name={jobsArr} group={<Text>Jobs</Text>}/> */}
+              <View>              
+                <View >
+                  <Text style={[styles.pushRight,styles.sectionHeader]}>Countries</Text>
+                    <Options  values={countryArr} />
+                  <Text style={[styles.pushRight,styles.sectionHeader]}>Jobs</Text>
+                    <Options values={jobsArr}/>
+                    {/* <ScrollViews  name={countryArr} group={<Text>Countries</Text>}/>
+                    <ScrollViews  name={jobsArr} group={<Text>Jobs</Text>}/> */}
+                </View>
+                <View style={styles.footer}>
+                    <TouchableHighlight
+                      underlayColor='green'
+                      style={styles.buttonContainer}
+                      onPress={onBook}
+                    >
+                      <Text style={styles.button}>See more</Text>
+                    </TouchableHighlight>
+                </View>
               </View>
-              <View style={styles.footer}>
-                <TouchableHighlight
-                  underlayColor='green'
-                  style={styles.buttonContainer}
-                  onPress={onBook}
-                >
-                  <Text style={styles.button}>See more</Text>
-                </TouchableHighlight>
-            </View>
           </View>
           </View>  
         </Modal>
@@ -86,6 +93,18 @@ const styles = StyleSheet.create({
   modal: {
     backgroundColor: 'white',
   },
+  item: {
+    
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    padding: 30,
+    margin: 2,
+    borderColor: '#2a4944',
+    borderWidth: 1,
+    backgroundColor: '#d2f7f1'
+ },
+
   content: {
     flex: 1,
     margin: 20,
@@ -138,7 +157,9 @@ const styles = StyleSheet.create({
   },
   // Footer
   footer: {
-    padding: 10,
+    paddingLeft: 10,
+    paddingRight: 10,
+    paddingBottom: 10,
   },
   buttonContainer: {
     backgroundColor: 'green',
