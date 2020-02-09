@@ -5,6 +5,7 @@ import { Card } from 'react-native-paper';
 
 import { defaultStyles } from './styles';
 import ScrollViews from './scrollViews';
+import Options from './Options';
 
 
 const {height, width} = Dimensions.get('window')
@@ -35,7 +36,7 @@ export default class Confirmation extends Component {
           <Card style={[styles.shadow,styles.card,styles.cardBackgroundColor]}>
             <View style={[styles.horizontalArrangement,styles.placeCenter]}>
                 <Image style={styles.imageStyle} source={{uri: job.logo}}/>
-                <View style={{flex : 1, justifyContent: 'flex-start', alignItems: 'center',}}>
+                <View style={{alignSelf : 'flex-start', justifyContent: 'flex-start', alignItems: 'center', padding: 5, alignSelf: 'flex-start'}}>
                   <Text style={[styles.textStyle,styles.textColor]}>{job.CompanyName}</Text>
                 </View>
             </View>
@@ -56,7 +57,7 @@ export default class Confirmation extends Component {
           <Card style={[styles.shadow,styles.containerCard,styles.cardBackgroundColor]}>
             <ScrollViews name={job.jobsArr} group={<Text>Hiring</Text>}/>
             <ScrollViews name={job.address.countryArr} group={<Text>Country</Text>}/>
-            <ScrollViews name={job.address.cityArr} group={<Text>City</Text>}/>
+            <ScrollViews name={job.address.cityArr} group={<Text>City</Text>}/> 
           </Card>
           <Card style={[styles.shadow,{margin:10},styles.cardBackgroundColor]}>
             <Text style={{margin:10,color:'#a5acad',fontWeight: '500'}}>About</Text>
@@ -104,6 +105,7 @@ const styles = StyleSheet.create({
   linkContainer:{
     margin: 10,
     height: height * 0.09,
+    padding: 5,
   },
   linkStyle:{
     flex: 1,
@@ -112,6 +114,7 @@ const styles = StyleSheet.create({
   },
   horizontalArrangement: {
     flexDirection : 'row',
+    alignSelf:'flex-start'
   },
   imageStyle: {     //css style for image shown in the confirmation page
     height:125,
@@ -123,7 +126,7 @@ const styles = StyleSheet.create({
   },
   textStyle: {
     fontSize: 40,
-    flex: 1,
+    flex: 1, 
   },
   textColor:{
     color:'#a5acad'
@@ -170,4 +173,5 @@ const styles = StyleSheet.create({
     fontSize: 12,
     lineHeight: 14,
   },
+ 
 });

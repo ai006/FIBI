@@ -1,5 +1,5 @@
 import React, { Component} from 'react';
-import {StyleSheet,Text, View} from 'react-native';
+import {StyleSheet,Text, View, Platform} from 'react-native';
 import { Card } from 'react-native-paper';
 
 export default class HorizontalScroll extends Component {
@@ -21,7 +21,7 @@ export default class HorizontalScroll extends Component {
 
 const styles = StyleSheet.create({
   card:{
-    height:50,
+    height: Platform.OS === "ios" ? 40 : 50,
     width:130,
     borderRadius:8,
     marginLeft:20, 

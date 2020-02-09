@@ -41,10 +41,13 @@ const styles = StyleSheet.create({
     ...defaultStyles.text,
   },
   card:{
+    //flexWrap: 'wrap',
     alignItems: 'center',
-     borderColor: 'white',
+    borderColor: 'white',
     borderWidth: 1,
     borderRadius: 10,
+    
+    justifyContent: 'center',
     // height:40,
     //width:100,
     padding: 10,
