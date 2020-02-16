@@ -7,6 +7,7 @@ import { Fumi } from 'react-native-textinput-effects';
 import { Platform,Alert } from "react-native";
 import { Header, useHeaderHeight } from 'react-navigation-stack';
 import { Dropdown } from 'react-native-material-dropdown';
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 
 
 import { defaultStyles } from './styles';
@@ -106,12 +107,10 @@ export default class UserAddJob extends Component {
     let data = [{ value: "Bachelor's degree",}, { value: "Master's degree",}, {value: "Doctoral degree", }];
     return (
         <View style={styles.ScreenBackground}>
-             <SafeAreaView style={{flex:1}}>
-        <KeyboardAvoidingView behavior={"position"} keyboardVerticalOffset = {useHeaderHeight+50} style = {{ flex: 1 }}>
-       
-        
-           
-            <ScrollView  showsVerticalScrollIndicator={false}>
+            <KeyboardAwareScrollView
+               extraScrollHeight={60} enableOnAndroid={true} 
+               keyboardShouldPersistTaps='handled'>
+               <ScrollView >  
                 <View style={styles.FirstContainer}>
                     <Card style={[styles.about,styles.shadow]}>
                         <View style={[styles.card,styles.container]}>
@@ -210,9 +209,8 @@ export default class UserAddJob extends Component {
                         <Text style={styles.button}>Done</Text>
                     </TouchableOpacity>
                 </Card>
-                </ScrollView>
-                </KeyboardAvoidingView>
-                </SafeAreaView>
+                </ScrollView>     
+                </KeyboardAwareScrollView>
             </View>              
     );
   }
