@@ -1,11 +1,19 @@
 import React from 'react';
 import { View, Text, Image } from 'react-native';
 
-import store from '../store';
+
+import store from '../redux/store';
 import { fetchJobsData } from '../api';
 
+/*
+  Component for the splash screen (logo shown on startup)
+  makes a call to the api function to get the data from the server
 
 
+  should build another page for no internet connection
+
+
+*/
 class SplashScreen extends React.Component {
 
   async componentDidMount() {
@@ -13,9 +21,15 @@ class SplashScreen extends React.Component {
     // Preload data using AsyncStorage
     await store.dispatch(fetchJobsData());
 
+
+    //switch to new screen (jobsDataScree) after the store has been
+    //updated with data
     if(store.getState() !== null){
 
       this.props.navigation.navigate('App');
+    }
+    else{
+      //add another screen for empty store
     }
   }
 

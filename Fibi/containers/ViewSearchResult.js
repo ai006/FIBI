@@ -43,7 +43,7 @@ export default class ViewSearchResults extends Component {
 
   bookTicket = () => {
       this.closeMovie();
-      this.props.navigation.push('Confirm', {   // Navigate away to Confirmation route
+      this.props.navigation.push('detailedJob', {   // Navigate away to detailedJob route
         job: this.state.jobClicked
       });
   }

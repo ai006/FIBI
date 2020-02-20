@@ -10,8 +10,8 @@ import { Dropdown } from 'react-native-material-dropdown';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 
 
-import { defaultStyles } from './styles';
-import { sendAddedJob } from './api';
+import { defaultStyles } from '../styles';
+import { sendAddedJob } from '../api';
 
 const {height, width} = Dimensions.get('window')
 
@@ -105,10 +105,11 @@ export default class UserAddJob extends Component {
   render() {
     const {nameFocused, jobFocused, linkFocused, aboutFocused, countryFocused, cityFocused} = this.state;
     let data = [{ value: "Bachelor's degree",}, { value: "Master's degree",}, {value: "Doctoral degree", }];
+
     return (
         <View style={styles.ScreenBackground}>
             <KeyboardAwareScrollView
-               extraScrollHeight={60} enableOnAndroid={true} 
+               extraScrollHeight={70} enableOnAndroid={true} 
                keyboardShouldPersistTaps='handled'>
                <ScrollView >  
                 <View style={styles.FirstContainer}>

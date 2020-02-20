@@ -2,11 +2,12 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { Provider } from 'react-redux';
 
-import store from './store';
-import { fetchJobsData } from './api';
-//import AppNavigator from './ScreenContainer';
-import InitialNavigator from './initialNavigation';
+import store from './redux/store';
+import InitialNavigator from './screens/initialNavigation';
 
+
+/*This is the main function of our app
+everything starts here*/ 
 export default class App extends React.Component {
 
   // componentDidMount(){
@@ -19,11 +20,15 @@ export default class App extends React.Component {
   }
 
   render() {
+    /*start the redux process*/
     return (
-        <Provider store={store}>
+      <View style={styles.container}>
+         <Provider store={store}>
           {/* <AppNavigator/> */}
           <InitialNavigator/>
-        </Provider>           
+        </Provider>  
+      </View>
+                
     )
   }
 }
@@ -31,7 +36,7 @@ export default class App extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex:1,
-    backgroundColor: '#fff',
+    backgroundColor: '#ffffff',
     alignItems: 'center',
     justifyContent: 'center',
     paddingTop: 50,

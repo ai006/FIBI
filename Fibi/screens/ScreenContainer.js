@@ -1,27 +1,26 @@
-// import { createAppContainer } from 'react-navigation'
 import { createBottomTabNavigator } from 'react-navigation-tabs';
 import { createStackNavigator } from 'react-navigation-stack';
 import { createAppContainer } from 'react-navigation';
+import React, { Component } from 'react';
+import Ionicons from "react-native-vector-icons/Ionicons";
+import { Icon } from 'native-base';
+import { Platform } from "react-native";
 
-  import React, { Component } from 'react';
-  import Ionicons from "react-native-vector-icons/Ionicons";
-  import { Icon } from 'native-base';
-  import { Platform } from "react-native";
+import JobsDataScreen from './jobsDataScreen';
+import AdviceScreen from './adviceScreen';
+import UniversityScreen from './universityScreen';
+import DetailedJobScreen from './detailedJobScreen';
+import ViewSearchResults from '../containers/ViewSearchResult';
+import UserAddJob from './userAddJobScreen';
 
-  import JobsDataScreen from './containers/jobsData';
-  import TwitterScreen from './TwitterScreen';
-  import UniversityScreen from './screens/universityScreen';
-  import Confirmation from './confirmation';
-  import ViewSearchResults from './containers/ViewSearchResult';
-  import UserAddJob from './UserAddJob';
 
+//screens on the embedded in the JobsDataScreen
 const JobsStack = createStackNavigator(    
     {
         JobsData  : JobsDataScreen, 
-        Confirm   : Confirmation,
+        detailedJob   : DetailedJobScreen,
         ViewResult: ViewSearchResults,
         AddJob    : UserAddJob,
-        
     },
     {
         initialRouteName: "JobsData",
@@ -42,7 +41,7 @@ JobsStack.navigationOptions = {
 const MainTabs = createBottomTabNavigator(
     {
       Jobs: JobsStack,
-      Advice: TwitterScreen,
+      Advice: AdviceScreen,
       University: UniversityScreen,
     },
     {
@@ -55,5 +54,3 @@ const MainTabs = createBottomTabNavigator(
 
 
 export default createAppContainer(MainTabs);
-
-//export default Container; 

@@ -1,5 +1,7 @@
-import {FETCH_JOBS_PENDING,FETCH_JOBS_ERROR,FETCH_JOBS_SUCCESS } from '../actions/types';
+import {FETCH_JOBS_PENDING,FETCH_JOBS_ERROR,FETCH_JOBS_SUCCESS } from './actions/types';
 
+
+//Object for the Jobs state
 const initialState = {
   pending: false,
   jobs: [],

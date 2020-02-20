@@ -1,0 +1,7 @@
+1. change all the file names and classes to their appropriate names
+2. check keyboard scrollview on the iphone
+3. make sure modal dismisses when you press the black background
+4. add more jobs to the database
+5. make a test database for future implementations
+6. build the IOS version
+7. email the walmart dude 

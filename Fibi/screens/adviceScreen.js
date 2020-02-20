@@ -5,7 +5,7 @@ import { Platform } from "react-native";
 
 import Ionicons from "react-native-vector-icons/Ionicons";
 
-export default class TwitterScreen extends React.Component {
+export default class AdviceScreen extends React.Component {
   static navigationOptions = {
     tabBarIcon: ({ focused, tintColor }) => (
     <Ionicons

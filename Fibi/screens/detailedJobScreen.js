@@ -3,9 +3,9 @@ import {StyleSheet, Text, Image, TouchableOpacity, ScrollView, View, Dimensions,
 import { Card } from 'react-native-paper';
 
 
-import { defaultStyles } from './styles';
-import ScrollViews from './scrollViews';
-import Options from './Options';
+import { defaultStyles } from '../styles';
+import ScrollViews from '../scrollViews';
+import Options from '../Options';
 
 
 const {height, width} = Dimensions.get('window')
@@ -13,7 +13,7 @@ const {height, width} = Dimensions.get('window')
 
 /* This class shows the page of the job with more detailes
  that was clicked. */
-export default class Confirmation extends Component {
+export default class DetailedJobScreen extends Component {
 
   static navigationOptions = ({ navigation }) => {
     return {
@@ -116,7 +116,7 @@ const styles = StyleSheet.create({
     flexDirection : 'row',
     alignSelf:'flex-start'
   },
-  imageStyle: {     //css style for image shown in the confirmation page
+  imageStyle: {     //css style for image shown in the detailedJob page
     height:125,
     width:125,
     resizeMode: 'contain',

@@ -8,10 +8,9 @@ import { Card } from 'react-native-paper';
 //import { Icon } from 'react-native-elements';
 
 
-import MoviePoster from './MoviePoster';
+import MoviePoster from '../containers/MoviePoster'
 import Constants from 'expo-constants';
-//import MoviePopup from '../MoviePopUp';
-import MoviePopUp from './MoviePopup';
+import MoviePopUp from '../containers/MoviePopup';
 import {searchRedux} from '../search';
 
 class JobsData extends Component {
@@ -64,7 +63,7 @@ class JobsData extends Component {
 
   bookTicket = () => {
       this.closeMovie();
-      this.props.navigation.push('Confirm', {   // Navigate away to Confirmation route
+      this.props.navigation.push('detailedJob', {   // Navigate away to detailed job route
         job: this.state.jobClicked
       });
   }
@@ -100,7 +99,7 @@ class JobsData extends Component {
         )
     }
     return (
-      <View >
+      <View style={{backgroundColor:'#ffffff', flex:1}}> 
           <Searchbar //android and ios have display differently
               placeholder = {Platform.OS === "ios" ? "Search  'Texas' or  'IT'" :
                 "Search  'Texas'  or  'USA'  or  'IT'"}

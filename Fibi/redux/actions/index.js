@@ -1,5 +1,6 @@
 import {FETCH_JOBS_PENDING, FETCH_JOBS_ERROR, FETCH_JOBS_SUCCESS } from './types';
 
+//redux actions
 export const fetchJobsPending = () => {
   return {
     type: FETCH_JOBS_PENDING
