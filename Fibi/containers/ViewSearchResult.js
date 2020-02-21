@@ -35,14 +35,14 @@ export default class ViewSearchResults extends Component {
     });
   }
 
-  closeMovie = () => {
+  closeJob = () => {
     this.setState({
       popupIsOpen: false,
     }); 
   }
 
   bookTicket = () => {
-      this.closeMovie();
+      this.closeJob();
       this.props.navigation.push('detailedJob', {   // Navigate away to detailedJob route
         job: this.state.jobClicked
       });
@@ -59,7 +59,7 @@ export default class ViewSearchResults extends Component {
               { data.map((job,index) => <MoviePoster job={job} onOpen={this.openMovie}  key={index}/>)}  
           </ScrollView>
           <JobPopUp jobClicked={this.state.jobClicked} isOpen={this.state.popupIsOpen}
-            onClose={this.closeMovie} onBook={this.bookTicket}/>
+            onClose={this.closeJob} onBook={this.bookTicket}/>
         </View> 
        
         </View>

@@ -109,7 +109,8 @@ export default class UserAddJob extends Component {
     return (
         <View style={styles.ScreenBackground}>
             <KeyboardAwareScrollView
-               extraScrollHeight={70} enableOnAndroid={true} 
+               extraScrollHeight={70} enableOnAndroid={Platform.OS === "ios" ? false:true} 
+               nableAutoAutomaticScroll={(Platform.OS === 'ios')}
                keyboardShouldPersistTaps='handled'>
                <ScrollView >  
                 <View style={styles.FirstContainer}>
