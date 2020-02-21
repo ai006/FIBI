@@ -3,7 +3,7 @@ import { View, Text, Image } from 'react-native';
 
 
 import store from '../redux/store';
-import { fetchJobsData } from '../api';
+import { fetchJobsData } from '../api/api';
 
 /*
   Component for the splash screen (logo shown on startup)

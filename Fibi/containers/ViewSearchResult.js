@@ -3,8 +3,8 @@ import {ScrollView, Dimensions, StyleSheet, Text, View, ActivityIndicator } from
 
 import MoviePoster from './MoviePoster';
 import Constants from 'expo-constants';
-//import MoviePopup from '../MoviePopUp';
-import MoviePopUp from './MoviePopup';
+//import JobPopUp from '../JobPopUp';
+import JobPopUp from './JobPopUp';
 
 
 export default class ViewSearchResults extends Component {
@@ -58,7 +58,7 @@ export default class ViewSearchResults extends Component {
           <ScrollView contentContainerStyle={styles.scrollContent} >
               { data.map((job,index) => <MoviePoster job={job} onOpen={this.openMovie}  key={index}/>)}  
           </ScrollView>
-          <MoviePopUp jobClicked={this.state.jobClicked} isOpen={this.state.popupIsOpen}
+          <JobPopUp jobClicked={this.state.jobClicked} isOpen={this.state.popupIsOpen}
             onClose={this.closeMovie} onBook={this.bookTicket}/>
         </View> 
        

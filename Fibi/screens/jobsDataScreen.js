@@ -10,7 +10,7 @@ import { Card } from 'react-native-paper';
 
 import MoviePoster from '../containers/MoviePoster'
 import Constants from 'expo-constants';
-import MoviePopUp from '../containers/MoviePopup';
+import JobPopUp from '../containers/JobPopUp';
 import {searchRedux} from '../search';
 
 class JobsData extends Component {
@@ -117,7 +117,7 @@ class JobsData extends Component {
           <ScrollView style={{marginBottom: 100,}} contentContainerStyle={styles.scrollContent} showsVerticalScrollIndicator={false} >
               { data.map((job,index) => <MoviePoster job={job} onOpen={this.openMovie}  key={index}/>)}
           </ScrollView>
-          <MoviePopUp jobClicked={this.state.jobClicked} isOpen={this.state.popupIsOpen}
+          <JobPopUp jobClicked={this.state.jobClicked} isOpen={this.state.popupIsOpen}
             onClose={this.closeMovie} onBook={this.bookTicket}/>
         </View> 
        

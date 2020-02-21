@@ -11,7 +11,7 @@ import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view
 
 
 import { defaultStyles } from '../styles';
-import { sendAddedJob } from '../api';
+import { sendAddedJob } from '../api/api';
 
 const {height, width} = Dimensions.get('window')
 

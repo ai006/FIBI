@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="819765d6-1da6-4584-933b-34853573f397" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/../../Fibi/App.js" afterPath="$PROJECT_DIR$/../../Fibi/App.js" />
-      <change beforePath="$PROJECT_DIR$/../../Fibi/ScreenContainer.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../Fibi/TwitterScreen.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../Fibi/actions/index.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../Fibi/actions/types.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../Fibi/api.js" afterPath="$PROJECT_DIR$/../../Fibi/api.js" />
-      <change beforePath="$PROJECT_DIR$/../../Fibi/containers/jobsData.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../Fibi/screens/splashScreen.js" afterPath="$PROJECT_DIR$/../../Fibi/screens/splashScreen.js" />
+      <change beforePath="$PROJECT_DIR$/../../Fibi/todo.txt" afterPath="$PROJECT_DIR$/../../Fibi/todo.txt" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />

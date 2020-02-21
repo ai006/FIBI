@@ -14,7 +14,7 @@ const { width, height } = Dimensions.get('window'); // Get screen dimensions
 const screenDivider = Platform.OS === "ios" ? 0.75 : 0.67;
 const defaultHeight = height * screenDivider;
 
-export default class MoviePopup extends Component {
+export default class JobPopUp extends Component {
   
   static propTypes = {
 	  isOpen: PropTypes.bool.isRequired,
@@ -28,7 +28,7 @@ export default class MoviePopup extends Component {
   };
 
    render() {     
-    const {jobClicked, chosenDay, chosenTime, onChooseDay, onChooseTime, onBook} = this.props;
+    const {jobClicked, onBook} = this.props;
     const { CompanyName, link, logo, address,jobsArr } = jobClicked || {}; // Pull out movie data
     const {countryArr} = address || [];
     

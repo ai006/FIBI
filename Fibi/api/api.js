@@ -1,4 +1,4 @@
-import {fetchJobsPending, fetchJobsError, fetchJobSuccess} from './redux/actions/index';
+import {fetchJobsPending, fetchJobsError, fetchJobSuccess} from '../redux/actions/index';
 import { Alert} from 'react-native'
 
 //URL address used to fetch/call the server on heroku to fetch jobs
