@@ -11,7 +11,7 @@ const cols = 3, rows = 3;
 
 /* This class is the jobs poster, it is the first page opened 
 when you start the app. The jobs are arranged in 3 columns */
-export default class MoviePoster extends Component {
+export default class JobPoster extends Component {
 
   static propTypes = {
     job: PropTypes.object.isRequired,

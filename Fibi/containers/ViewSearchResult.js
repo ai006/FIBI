@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {ScrollView, Dimensions, StyleSheet, Text, View, ActivityIndicator } from 'react-native';
 
-import MoviePoster from './MoviePoster';
+import JobPoster from './jobPoster';
 import Constants from 'expo-constants';
 //import JobPopUp from '../JobPopUp';
 import JobPopUp from './JobPopUp';
@@ -28,7 +28,7 @@ export default class ViewSearchResults extends Component {
     }
   }
 
-  openMovie = (jobClicked) => {
+  openJob = (jobClicked) => {
     this.setState({
       popupIsOpen: true,
       jobClicked, 
@@ -41,7 +41,7 @@ export default class ViewSearchResults extends Component {
     }); 
   }
 
-  bookTicket = () => {
+  seeDetailedJob = () => {
       this.closeJob();
       this.props.navigation.push('detailedJob', {   // Navigate away to detailedJob route
         job: this.state.jobClicked
@@ -56,10 +56,10 @@ export default class ViewSearchResults extends Component {
       <View>
         <View style={styles.container}>
           <ScrollView contentContainerStyle={styles.scrollContent} >
-              { data.map((job,index) => <MoviePoster job={job} onOpen={this.openMovie}  key={index}/>)}  
+              { data.map((job,index) => <JobPoster job={job} onOpen={this.openJob}  key={index}/>)}  
           </ScrollView>
           <JobPopUp jobClicked={this.state.jobClicked} isOpen={this.state.popupIsOpen}
-            onClose={this.closeJob} onBook={this.bookTicket}/>
+            onClose={this.closeJob} onBook={this.seeDetailedJob}/>
         </View> 
        
         </View>

@@ -18,7 +18,7 @@ export default class JobPopUp extends Component {
   
   static propTypes = {
 	  isOpen: PropTypes.bool.isRequired,
-    movie: PropTypes.object,      // Movie object that has title, genre, poster, days and times
+    jobClicked: PropTypes.object,      // job object that has title, genre, poster, days and times
     onBook: PropTypes.func,       // Gets called when user books their ticket
     onClose: PropTypes.func,      // Gets called when popup closed
   }
@@ -29,7 +29,7 @@ export default class JobPopUp extends Component {
 
    render() {     
     const {jobClicked, onBook} = this.props;
-    const { CompanyName, link, logo, address,jobsArr } = jobClicked || {}; // Pull out movie data
+    const { CompanyName, link, logo, address,jobsArr } = jobClicked || {}; // Pull out job data
     const {countryArr} = address || [];
     
      return (
@@ -43,7 +43,7 @@ export default class JobPopUp extends Component {
 
           <View style={styles.container}>
             <View style={styles.scrollableModal}>
-              <View style={styles.movieContainer}>
+              <View style={styles.jobContainer}>
                 <View style={styles.imageContainer}>
                   <Image source={{ uri: logo }} style={styles.image} />
                 </View>
@@ -110,8 +110,8 @@ const styles = StyleSheet.create({
     margin: 20,
     marginBottom: 0,
   },
-  // Movie container
-  movieContainer: {
+  // job container
+  jobContainer: {
     flex: 1,  
     flexDirection: 'row',                          // take up all available space
     // alignItems:'center', 

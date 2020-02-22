@@ -8,7 +8,7 @@ import { Card } from 'react-native-paper';
 //import { Icon } from 'react-native-elements';
 
 
-import MoviePoster from '../containers/MoviePoster'
+import JobPoster from '../containers/jobPoster'
 import Constants from 'expo-constants';
 import JobPopUp from '../containers/JobPopUp';
 import {searchRedux} from '../search';
@@ -48,7 +48,7 @@ class JobsData extends Component {
     }
   }
 
-  openMovie = (jobClicked) => {
+  openJob = (jobClicked) => {
     this.setState({
       popupIsOpen: true,
       jobClicked, 
@@ -61,7 +61,7 @@ class JobsData extends Component {
     }); 
   }
 
-  bookTicket = () => {
+  seeDetailedJob = () => {
       this.closeJob();
       this.props.navigation.push('detailedJob', {   // Navigate away to detailed job route
         job: this.state.jobClicked
@@ -115,10 +115,10 @@ class JobsData extends Component {
         }
         <View style={[styles.ScreenBackground,styles.container]}>
           <ScrollView style={{marginBottom: 100,}} contentContainerStyle={styles.scrollContent} showsVerticalScrollIndicator={false} >
-              { data.map((job,index) => <MoviePoster job={job} onOpen={this.openMovie}  key={index}/>)}
+              { data.map((job,index) => <JobPoster job={job} onOpen={this.openJob}  key={index}/>)}
           </ScrollView>
           <JobPopUp jobClicked={this.state.jobClicked} isOpen={this.state.popupIsOpen}
-            onClose={this.closeJob} onBook={this.bookTicket}/>
+            onClose={this.closeJob} onBook={this.seeDetailedJob}/>
         </View> 
        
         </View>
