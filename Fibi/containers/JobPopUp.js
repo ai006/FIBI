@@ -31,7 +31,7 @@ export default class JobPopUp extends Component {
     const {jobClicked, onBook} = this.props;
     const { CompanyName, link, logo, address,jobsArr } = jobClicked || {}; // Pull out job data
     const {countryArr} = address || [];
-    
+    console.log('in modal')
      return (
         <Modal
           isVisible={this.props.isOpen}
@@ -39,6 +39,9 @@ export default class JobPopUp extends Component {
           swipeDirection="down"
           style={styles.bottomModal}
           propagateSwipe={Platform.OS === "ios" ? true : null}
+          onBackdropPress = { () => this.setState(
+              console.log('hi')
+          )}
          >
 
           <View style={styles.container}>

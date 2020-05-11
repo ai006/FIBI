@@ -2,7 +2,7 @@ import axios from 'axios';
 
 
 //IP address for connecting to the localhost
-const API_URL_LOCALHOST = 'http://localhost:3001/'
+const API_URL_LOCALHOST = 'http://localhost:5000/'
 
 //IP address or URL for connecting to the server
 const API_URL = 'https://desolate-tor-37189.herokuapp.com/'
@@ -14,6 +14,18 @@ export const fetchData = async () => {
     const response = await fetch(API_URL_LOCALHOST + 'api/getData');
     const {data} = await response.json();
     return data;
+}
+
+// get method that uses our backend api to
+// fetch only the specified jobs  from our data base
+export const searchJob = async (job) => {
+
+  const response = await axios.post(API_URL + 'api/search', { job });
+  console.log('👉 Returned data:', response);
+  
+  const {data} = await response.data;
+  
+  return data;
 }
 
 // our put method that uses our backend api

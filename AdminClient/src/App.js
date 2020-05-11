@@ -5,6 +5,7 @@ import HeaderComponent from './headers';
 import JobsComponent from './jobsHeader'
 import imagesComponent from './images';
 import jobsToVetComponent from './jobsToVet';
+import searchComponent from './searchJob';
 
 
 /*first executed page on admin client
@@ -22,6 +23,7 @@ class App extends Component {
           <Route exact path='/' component={JobsComponent}></Route>
           <Route exact path='/userAddedJobs' component={jobsToVetComponent}></Route>
           <Route exact path='/images' component={imagesComponent}></Route>
+          <Route exact path='/search' component={searchComponent}></Route>
         </div>
       </Router> 
     )

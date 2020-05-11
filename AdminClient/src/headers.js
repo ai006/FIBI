@@ -21,6 +21,9 @@ class  HeaderComponent extends Component {
               <li>
                 <Link to="/images"> Images </Link>
               </li>
+              <li>
+                <Link to="/search"> search Job </Link>
+              </li>
             </ul>
           )
     }
