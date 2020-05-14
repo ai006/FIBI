@@ -12,18 +12,20 @@ import UniversityScreen from './universityScreen';
 import DetailedJobScreen from './detailedJobScreen';
 import ViewSearchResults from '../containers/ViewSearchResult';
 import UserAddJob from './userAddJobScreen';
+import JobOptionScreen from './jobOptionsScreen';
 
 
 //screens on the embedded in the JobsDataScreen
 const JobsStack = createStackNavigator(    
     {
+        Options   : JobOptionScreen,
         JobsData  : JobsDataScreen, 
         detailedJob   : DetailedJobScreen,
-        ViewResult: ViewSearchResults,
+        //ViewResult: ViewSearchResults,
         AddJob    : UserAddJob,
     },
     {
-        initialRouteName: "JobsData",
+        initialRouteName: "Options",
     }
 );
 

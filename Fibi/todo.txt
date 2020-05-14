@@ -1,4 +1,13 @@
+1. repurpose the search algorithm to search for only jobs e.g Accounting --done
+2. add image to the upper bar   --done
+3. add more documents to the database
+5. remove the map state to props from the other jobsDataScreen  --done
+6. fix the admin or server to update properly
 
+
+
+1.make sure to always remove the space at the front when entering data into input
+2. fix server to incremement on the count when adding jobs
 3. make sure modal dismisses when you press the black background
 4. add more jobs to the database
 5. make a test database for future implementations

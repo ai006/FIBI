@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+/*import React, { Component } from 'react';
 import {ScrollView, Dimensions, StyleSheet, Text, View, ActivityIndicator } from 'react-native';
 
 import JobPoster from './jobPoster';
@@ -94,3 +94,4 @@ const styles = StyleSheet.create({
     // alignItems: 'center',
   },
 })
+*/

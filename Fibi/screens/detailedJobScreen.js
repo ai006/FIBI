@@ -36,9 +36,6 @@ export default class DetailedJobScreen extends Component {
           <Card style={[styles.shadow,styles.card,styles.cardBackgroundColor]}>
             <View style={[styles.horizontalArrangement,styles.placeCenter]}>
                 <Image style={styles.imageStyle} source={{uri: job.logo}}/>
-                <View style={{alignSelf : 'flex-start', justifyContent: 'flex-start', alignItems: 'center', padding: 5, alignSelf: 'flex-start'}}>
-                  <Text style={[styles.textStyle,styles.textColor]}>{job.CompanyName}</Text>
-                </View>
             </View>
           </Card>
           <Card style={[styles.shadow,styles.linkContainer, styles.cardBackgroundColor]}>

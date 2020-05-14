@@ -1,3 +1,4 @@
+/*
 export const searchRedux =  (reduxData,query) => {
     
     let arr = [];
@@ -66,3 +67,4 @@ export const searchRedux =  (reduxData,query) => {
     }
     return arr;
 }
+*/

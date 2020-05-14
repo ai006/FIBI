@@ -7,11 +7,10 @@ import { Platform } from "react-native";
 import { Card } from 'react-native-paper';
 //import { Icon } from 'react-native-elements';
 
-
 import JobPoster from '../containers/jobPoster'
 import Constants from 'expo-constants';
 import JobPopUp from '../containers/JobPopUp';
-import {searchRedux} from '../search';
+//import {searchRedux} from '../search';
 
 class JobsData extends Component {
 
@@ -43,8 +42,8 @@ class JobsData extends Component {
     super(props);
     this.state = {
       popupIsOpen: false,
-      Query: '',
-      searching:false,
+      // Query: '',
+      // searching:false,
     }
   }
 
@@ -68,23 +67,28 @@ class JobsData extends Component {
       });
   }
 
-  searchData = (data) => {
-    this.setState({
-      searching:true,
-    })
-    searchResult = searchRedux(data,this.state.Query);
-    this.setState({
-      searching:false,
-    })
-    this.props.navigation.push('ViewResult', {
-        arrayResult: searchResult,
-        userSearched: this.state.Query
-    });
-  }
+  // searchData = (data) => {
+  //   this.setState({
+  //     searching:true,
+  //   })
+  //   searchResult = searchRedux(data,this.state.Query);
+  //   this.setState({
+  //     searching:false,
+  //   })
+  //   this.props.navigation.push('ViewResult', {
+  //       arrayResult: searchResult,
+  //       userSearched: this.state.Query
+  //   });
+  // }
 
   render(){
-    const { Query } = this.state;
-    const {data,status,pending} = this.props;
+    //const { Query } = this.state;
+    //const {data,status,pending} = this.props;
+    const {status,pending} = this.props;
+
+    const data = this.props.navigation.getParam('name');
+    
+    //console.log(temp)
     //console.log(data)
     // if(!data) {
     //   return (
@@ -100,7 +104,7 @@ class JobsData extends Component {
     }
     return (
       <View style={{backgroundColor:'#ffffff', flex:1}}> 
-          <Searchbar //android and ios have display differently
+          {/* <Searchbar //android and ios have display differently
               placeholder = {Platform.OS === "ios" ? "Search  'Texas' or  'IT'" :
                 "Search  'Texas'  or  'USA'  or  'IT'"}
               onChangeText={query => { this.setState({ Query: query }); }}
@@ -112,9 +116,9 @@ class JobsData extends Component {
           <View style={styles.loading}>
             <ActivityIndicator size='large' color='green' />
           </View>:null
-        }
+        } */}
         <View style={[styles.ScreenBackground,styles.container]}>
-          <ScrollView style={{marginBottom: 100,}} contentContainerStyle={styles.scrollContent} showsVerticalScrollIndicator={false} >
+          <ScrollView style={{marginBottom: 1,}} contentContainerStyle={styles.scrollContent} showsVerticalScrollIndicator={false} >
               { data.map((job,index) => <JobPoster job={job} onOpen={this.openJob}  key={index}/>)}
           </ScrollView>
           <JobPopUp jobClicked={this.state.jobClicked} isOpen={this.state.popupIsOpen}
@@ -128,7 +132,7 @@ class JobsData extends Component {
 
 const mapStateToProps = state => {
   return {
-    data:  state.data.jobs,      //array of jobs
+   // data:  state.data.jobs,      //array of jobs
     status: state.data.error,    //string of error message if an error occurs during fetch
     pending: state.data.pending, //boolean true during fetching of API data and false before and after fetching  
   };
