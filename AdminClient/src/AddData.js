@@ -15,6 +15,8 @@ export default class AddData extends Component {
             CompanyName: '',
             logo:'',
             educationLevel:'',
+            hire: '',
+            hireArr:[],
             address:{
                 city:'',
                 cityArr: [],
@@ -51,6 +53,7 @@ export default class AddData extends Component {
       this.setState(                //after sending data reset arrays 
           {
             jobsArr:[],  
+            hireArr: [],
             address:{...this.state.address,
                 cityArr:[],
                 countryArr:[],
@@ -70,6 +73,7 @@ export default class AddData extends Component {
                     <InputForm type={"text"} name="country" value={this.state.address.country} handleChange={this.UpdateAddress.bind(this,'country')} placeholder={"country"}/>
                     <InputForm type={"text"} name="link" value={this.state.address.link} handleChange={this.UpdateChange} placeholder={"link"}/>
                     <InputForm type={"text"} name="jobs" value={this.state.jobs} handleChange={this.UpdateChange} placeholder={"jobs"}/>
+                    <InputForm type={"text"} name="hire" value={this.state.hire} handleChange={this.UpdateChange} placeholder={"hire"}/>
                     <textarea  style={{width:'200px',padding:'10px'}} rows = "4" name= "about" value={this.state.about} onChange={this.UpdateChange} placeholder={"about company"}/>
                 </div>
                 <button onClick={() => this.putDataToDB()}>

@@ -11,7 +11,7 @@ const API_URL = 'https://desolate-tor-37189.herokuapp.com/'
 // our first get method that uses our backend api to
 // fetch data from our data base
 export const fetchData = async () => {
-    const response = await fetch(API_URL_LOCALHOST + 'api/getData');
+    const response = await fetch(API_URL + 'api/getData');
     const {data} = await response.json();
     return data;
 }
@@ -32,13 +32,15 @@ export const searchJob = async (job) => {
 // to create new query into our data base
 //add all the information from variables to JSON to send POST request to server
 export const addDataToDB = async (id, data) => {
-    axios.post(API_URL_LOCALHOST + 'api/putData', {
+    axios.post(API_URL + 'api/putData', {
       id: id,
       job : {
         id:id,
         CompanyName : data.CompanyName,
         logo : data.logo,
         educationLevel : data.educationLevel,
+        hire: data.hire,
+        hireArr: data.hireArr,
         address :{
           city   : data.address.city,
           cityArr: data.address.cityArr,
