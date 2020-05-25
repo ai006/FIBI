@@ -1,7 +1,4 @@
-1. repurpose the search algorithm to search for only jobs e.g Accounting --done
-2. add image to the upper bar   --done
 3. add more documents to the database
-5. remove the map state to props from the other jobsDataScreen  --done
 6. fix the admin or server to update properly
 
 

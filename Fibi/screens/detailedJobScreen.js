@@ -38,10 +38,13 @@ export default class DetailedJobScreen extends Component {
                 <Image style={styles.imageStyle} source={{uri: job.logo}}/>
             </View>
           </Card>
+          <Card style={[styles.shadow,styles.hireCard,styles.cardBackgroundColor]}>
+            <ScrollViews name={job.hireArr} group={<Text>Company Hires</Text>}/>
+          </Card>
           <Card style={[styles.shadow,styles.linkContainer, styles.cardBackgroundColor]}>
                 <View style={[styles.linkStyle,styles.horizontalArrangement]}>
-                  <Text style={{color:'#a5acad', fontWeight: '200',fontSize:20}}>Education level : </Text>
-                  <Text style={{color:'green',fontSize:20}}>{job.educationLevel}</Text>
+                  <Text style={{flex:1,color:'#a5acad', fontWeight: '200',fontSize:20}}> Sponsorship Education level : </Text>
+                  <Text style={{flex:1,color:'green',fontSize:20}}>{job.educationLevel}</Text>
                 </View>
           </Card>
           <Card style={[styles.shadow,styles.linkContainer,styles.cardBackgroundColor]}>
@@ -53,8 +56,8 @@ export default class DetailedJobScreen extends Component {
           </Card>
           <Card style={[styles.shadow,styles.containerCard,styles.cardBackgroundColor]}>
             <ScrollViews name={job.jobsArr} group={<Text>Hiring</Text>}/>
-            <ScrollViews name={job.address.countryArr} group={<Text>Country</Text>}/>
             <ScrollViews name={job.address.cityArr} group={<Text>City</Text>}/> 
+            <ScrollViews name={job.address.countryArr} group={<Text>Country</Text>}/>
           </Card>
           <Card style={[styles.shadow,{margin:10},styles.cardBackgroundColor]}>
             <Text style={{margin:10,color:'#a5acad',fontWeight: '500'}}>About</Text>
@@ -78,8 +81,11 @@ const styles = StyleSheet.create({
     backgroundColor: '#fcfcfc',//'white',//'#ecf0f1',
   },
   containerCard: {
-    
     height: height*0.45,
+    margin: 10,
+  },
+  hireCard: {
+    height: height*0.16,
     margin: 10,
   },
   cardBackgroundColor: {

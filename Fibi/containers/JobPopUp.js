@@ -29,7 +29,7 @@ export default class JobPopUp extends Component {
 
    render() {     
     const {jobClicked, onBook} = this.props;
-    const { CompanyName, link, logo, address,jobsArr,hire } = jobClicked || {}; // Pull out job data
+    const { CompanyName, link, logo, address,jobsArr,hireArr } = jobClicked || {}; // Pull out job data
     const {countryArr} = address || [];
     console.log('in modal')
      return (
@@ -58,7 +58,7 @@ export default class JobPopUp extends Component {
               <View>              
                 <View >
                   <Text style={[styles.pushRight,styles.sectionHeader]}>Hire</Text>
-                    <Options  values={hire} />
+                    <Options  values={hireArr} />
                   <Text style={[styles.pushRight,styles.sectionHeader]}>Jobs</Text>
                     <Options values={jobsArr}/>
                     {/* <ScrollViews  name={countryArr} group={<Text>Countries</Text>}/>

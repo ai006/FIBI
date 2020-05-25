@@ -10,7 +10,7 @@ import { Alert} from 'react-native'
 
 //URL address used to send data of new job to Heroku server 
 const API_URL_USER = 'https://desolate-tor-37189.herokuapp.com/api/userAddedJob';
-//const API_URL_USER = 'http://10.0.2.2:3001/api/userAddedJob';
+//const API_URL_USER = 'http://10.0.2.2:5000/api/userAddedJob';
 
 
 //function used to call and fetch the jobs data from the server
@@ -39,7 +39,10 @@ export const fetchJobsData =  () => {
   if it fails it responds with two variables 
   boolean "success" set to false and string 
   "error" which contains a message.*/ 
-  export const sendAddedJob = async (data) => {
+  export const sendAddedJob = async (data, hireOptions) => {
+    
+    data.hire = hireOptions;    //add the hiring options to the object of the job to send to the API
+    
     try{
       const response = await fetch(API_URL_USER, {              //sends the data to server
         method: 'POST',
@@ -53,7 +56,7 @@ export const fetchJobsData =  () => {
       if(responseJson.success) {                              //if sending data was successful 
         Alert.alert(                                          //alert user with a thank you   
           'Job sent and saved!',                              //message
-          'Thank you! :)',
+          'The job will be vetted. Thank you! :)',
           [
             {text: 'OK', onPress: () => console.log('OK Pressed')},
           ],

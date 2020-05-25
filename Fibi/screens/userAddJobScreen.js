@@ -8,6 +8,7 @@ import { Platform,Alert } from "react-native";
 import { Header, useHeaderHeight } from 'react-navigation-stack';
 import { Dropdown } from 'react-native-material-dropdown';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
+import { CheckBox } from 'react-native-elements';
 
 
 import { defaultStyles } from '../styles';
@@ -40,6 +41,7 @@ export default class UserAddJob extends Component {
                     country: '',
                     link: '',
                     about: '',
+                    hire:'',
                     educationLevel:'',
             },
             nameFocused: false,
@@ -48,6 +50,9 @@ export default class UserAddJob extends Component {
             countryFocused: false,
             linkFocused: false,
             aboutFocused: false,
+            checkedCPT : false,
+            checkedOPT : false,
+            checkedSponsor: false,
       };
   }
 
@@ -80,20 +85,44 @@ export default class UserAddJob extends Component {
 
   //used to send 
   SendJobToDB = async () => {
+    
     //this.printState();
 
-     //checks if user has added type of job and name of job
-    if( this.state.AddedJob.job !== '' && this.state.AddedJob.CompanyName !== '' && this.state.AddedJob.educationLevel !== ''){                       
+    //line 92 to 99 is for getting checkbox options 
+    //that are selected to send to the API
+    var hireOptions = ''
+    if( this.state.checkedCPT === true)
+        hireOptions = hireOptions + ' CPT '
+    if(this.state.checkedOPT === true)
+        hireOptions = hireOptions + ' OPT '
+    if(this.state.checkedSponsor === true)
+        hireOptions = hireOptions + ' Sponsor '
+
+    //alert user of missing education level required for sponsorship
+    if(this.state.checkedSponsor ===true && this.state.AddedJob.educationLevel.length === 0){
+        Alert.alert(                                            
+            'status: incomplete',   
+            'Please add the education level for sponsorship :)',
+            [
+              {text: 'OK', onPress: () => console.log('OK Pressed')},
+            ],
+            {cancelable: false},
+        );
+        return
+    }
+    
+    //checks if user has added type of job and name of job
+    if( this.state.AddedJob.job !== '' && this.state.AddedJob.CompanyName !== '' &&  hireOptions.length > 0 ){                       
       
-        status = await sendAddedJob(this.state.AddedJob)       //wait for the repsonse from server (function sendAddedJob in file api)
-        if(status){                                            //if server received job go back to the main view
+        var status = await sendAddedJob(this.state.AddedJob,hireOptions)       //wait for the repsonse from server (function sendAddedJob in file api)
+        if(status){                                                        //if server received job go back to the main view
             this.props.navigation.pop()
         }
     }
     else{
         Alert.alert(                                          //alert user of missing companyname and job title   
             'status: incomplete',   
-            'Please add the company name, type of job, and education level :)',
+            'Please add the company name, type of job and check at least one option in company hires :)',
             [
               {text: 'OK', onPress: () => console.log('OK Pressed')},
             ],
@@ -109,7 +138,7 @@ export default class UserAddJob extends Component {
     return (
         <View style={styles.ScreenBackground}>
             <KeyboardAwareScrollView
-               extraScrollHeight={70} enableOnAndroid={Platform.OS === "ios" ? false:true} 
+               enableOnAndroid={Platform.OS === "ios" ? false:true} 
                nableAutoAutomaticScroll={(Platform.OS === 'ios')}
                keyboardShouldPersistTaps='handled'>
                <ScrollView >  
@@ -190,6 +219,39 @@ export default class UserAddJob extends Component {
                                 
                             />
                         </View>
+                    </Card>
+                </View>
+
+            <View style={styles.FirstContainer}>
+                <Card style={styles.shadow}>
+                    <View style={{alignItems:'center', padding:10}}>
+                    <Text style={{fontSize:20, fontWeight:'bold',color:'green'}}>Company hires</Text>
+                    </View>
+                    <View style={styles.container}>
+                    <CheckBox
+                        checkedColor = 'green'
+                        title='CPT'
+                        checked={this.state.checkedCPT}
+                        onPress={() => this.setState({checkedCPT: !this.state.checkedCPT})}
+                    />
+                    <CheckBox
+                        checkedColor = 'green'
+                        title='OPT'
+                        checked={this.state.checkedOPT}
+                        onPress={() => this.setState({checkedOPT: !this.state.checkedOPT})}
+                    />
+                    <CheckBox
+                        checkedColor = 'green'
+                        title='Sponsorship'
+                        checked={this.state.checkedSponsor}
+                        onPress={() => this.setState({checkedSponsor: !this.state.checkedSponsor})}
+                    />
+                    </View>
+                    {this.state.checkedSponsor  ?
+                    <View style={{paddingTop:20}}>
+                        <View style={{alignItems:'center'}}>
+                        <Text style={{fontSize:17, fontWeight:'bold',color:'green'}}>Education level for Sponsorship</Text>
+                        </View>
                         <View>
                             <Dropdown
                                 label='Education level'
@@ -200,12 +262,16 @@ export default class UserAddJob extends Component {
                                 fontSize= {20}
                                 data={data}
                                 onChangeText={(value) => this.setState(
-                                    {...this.state,AddedJob : {...this.state.AddedJob, educationLevel : value}}
-                                    )}
+                                    {...this.state,AddedJob : {...this.state.AddedJob, educationLevel : value}})}
                             />
                         </View>
-                    </Card>
-                </View>
+                    </View>
+                    :
+                    null
+                    }
+                </Card>
+            </View>
+
                 <Card style={styles.shadow}>
                     <TouchableOpacity style={styles.buttonContainer} onPress={this.SendJobToDB}>
                         <Text style={styles.button}>Done</Text>
