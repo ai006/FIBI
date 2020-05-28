@@ -1,3 +1,11 @@
+1. add more index and types in action for fetching jobtype  --done
+2. make a reduce for jobtype and add to reducer combiner    --done
+3. fetch types of jobs before anything happens
+4. make api function for fetching types of jobs
+5. 
+
+
+
 3. add more documents to the database
 6. fix the admin or server to update properly
 

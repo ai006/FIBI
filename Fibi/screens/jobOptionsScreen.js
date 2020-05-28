@@ -85,16 +85,9 @@ class JobOptionScreen extends React.Component {
 
   render() {
 
-    const arr = [
-                'Accounting','Actuarial Science','Biomedical Engineering', 'mechanical engineering','eletrical Engineering',
-                'business','media','Marketing', 'android','ios',
-                'microsoft','dell','macbook', 'laptop','phones',
-                'asus','ipad','wallet', 'book','charger',
-                'flash','pen','ruler', 'calculator','deodorant'
-              ]
-
     var rgb = Math.floor(Math.random() * 256)
     
+    const {jobTypes}  = this.props;         //get the types of jobs in our redux store and display
     
     return (
       <View style = {styles.background}>
@@ -107,9 +100,9 @@ class JobOptionScreen extends React.Component {
         }
         <View>
           <ScrollView contentContainerStyle={styles.scrollContent} showsVerticalScrollIndicator={false}>
-            { arr.map((job,index) =>  
+            { jobTypes.map((job,index) =>  
                     <View style={[styles.container, styles.space]} key={index}>
-                        <Cards clickedJob={this.jobclicked} jobName={job} key={index}/>
+                        <Cards clickedJob={this.jobclicked} jobName={job.occupation} key={index}/>
                     </View>
             )}
           </ScrollView>
@@ -124,6 +117,7 @@ class JobOptionScreen extends React.Component {
 const mapStateToProps = state => {
   return {
     data:  state.data.jobs,      //array of jobs
+    jobTypes: state.jobType.jobTypes, //array of the type of jobs
     status: state.data.error,    //string of error message if an error occurs during fetch
     pending: state.data.pending, //boolean true during fetching of API data and false before and after fetching  
   };

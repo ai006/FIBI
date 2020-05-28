@@ -3,7 +3,7 @@ import { View, Text, Image } from 'react-native';
 
 
 import store from '../redux/store';
-import { fetchJobsData } from '../api/api';
+import { fetchJobsData, fetchJobType } from '../api/api';
 
 /*
   Component for the splash screen (logo shown on startup)
@@ -20,6 +20,7 @@ class SplashScreen extends React.Component {
     // Preload data from an external API
     // Preload data using AsyncStorage
     await store.dispatch(fetchJobsData());
+    await store.dispatch(fetchJobType());
 
 
     //switch to new screen (jobsDataScree) after the store has been
