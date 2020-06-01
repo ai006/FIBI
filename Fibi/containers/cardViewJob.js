@@ -1,11 +1,21 @@
 import React from 'react';
-import {Dimensions, StyleSheet, TouchableOpacity, Text, View} from 'react-native';
+import {ImageBackground,Dimensions, StyleSheet, TouchableOpacity, Text, View} from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 
 // Get screen dimensions
 const { width, height } = Dimensions.get('window');
 // How many posters we want to have in each row and column
 const cols = 2, rows = 3;
+
+var randomImg = [
+    require('../images/Cinnamint.jpg'), require('../images/EasyMed.jpg'),    
+    require('../images/EndlessRiver.jpg'), require('../images/GreenandBlue.jpg'), 
+    require('../images/LemonTwist.jpg'), require('../images/Limeade.jpg'),     
+    require('../images/Mild.jpg'), require('../images/Mojito.jpg'),    
+    require('../images/NeonLife.jpg'), require('../images/Ohhappiness.jpg'),
+    require('../images/PacificDream.jpg'), require('../images/Quepal.jpg'),    
+    require('../images/SummerDog.jpg'),require('../images/TealLove.jpg'),    
+    require('../images/UnderLake.jpg'), require('../images/Vine.jpg')];  
 
 export default class Cards extends React.Component {
 
@@ -17,19 +27,11 @@ export default class Cards extends React.Component {
        this.props.clickedJob(job);
     }
 
-    render() {
-        var rgb_1_1 = Math.floor(Math.random() * 256) + 128
-        var rgb_2_1 = Math.floor(Math.random() * 256) 
-
+    render() {    
         return (
-            <LinearGradient
-                colors={[`rgb(255,255,240)`, 
-                        `rgb(${rgb_1_1},255,${rgb_1_1})`,
-                        `rgb(${rgb_2_1}, 255 ,${rgb_2_1})`,
-                        ]}
-                start={[0.15,0.15]}
-                end={[0.9,0.9]}
-                style={[styles.about,styles.shadow,styles.imageContainer]}>
+            <ImageBackground source={ randomImg[Math.floor(Math.random()*randomImg.length)]} 
+            style={[styles.about,styles.shadow,styles.imageContainer]}
+            imageStyle={{ borderRadius: 10}}>
                 <TouchableOpacity activeOpacity={0.1} style={{flex:1}}
                     onPress={() => this.handleClick(this.props.jobName)} 
                     >
@@ -39,9 +41,9 @@ export default class Cards extends React.Component {
                         </Text>
                     </View>
                 </TouchableOpacity>
-            </LinearGradient>
-        );
-    }
+            </ImageBackground>
+            );
+        }
     }
 
     const styles = StyleSheet.create({
@@ -54,11 +56,13 @@ export default class Cards extends React.Component {
         marginTop:10,
     },
     paragraph: {
-        color:'#005500',    //color of the text for the job hiring
+        margin: 10,
         fontSize: 20,
         fontWeight: 'bold',
+        justifyContent:'center',
+        alignItems: 'center',
         textAlign: 'center',
-        paddingHorizontal: 5,   
+        color: 'white'   
     },
     card: {
         position: 'absolute',
@@ -109,3 +113,7 @@ export default class Cards extends React.Component {
         resizeMode:'contain',
     },
     });
+
+
+
+
