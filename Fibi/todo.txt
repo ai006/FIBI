@@ -1,8 +1,20 @@
-1. add more index and types in action for fetching jobtype  --done
-2. make a reduce for jobtype and add to reducer combiner    --done
-3. fetch types of jobs before anything happens
-4. make api function for fetching types of jobs
-5. 
+
+3. function to add forum question
+4. user add question to redux 
+    - add question or comment question and response
+    - new card to display unapproved sentences 
+5. change schema for tweets to handle also have pending on response
+    or change the object of schemas by adding pending
+6. add email notification on api 
+7. add email api caller on react native
+
+
+#after I push the above changes 
+1. merge forum and jobs to one card 
+    - left side jobs and right side questions 
+    - possible use of a modal
+
+
 
 
 

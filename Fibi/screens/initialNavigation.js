@@ -4,7 +4,7 @@ import { createSwitchNavigator } from 'react-navigation-switch-transitioner'
 import AppNavigator from './ScreenContainer'
 import SplashScreen from './splashScreen'
 
-//the 21  to switch from the splashscreen to the mainscreen
+//the container to switch from the splashscreen to the mainscreen
 const InitialNavigator = createSwitchNavigator({
     Splash: SplashScreen,
     App: AppNavigator

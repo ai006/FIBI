@@ -23,22 +23,29 @@ export default class Cards extends React.Component {
         super(props);
     }
   
+    //get the occupation for the card clicked
     handleClick = (job) => {
-       this.props.clickedJob(job);
+       this.props.clickedJob(job.occupation);
     }
 
     render() {    
         return (
             <ImageBackground source={ randomImg[Math.floor(Math.random()*randomImg.length)]} 
-            style={[styles.about,styles.shadow,styles.imageContainer]}
+            style={[styles.shadow,styles.imageContainer]}
             imageStyle={{ borderRadius: 10}}>
                 <TouchableOpacity activeOpacity={0.1} style={{flex:1}}
                     onPress={() => this.handleClick(this.props.jobName)} 
                     >
                     <View style={styles.container}>
                         <Text style={styles.paragraph}>
-                            {this.props.jobName}
+                            {this.props.jobName.occupation}
                         </Text>
+                    </View>
+                    <View style={styles.questions}>
+                        <Text style={styles.textBelow}>Jobs </Text>
+                        <View style={styles.circle}>
+                            <Text style={styles.number}> {this.props.jobName.jobs} </Text>
+                        </View>
                     </View>
                 </TouchableOpacity>
             </ImageBackground>
@@ -46,7 +53,33 @@ export default class Cards extends React.Component {
         }
     }
 
-    const styles = StyleSheet.create({
+const styles = StyleSheet.create({
+    textBelow : {
+        fontSize: 13, 
+        fontWeight:'bold', 
+        color:'white'
+    },
+    circle : {
+        height:20,
+        width: 20,
+        borderRadius: 15,
+        backgroundColor: 'white',
+        alignItems:'center', 
+        justifyContent: 'center',
+    },
+    number : {
+        fontWeight : 'bold',
+        fontSize: 11,
+        color: 'gray'
+    },
+    questions: { 
+        alignItems:'center',
+        marginRight: 5,
+        alignSelf: 'flex-end',
+        flexDirection:'row',
+        //marginBottom:2,
+        flex:1,
+    },
     scrollContent: {
         flexDirection: 'row',   // arrange posters in rows
         flexWrap: 'wrap',       // allow multiple rows
@@ -73,9 +106,6 @@ export default class Cards extends React.Component {
         justifyContent: 'center', 
         alignItems: 'center',
     },
-    about: {
-    height : 150,
-    },
     text: {
         fontSize:30
     },
@@ -94,17 +124,15 @@ export default class Cards extends React.Component {
         shadowRadius: 4.65,
         elevation: 8,
     },
-    about: {
-        height : 150,
-        borderRadius: 10
-    }, 
     container: {                          
-        flex:1,
+        flex:4,
         justifyContent: "center",
-        alignItems: "center"
+        alignItems: "center",
+        //backgroundColor:'red'
     },
     imageContainer: {
-        flex: 1,                          // take up all available space
+        flex: 1,  
+        borderRadius: 10                        // take up all available space
     },
     image: {
         borderRadius: 5,                 // rounded corners

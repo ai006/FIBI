@@ -85,10 +85,7 @@ class JobOptionScreen extends React.Component {
 
   render() {
 
-    var rgb = Math.floor(Math.random() * 256)
-    
     const {jobTypes}  = this.props;         //get the types of jobs in our redux store and display
-    
     return (
       <View style = {styles.background}>
         {this.state.searching ? 
@@ -102,14 +99,12 @@ class JobOptionScreen extends React.Component {
           <ScrollView contentContainerStyle={styles.scrollContent} showsVerticalScrollIndicator={false}>
             { jobTypes.map((job,index) =>  
                     <View style={[styles.container, styles.space]} key={index}>
-                        <Cards clickedJob={this.jobclicked} jobName={job.occupation} key={index}/>
+                        <Cards clickedJob={this.jobclicked} jobName={job} key={index}/>
                     </View>
             )}
           </ScrollView>
         </View>
-    </View>
-    
-    
+      </View>
     );
   }
 }

@@ -31,7 +31,7 @@ export default class JobPopUp extends Component {
     const {jobClicked, onBook} = this.props;
     const { CompanyName, link, logo, address,jobsArr,hireArr } = jobClicked || {}; // Pull out job data
     const {countryArr} = address || [];
-    console.log('in modal')
+    //console.log('in modal')
      return (
         <Modal
           isVisible={this.props.isOpen}

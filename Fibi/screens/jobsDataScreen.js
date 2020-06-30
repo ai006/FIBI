@@ -132,7 +132,7 @@ class JobsData extends Component {
 
 const mapStateToProps = state => {
   return {
-   // data:  state.data.jobs,      //array of jobs
+    //data:  state.data.jobs,      //array of jobs
     status: state.data.error,    //string of error message if an error occurs during fetch
     pending: state.data.pending, //boolean true during fetching of API data and false before and after fetching  
   };
