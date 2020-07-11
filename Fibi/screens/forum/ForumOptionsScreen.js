@@ -56,11 +56,9 @@ class ForumOptionsScreen extends Component {
   //the redux for the questions in that category
     openQuestions = (category) => {
         
-      const {questions} = this.props;
-      //console.log(questions.length)
-      var results = [];
+      const {questions} = this.props;               //get all the questions in the forum stored in redux
+      var results = [];                             //array to save all the questions that fit the category
       for (var i = 0; i < questions.length; i++) { 
-          //console.log(questions[i].category) 
           if (questions[i].category === category) {
                 results.push(questions[i]);
             }
@@ -74,7 +72,8 @@ class ForumOptionsScreen extends Component {
     }
 
     render() {   
-      const {questions,jobTypes}  = this.props; 
+      const {questions,jobTypes,datas}  = this.props; 
+      //console.log(datas)
         return (
             <View style={{backgroundColor:'white', marginBottom: 10}}>
               <ScrollView>
@@ -93,6 +92,7 @@ class ForumOptionsScreen extends Component {
  
 const mapStateToProps = state => {
   return {
+    datas :state,
     questions: state.forum.forum, //array of the type of jobs
     jobTypes: state.jobType.jobTypes, //array of the type of jobs
     status: state.forum.error,    //string of error message if an error occurs during fetch

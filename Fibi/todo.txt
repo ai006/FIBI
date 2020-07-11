@@ -1,12 +1,12 @@
 
-3. function to add forum question
-4. user add question to redux 
-    - add question or comment question and response
-    - new card to display unapproved sentences 
-5. change schema for tweets to handle also have pending on response
-    or change the object of schemas by adding pending
-6. add email notification on api 
-7. add email api caller on react native
+#ways to improve user experience
+1. see if possible to get values from state in the other screen instead of passing 
+2. see if it possible to force a refresh when pop is made
+    - use example newAnswerScreen and forumScreen
+3. add checking for posting question or answering question
+4. make a separate file just for api links
+5. add comments
+    - add comments to mapStateToProps explain how it works
 
 
 #after I push the above changes 

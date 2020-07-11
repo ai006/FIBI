@@ -13,6 +13,7 @@ import { CheckBox } from 'react-native-elements';
 
 import { defaultStyles } from '../styles';
 import { sendAddedJob } from '../api/api';
+import {mailSender} from '../api/mailSender'
 
 const {height, width} = Dimensions.get('window')
 
@@ -112,10 +113,12 @@ export default class UserAddJob extends Component {
     }
     
     //checks if user has added type of job and name of job
-    if( this.state.AddedJob.job !== '' && this.state.AddedJob.CompanyName !== '' &&  hireOptions.length > 0 ){                       
+   if( this.state.AddedJob.job !== '' && this.state.AddedJob.CompanyName !== '' &&  hireOptions.length > 0 ){                       
       
         var status = await sendAddedJob(this.state.AddedJob,hireOptions)       //wait for the repsonse from server (function sendAddedJob in file api)
-        if(status){                                                        //if server received job go back to the main view
+        var mailStatus = await mailSender(this.state.AddedJob,'job')
+       
+        if(mailStatus && status){                                                        //if server received job go back to the main view
             this.props.navigation.pop()
         }
     }

@@ -2,20 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="819765d6-1da6-4584-933b-34853573f397" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/../../Fibi/containers/JobPopUp.js" afterPath="$PROJECT_DIR$/../../Fibi/containers/JobPopUp.js" />
-      <change beforePath="$PROJECT_DIR$/../../Fibi/containers/cardViewJob.js" afterPath="$PROJECT_DIR$/../../Fibi/containers/cardViewJob.js" />
-      <change beforePath="$PROJECT_DIR$/../../Fibi/package-lock.json" afterPath="$PROJECT_DIR$/../../Fibi/package-lock.json" />
-      <change beforePath="$PROJECT_DIR$/../../Fibi/package.json" afterPath="$PROJECT_DIR$/../../Fibi/package.json" />
+      <change beforePath="$PROJECT_DIR$/../../Fibi/api/api.js" afterPath="$PROJECT_DIR$/../../Fibi/api/api.js" />
+      <change beforePath="$PROJECT_DIR$/../../Fibi/cards/forumCard.js" afterPath="$PROJECT_DIR$/../../Fibi/cards/forumCard.js" />
+      <change beforePath="$PROJECT_DIR$/../../Fibi/redux/actions/indexForum.js" afterPath="$PROJECT_DIR$/../../Fibi/redux/actions/indexForum.js" />
       <change beforePath="$PROJECT_DIR$/../../Fibi/redux/actions/types.js" afterPath="$PROJECT_DIR$/../../Fibi/redux/actions/types.js" />
-      <change beforePath="$PROJECT_DIR$/../../Fibi/redux/jobTypesReducer.js" afterPath="$PROJECT_DIR$/../../Fibi/redux/jobTypesReducer.js" />
-      <change beforePath="$PROJECT_DIR$/../../Fibi/redux/reducerCombiner.js" afterPath="$PROJECT_DIR$/../../Fibi/redux/reducerCombiner.js" />
-      <change beforePath="$PROJECT_DIR$/../../Fibi/screens/ScreenContainer.js" afterPath="$PROJECT_DIR$/../../Fibi/screens/ScreenContainer.js" />
-      <change beforePath="$PROJECT_DIR$/../../Fibi/screens/initialNavigation.js" afterPath="$PROJECT_DIR$/../../Fibi/screens/initialNavigation.js" />
-      <change beforePath="$PROJECT_DIR$/../../Fibi/screens/jobOptionsScreen.js" afterPath="$PROJECT_DIR$/../../Fibi/screens/jobOptionsScreen.js" />
-      <change beforePath="$PROJECT_DIR$/../../Fibi/screens/jobsDataScreen.js" afterPath="$PROJECT_DIR$/../../Fibi/screens/jobsDataScreen.js" />
-      <change beforePath="$PROJECT_DIR$/../../Fibi/screens/splashScreen.js" afterPath="$PROJECT_DIR$/../../Fibi/screens/splashScreen.js" />
+      <change beforePath="$PROJECT_DIR$/../../Fibi/redux/forumReducer.js" afterPath="$PROJECT_DIR$/../../Fibi/redux/forumReducer.js" />
+      <change beforePath="$PROJECT_DIR$/../../Fibi/screens/forum/ForumOptionsScreen.js" afterPath="$PROJECT_DIR$/../../Fibi/screens/forum/ForumOptionsScreen.js" />
+      <change beforePath="$PROJECT_DIR$/../../Fibi/screens/forum/detailedForumScreen.js" afterPath="$PROJECT_DIR$/../../Fibi/screens/forum/detailedForumScreen.js" />
+      <change beforePath="$PROJECT_DIR$/../../Fibi/screens/forum/forumScreen.js" afterPath="$PROJECT_DIR$/../../Fibi/screens/forum/forumScreen.js" />
+      <change beforePath="$PROJECT_DIR$/../../Fibi/screens/forum/newAnswerScreen.js" afterPath="$PROJECT_DIR$/../../Fibi/screens/forum/newAnswerScreen.js" />
+      <change beforePath="$PROJECT_DIR$/../../Fibi/screens/forum/newQuestionScreen.js" afterPath="$PROJECT_DIR$/../../Fibi/screens/forum/newQuestionScreen.js" />
+      <change beforePath="$PROJECT_DIR$/../../Fibi/screens/userAddJobScreen.js" afterPath="$PROJECT_DIR$/../../Fibi/screens/userAddJobScreen.js" />
       <change beforePath="$PROJECT_DIR$/../../Fibi/todo.txt" afterPath="$PROJECT_DIR$/../../Fibi/todo.txt" />
-      <change beforePath="$PROJECT_DIR$/../../Fibi/yarn.lock" afterPath="$PROJECT_DIR$/../../Fibi/yarn.lock" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -25177,7 +25175,7 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3270366" sideWeight="0.5585392" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3270366" sideWeight="0.57626206" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -25186,7 +25184,7 @@
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Build" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3270366" sideWeight="0.4414608" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3270366" sideWeight="0.4237379" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Device File Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />

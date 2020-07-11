@@ -1,14 +1,15 @@
 import React from 'react';
 import {TextInput, Dimensions, StyleSheet, Text, View,ScrollView,TouchableOpacity } from 'react-native';
-import { Card } from 'react-native-paper';
-import { LinearGradient } from 'expo-linear-gradient';
-import { Icon } from 'react-native-elements'
-import { formatDistance} from 'date-fns'
-import { Questions } from './models';
+import { connect } from 'react-redux';
+
+import {addForumQuestion} from '../../redux/actions/indexForum';
+import {sendForumData} from '../../api/sendForumAPI';
+import store from '../../redux/store';
+import {mailSender} from '../../api/mailSender';
 
 const { width, height } = Dimensions.get('window');
 
-export default class NewQuestionScreen extends React.Component {
+class NewQuestionScreen extends React.Component {
 
 static navigationOptions = ({ navigation }) => {
     return {
@@ -29,17 +30,35 @@ constructor(props){
 }
 
 //function used to get all the user input to send to our database
-handleClick  = () => {
-  
+handleClick = async () => {
+
+  const {questions}  = this.props; 
+  let id_ = 0;                                   //id of the new question
+  for(var i = 0; i < questions.length; i++){    //search through all the questions in redux
+    if(id_ === questions[i].id){                 //and assign the question with a unique ID 
+      id_++;
+    }
+  }
+
   const question = {
-      title : this.state.title,     //title of the question
-      inquiry : this.state.inquiry, //the fill question
-      commments : [],               //comments left blank
-      createdAt : new Date(),       //get the date and time the question was asked
-      approved : false,             //all new questions will need to be approved        
+      id    : id_,
+      title : this.state.title,                             //title of the question
+      inquiry : this.state.inquiry,                         //the fill question
+      comments : [],                                        //comments left blank
+      createdAt : new Date(),                               //get the date and time the question was asked
+      approved : false,                                      //all new questions will need to be approved        
+      show  : true,                                         //show the new question
       category : this.props.navigation.getParam('category') //get the category of the question
   }
+  store.dispatch(addForumQuestion(question));
   
+  question.show = false;                                    //change show to false so other users won't see it
+
+  var status = await sendForumData(question,'question');   //send the question to the DB
+  var mailStatus = await mailSender(question,'forum');    //send a notification that something was added to the DB     
+  if(status && mailStatus){
+    this.props.navigation.pop(2)  //go back two screens
+  }
 }
 
 render() {  
@@ -77,6 +96,12 @@ render() {
   }
 }
 
+const mapStateToProps = state => {
+  return {
+    questions: state.forum.forum, //array of the questions
+  };
+}; 
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -106,3 +131,5 @@ const styles = StyleSheet.create({
     borderRadius:10
   },
 });
+
+export default connect(mapStateToProps,null)(NewQuestionScreen);

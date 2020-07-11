@@ -35,6 +35,15 @@ getTime = (time) => {
     return  formatDistance(Date.parse(time),new Date())
 }
 
+handleClick = () => {
+
+    this.props.navigation.push('newAnswer',{
+                                                id : this.props.navigation.getParam('id'),
+                                                question: this.props.navigation.getParam('query'),
+                                                route : 'second_route'
+                                            });
+}
+
 
 
 render() {
@@ -43,10 +52,17 @@ render() {
     
     return (
         <ScrollView>
-            <View style={styles.card}>
+            <View style={{marginTop:3,
+                        backgroundColor: query.approved ? 'white': '#f0f0f0'}}>
                 <View style={{ flex: 2, paddingBottom: height*0.10}}>
+                    {
+                        query.approved ? null   :            
+                        <View style={styles.pending}>
+                            <Text style={{ fontSize: 11, fontWeight:'bold', color:'red'}}> pending approval</Text>
+                        </View> 
+                    }
                     <View style={styles.title}>
-                        <Text style={{ fontSize: 15, fontWeight:'bold', color:'green'}}> {query.inquiry} </Text>
+                        <Text style={{ fontSize: 15, fontWeight:'bold', color:'green'}}> {query.title} </Text>
                     </View>
                     <View style={styles.text}> 
                         <Text style={{ flex:1, fontSize: 18}}> {query.inquiry} </Text>
@@ -59,7 +75,7 @@ render() {
                             <Text style={{fontWeight:'bold',color:'gray'}}>answers</Text>
                     </View>
                     <View style={styles.write}>
-                        <TouchableOpacity style={styles.write} onPress={() => this.props.navigation.push('newAnswer')}>
+                        <TouchableOpacity style={styles.write} onPress={this.handleClick}>
                             <Icon name='create' type='material' color='green' size={20}/>
                             <Text style={{fontWeight:'bold',color:'gray'}}>Respond</Text>
                         </TouchableOpacity>
@@ -68,7 +84,13 @@ render() {
                 </View>
             </View>
             {query.comments.map((comment,index) =>      
-                <View key={index} style={styles.card}>
+                <View key={index} style={{backgroundColor: comment.approved ? 'white': '#f0f0f0', marginTop:3,}}>
+                    {
+                        comment.approved ? null   :            
+                        <View style={styles.pending}>
+                            <Text style={{ fontSize: 11, fontWeight:'bold', color:'red'}}> pending approval</Text>
+                        </View> 
+                    }
                     <View style={{ flex: 2, paddingBottom: height*0.10}}>
                         <View style={styles.title}>
                             <Text style={{ fontSize: 15, fontWeight:'bold', color:'green'}}> Response </Text>
@@ -104,23 +126,29 @@ title: {
 },
 text: {
     flex: 4,
-    backgroundColor: 'white',
+   // backgroundColor: 'white',
     marginTop: 5,
 },
 feedback: {
     flex:1,
     flexDirection:'row',
-    backgroundColor:'white',
+   // backgroundColor:'white',
     alignItems: 'center',
 },
 write: {
     flex:1,
     flexDirection:'row',
-    backgroundColor:'white',
+   // backgroundColor:'white',
     marginLeft: 5,
     alignItems:'center'
 },
 timeStamp: {
     alignSelf: 'flex-end'
-}
+},
+pending:{
+    // flex:1,
+     marginRight: 10,
+     alignItems:'flex-end'
+ 
+   },
 });

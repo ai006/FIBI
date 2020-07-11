@@ -1,4 +1,6 @@
-import {FETCH_QUESTIONS_PENDING, FETCH_QUESTIONS_ERROR, FETCH_QUESTIONS_SUCCESS  } from './actions/types';
+import {FETCH_QUESTIONS_PENDING, FETCH_QUESTIONS_ERROR, 
+        ADD_FORUM_QUESTION, FETCH_QUESTIONS_SUCCESS,
+        DELETE_FORUM_QUESTION, INSERT_FORUM_QUESTION} from './actions/types';
 
 
 //Object for the forum state
@@ -27,6 +29,21 @@ export default function forumReducer(state = initialState, action) {
           ...state,
           pending: false,
           forum: action.forum
+        }
+      case ADD_FORUM_QUESTION:
+        return {
+          ...state,
+          forum : [...state.forum, action.question]
+        }
+      case DELETE_FORUM_QUESTION:
+        return {
+          ...state,
+          forum:[...state.forum.slice(0, action.idNum),...state.forum.slice(action.idNum + 1)]
+        }
+      case INSERT_FORUM_QUESTION:
+        return {
+          ...state,
+          forum:[...state.forum.slice(0,action.idNum), action.inquiry, ...state.forum.slice(action.idNum)]
         }
       default:
         return state;

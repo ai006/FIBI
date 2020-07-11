@@ -29,16 +29,32 @@ class ForumScreen extends React.Component {
      };
   };
   
-  openDetailedQuery = (question) => {
+  openDetailedQuery = (question, idNumber) => {
     
     this.props.navigation.push('detailedForum', {   // Navigate away to detailed forum route
-      query: question
-    });
+                                                    query: question,
+                                                    id : idNumber
+                                                  });
   }
 
-  openAnswerQuery = () => {
-    this.props.navigation.push('newAnswer');
+  /* function used to open the newAnswerScreen 
+  which is used to add comments to questions.
+  The argument data is the ID of the selected question in the redux*/ 
+  openAnswerQuery = (data,inquiry) => {
+    this.props.navigation.push('newAnswer', {
+                                              id : data,
+                                              question : inquiry,
+                                              route : 'first_route'
+                                            }
+    );
   }
+
+  openNewQuestion = () => {
+    this.props.navigation.push('newQuestion', //name of the category selected to send to the new question screen
+                                  { category : this.props.navigation.getParam('option')}
+                                )
+  }
+
   
   render() {
     //const {questions}  = this.props;
@@ -51,18 +67,16 @@ class ForumScreen extends React.Component {
         <ScrollView>
           { 
             questions.map((question,index) =>  
-              <TouchableOpacity key={index} onPress={() => this.openDetailedQuery(question)}>
+              <TouchableOpacity key={index} onPress={() => this.openDetailedQuery(question,index)}>
                 <View key={index} style={{marginTop: 1.5}}>
-                  <ForumCard openAnswer={this.openAnswerQuery}  question={question} key={index}/>
+                  <ForumCard openAnswer={this.openAnswerQuery}  question={question} key={index} id={index}/>
                 </View>
               </TouchableOpacity>
               )
           }
         </ScrollView>
           <TouchableOpacity style={styles.btn} 
-            onPress={() => 
-              this.props.navigation.push('newQuestion', //name of the category selected to send to the new question screen
-                              { category : this.props.navigation.getParam('option')})}>
+            onPress={this.openNewQuestion}>
             <ImageBackground style={styles.img} 
                 source={randomImg[Math.floor(Math.random()*randomImg.length)]}
                 imageStyle={{ borderRadius: 35}}>

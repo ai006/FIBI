@@ -83,7 +83,7 @@ export const fetchJobType =  () => {
           'Job sent and saved!',                              //message
           'The job will be vetted. Thank you! :)',
           [
-            {text: 'OK', onPress: () => console.log('OK Pressed')},
+            {text: 'OK', },
           ],
           {cancelable: false},
         );
@@ -98,7 +98,7 @@ export const fetchJobType =  () => {
         'Status: error',                                      //alert user the job was not saved by server
         'Something went wrong please try again :)',
         [
-          {text: 'OK', onPress: () => console.log('OK Pressed')},
+          {text: 'OK', },
         ],
         {cancelable: false},
       );
