@@ -24,6 +24,25 @@ export default class ForumCard extends React.Component {
     const {openAnswer} = this.props
     const datePosted = formatDistance(Date.parse(question.createdAt),new Date())    //get the date or time question was asked
     //console.log(question)
+    if(question.show === false){
+      return(
+        null
+      )
+    }
+
+    /*line 33 to 40 is used to find the number of comments 
+    that have been approved
+    when you start the app all the questions in the DB are retrieved
+    some of the questions have been approved and some have not
+    it could be done better*/
+    var visibleAnswers, dontShow = 0;
+    for( var i = 0; i < question.comments.length; i++ ){
+      if(question.comments[i].show === false){
+        dontShow++;
+      }
+    }
+    visibleAnswers = question.comments.length - dontShow;
+
     return (
           <View style={{height: height * 0.215,
                         width: width,
@@ -45,7 +64,7 @@ export default class ForumCard extends React.Component {
               <View style={styles.feedback}>
                 <View style={styles.write}>
                         <Icon name='comment' type='evilicon' color='#00AF33' size={30}/>
-                        <Text style={{ fontSize: 18, alignSelf:'center',color:'gray'}}> {question.comments.length} </Text>
+                        <Text style={{ fontSize: 18, alignSelf:'center',color:'gray'}}> {visibleAnswers} </Text>
                         <Text style={{fontWeight:'bold',color:'gray'}}>answers</Text>
                 </View>
                 <View style={styles.write}>
@@ -57,6 +76,7 @@ export default class ForumCard extends React.Component {
                      <Text style={{fontWeight:'bold',color:'gray',marginRight:10}}> {datePosted} ago</Text>
               </View>
           </View>
+        
     );
   }
 }

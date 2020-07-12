@@ -1,5 +1,6 @@
 import React from "react";
-import {ImageBackground,Dimensions,ScrollView, Button, View, StyleSheet, Text,Image,TouchableOpacity } from "react-native";
+import {ImageBackground,Dimensions,ScrollView, Button, View,
+         StyleSheet, Text,Image,TouchableOpacity,KeyboardAvoidingView } from "react-native";
 import { Icon } from 'react-native-elements';
 import { Platform } from "react-native";
 import Ionicons from "react-native-vector-icons/Ionicons";
@@ -57,16 +58,22 @@ class ForumScreen extends React.Component {
 
   
   render() {
-    //const {questions}  = this.props;
-    const questions = this.props.navigation.getParam('questions');
+    const {questions}  = this.props;
+    const category = this.props.navigation.getParam('option');
     
+    var results = [];
+    for (var i = 0; i < questions.length; i++) { 
+      if (questions[i].category === category) {
+            results.push(questions[i]);
+        }
+    }
     
     return (
       <View style={{ backgroundColor:'#DCDCDC', flex:1, 
                      alignItems:'center', justifyContent: 'center',paddingTop:2}}>
         <ScrollView>
           { 
-            questions.map((question,index) =>  
+            results.map((question,index) =>  
               <TouchableOpacity key={index} onPress={() => this.openDetailedQuery(question,index)}>
                 <View key={index} style={{marginTop: 1.5}}>
                   <ForumCard openAnswer={this.openAnswerQuery}  question={question} key={index} id={index}/>

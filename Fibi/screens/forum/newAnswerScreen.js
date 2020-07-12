@@ -1,6 +1,7 @@
 import React from 'react';
 import {TextInput, Dimensions, StyleSheet, Text, View,ScrollView,TouchableOpacity } from 'react-native';
 import { connect } from 'react-redux';
+import Ionicons from "react-native-vector-icons/Ionicons";
 
 import {deleteForumQuestion,insertForumQuestion} from '../../redux/actions/indexForum';
 import store from '../../redux/store';
@@ -13,6 +14,24 @@ class NewAnswerQuestion extends React.Component {
 
 static navigationOptions = ({ navigation }) => {
     return {
+      headerRight: () =>            
+      <TouchableOpacity onPress={() => navigation.getParam('handleClick')()}>
+        <View style={{flexDirection:'row'}}>
+          <Ionicons
+              name={Platform.OS === "ios" ? "ios-paper-plane" : "md-paper-plane"}
+              size={30}
+              color={'green'}
+              style={{marginRight:5}}
+            />
+          <Text style={{fontSize:23, marginRight:8, color:'green'}}>Post</Text>
+            
+        </View>
+       </TouchableOpacity> ,
+        headerRightStyle: {
+          flex:1,
+          color: 'green',
+          fontSize: 25,
+        },
         headerTitle: 'Answer Question',
         headerTitleStyle: {
             color: 'green',
@@ -28,11 +47,20 @@ constructor(props){
   }
 }
 
+componentDidMount() {
+  // set handler method with setParams
+  this.props.navigation.setParams({ 
+    handleClick: this.handleClick
+  });
+}
+
 //function used to get all the user input to send to our database
 handleClick = async () => {
   const id = this.props.navigation.getParam('id');
   const question = this.props.navigation.getParam('question');
+  var clone = JSON.parse(JSON.stringify(question));
   const {questions}  = this.props; 
+  //let copiedObject = JSON.parse(JSON.stringify(questions))
 
   let _id = 0;                                               //id of the new question
   for(var i = 0; i < questions[id].comments.length; i++){    //search through all the questions in redux
@@ -48,16 +76,24 @@ handleClick = async () => {
       approved : false,             //all new answers will need to be approved        
       show: true,
   }
+
+  var commentAPI = {
+      id_ : _id,
+      response: this.state.answer,
+      createdAt : new Date(),       //get the date and time the question was answered
+      approved : false,             //all new answers will need to be approved        
+      show: false,
+  }
   
-  question.comments.push(comment)
-  store.dispatch(deleteForumQuestion(id))
-  store.dispatch(insertForumQuestion(id,question))
+  question.comments.push(comment);
+  store.dispatch(deleteForumQuestion(id));
+  store.dispatch(insertForumQuestion(id,question));
 
-  question.comments[question.comments.length-1].show = false; //get the comment that was edited and change show to true
-
+  
+  clone.comments.push(commentAPI);
   const route = this.props.navigation.getParam('route');    //get the route of which screen called this page
-  var status = await sendForumData(question,'answer');      //send the question to the DB
-  var mailStatus = await mailSender(question,'forum');      //send the a notification a question been added
+  var status = await sendForumData(clone,'answer');      //send the question to the DB
+  var mailStatus = await mailSender(clone,'forum');      //send the a notification a question been added
   if(route === 'first_route' && status === true && mailStatus === true){
     this.props.navigation.pop()  //go back to the previous screen
   }
@@ -82,10 +118,6 @@ render() {
                         />
                     </View>
               </View>
-            <TouchableOpacity style={styles.btn} onPress={this.handleClick}>
-                <Text style={{fontSize:18,color:'white',fontWeight:'bold'}}>Post</Text>
-                {/* <Icon name='create' type='material' color='white' size={10}/> */}
-            </TouchableOpacity>
           </View>
     );
   }

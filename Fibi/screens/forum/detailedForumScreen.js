@@ -5,6 +5,8 @@ import { LinearGradient } from 'expo-linear-gradient';
 import { Icon } from 'react-native-elements'
 import { formatDistance} from 'date-fns'
 
+import CommentCard from '../../cards/commentCard'
+
 //import GeneralQuestionScreen from './generalQuestionScreen'
 
 // GeneralQuestionScreen.navigationOptions = {
@@ -50,7 +52,23 @@ render() {
     const query = this.props.navigation.getParam('query');  //get the question that was selected plus comments
     const datePosted = formatDistance(Date.parse(query.createdAt),new Date())    //get the date or time question was asked
     
+
+    /*line 33 to 40 is used to find the number of comments 
+    that have been approved
+    when you start the app all the questions in the DB are retrieved
+    some of the questions have been approved and some have not
+    it could be done better*/
+    var visibleAnswers, dontShow = 0;
+    for( var i = 0; i < query.comments.length; i++ ){
+      if(query.comments[i].show === false){
+        dontShow++;
+      }
+    }
+    visibleAnswers = query.comments.length - dontShow;
+
+
     return (
+      
         <ScrollView>
             <View style={{marginTop:3,
                         backgroundColor: query.approved ? 'white': '#f0f0f0'}}>
@@ -71,7 +89,7 @@ render() {
                 <View style={styles.feedback}>
                     <View style={styles.write}>
                             <Icon name='comment' type='evilicon' color='green' size={27}/>
-                            <Text style={{ fontSize: 18, alignSelf:'center',color:'green'}}> {query.comments.length} </Text>
+                            <Text style={{ fontSize: 18, alignSelf:'center',color:'green'}}> {visibleAnswers} </Text>
                             <Text style={{fontWeight:'bold',color:'gray'}}>answers</Text>
                     </View>
                     <View style={styles.write}>
@@ -83,28 +101,12 @@ render() {
                         <Text style={{fontWeight:'bold',color:'gray',marginRight:10}}> {datePosted} ago</Text>
                 </View>
             </View>
-            {query.comments.map((comment,index) =>      
-                <View key={index} style={{backgroundColor: comment.approved ? 'white': '#f0f0f0', marginTop:3,}}>
-                    {
-                        comment.approved ? null   :            
-                        <View style={styles.pending}>
-                            <Text style={{ fontSize: 11, fontWeight:'bold', color:'red'}}> pending approval</Text>
-                        </View> 
-                    }
-                    <View style={{ flex: 2, paddingBottom: height*0.10}}>
-                        <View style={styles.title}>
-                            <Text style={{ fontSize: 15, fontWeight:'bold', color:'green'}}> Response </Text>
-                        </View>
-                        <View style={styles.text}> 
-                            <Text style={{ flex:1, fontSize: 18}}> {comment.response} </Text>
-                        </View>
-                    </View>
-                    <View style={styles.timeStamp}>
-                        <Text style={{marginRight:10, fontWeight:'bold',color:'gray'}}> {this.getTime(comment.createdAt)} ago</Text>
-                    </View>
+            {query.comments.map((comment,index) =>  
+                <View key={index}>
+                    <CommentCard comment={comment} />
                 </View>
             )}
-        </ScrollView>
+        </ScrollView> 
         );
     }
 }

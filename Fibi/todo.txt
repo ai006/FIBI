@@ -1,12 +1,7 @@
 
 #ways to improve user experience
-1. see if possible to get values from state in the other screen instead of passing 
-2. see if it possible to force a refresh when pop is made
-    - use example newAnswerScreen and forumScreen
 3. add checking for posting question or answering question
-4. make a separate file just for api links
-5. add comments
-    - add comments to mapStateToProps explain how it works
+8. add the FIBI icon to the top left corner on the iphone
 
 
 #after I push the above changes 
@@ -20,8 +15,9 @@
 
 3. add more documents to the database
 6. fix the admin or server to update properly
-
-
+5. add comments
+    - add comments to mapStateToProps explain how it works
+4. make a separate file just for api links
 
 1.make sure to always remove the space at the front when entering data into input
 2. fix server to incremement on the count when adding jobs

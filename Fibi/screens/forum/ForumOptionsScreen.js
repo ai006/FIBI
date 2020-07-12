@@ -55,17 +55,9 @@ class ForumOptionsScreen extends Component {
   //function to get the selected type of occupation and search through 
   //the redux for the questions in that category
     openQuestions = (category) => {
-        
-      const {questions} = this.props;               //get all the questions in the forum stored in redux
-      var results = [];                             //array to save all the questions that fit the category
-      for (var i = 0; i < questions.length; i++) { 
-          if (questions[i].category === category) {
-                results.push(questions[i]);
-            }
-      }
       //send all the questions to the Furum Screen and the category selected
       this.props.navigation.push('Forum', { 
-                                            questions:results,  //array containing all the selected category
+                                            //questions:results,  //array containing all the selected category
                                             option : category   //name of the category selected
                                           }
       );
