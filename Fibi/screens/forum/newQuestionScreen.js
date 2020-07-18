@@ -1,6 +1,6 @@
 import React from 'react';
 import {TextInput, Dimensions, StyleSheet,Platform,
-        Text, View,ScrollView,TouchableOpacity } from 'react-native';
+        Text, View,ScrollView,TouchableOpacity,Alert } from 'react-native';
 import { connect } from 'react-redux';
 import Ionicons from "react-native-vector-icons/Ionicons";
 
@@ -59,6 +59,18 @@ componentDidMount() {
 
 //function used to get all the user input to send to our database
 handleClick = async () => {
+  //check to see if the user has entered data before sending it to the api
+  if(this.state.title.length === 0 || this.state.inquiry.length === 0){
+    Alert.alert(                                          //alert user if missing title or body
+      'status: incomplete',   
+      'Please add  the title or the body of your question  :)',
+      [
+        {text: 'OK', onPress: () => console.log('OK Pressed')},
+      ],
+      {cancelable: false},
+    );
+    return;
+  }
 
   const {questions}  = this.props; 
   let id_ = 0;                                   //id of the new question

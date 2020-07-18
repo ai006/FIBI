@@ -24,6 +24,7 @@ export default class Options extends Component {
           horizontal={true}
           showsHorizontalScrollIndicator={false}
           showsVerticalScrollIndicator={false}
+          style={{flex:1}}
         >
           {values.map((value, index) =>
       
@@ -39,8 +40,11 @@ export default class Options extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: 2, //space between contries title and countries in cardview
+    flex:1,
+    marginTop: 2, 
     marginBottom: 10,
+    //backgroundColor:'red',
+  
   },
   options: {
     flexDirection: 'row',

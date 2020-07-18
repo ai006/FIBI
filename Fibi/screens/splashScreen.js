@@ -5,6 +5,7 @@ import { View, Text, Image } from 'react-native';
 import store from '../redux/store';
 import { fetchJobsData, fetchJobType } from '../api/api';
 import { fetchForumData} from '../api/forumApi';
+import {fetchNewsData} from '../api/newsAPI'
 
 /*
   Component for the splash screen (logo shown on startup)
@@ -23,6 +24,7 @@ class SplashScreen extends React.Component {
     await store.dispatch(fetchJobsData());
     await store.dispatch(fetchJobType());
     await store.dispatch(fetchForumData());
+    await store.dispatch(fetchNewsData());
 
 
     //switch to new screen (jobsDataScree) after the store has been

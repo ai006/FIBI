@@ -27,7 +27,8 @@ render() {
     }
 
     return (
-        <View style={{backgroundColor: comment.approved ? 'white': '#f0f0f0', marginTop:3,}}>
+        <View style={{backgroundColor: comment.approved ? 'white': '#f0f0f0', 
+                    borderBottomWidth :1, borderBottomColor: '#f0f0f0'}}>
         {
             comment.approved ? null   :            
             <View style={styles.pending}>
@@ -39,7 +40,7 @@ render() {
                 <Text style={{ fontSize: 15, fontWeight:'bold', color:'green'}}> Response </Text>
             </View>
             <View style={styles.text}> 
-                <Text style={{ flex:1, fontSize: 18}}> {comment.response} </Text>
+                <Text style={{ flex:1, fontSize: 16,color : '#585858',marginHorizontal:5}}> {comment.response} </Text>
             </View>
         </View>
         <View style={styles.timeStamp}>

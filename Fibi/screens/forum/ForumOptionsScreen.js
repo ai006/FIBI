@@ -12,23 +12,25 @@ class ForumOptionsScreen extends Component {
 
     static navigationOptions = ({ navigation }) => {
         return {
-          headerTitle:  () =>
-            <View style={{flex:1, flexDirection:'row', justifyContent:'center'}}>
-                <Image
-                    source={require('../../images/logo_small.jpg')}
-                    style={{width:40, height:40, flex:1}}
-                    resizeMode="contain"
-                />
-                <View style={{flex:1,justifyContent:'center',alignItems:'center'}}>
-                  <Text style={{
-                    alignSelf:'center',
-                    color: 'green',
-                    fontSize: 20,
-                    fontFamily:Platform.OS === 'ios'? 'Avenir': 'serif',}}>
-                      FIBI
-                  </Text>
-                </View>
-            </View>
+          headerLeft:  () =>
+          <View style={{flex:1, flexDirection:'row'}}>
+          <View style={{flex:1,justifyContent:'center',alignItems:'center'}}>
+            <Image
+                  source={require('../../images/logo_small.jpg')}
+                  style={{width:40, height:40, flex:1}}
+                  resizeMode="contain"
+              />
+          </View>
+          <View style={{flex:1,justifyContent:'center',alignItems:'center'}}>
+              <Text style={{
+                alignSelf:'center',
+                color: 'green',
+                fontSize: 20,
+                fontFamily:Platform.OS === 'ios'? 'Avenir': 'serif',}}>
+                  FIBI
+              </Text>
+          </View>
+        </View>
         ,
           headerRight: () =>            
            <TouchableOpacity onPress={()=> console.log('hello')}>
@@ -40,14 +42,15 @@ class ForumOptionsScreen extends Component {
               />
             </TouchableOpacity> 
           ,
-          headerTitleStyle: {
-              textAlign: "center",
-              justifyContent: 'center',
-              alignItems: 'center',
-              flex:1,
-              color: 'green',
-              fontSize: 25,
-          },
+          headerTitle: () => null,
+          headerLeftStyle: {
+            textAlign: "center",
+            justifyContent: 'center',
+            alignItems: 'center',
+            flex:1,
+            color: 'green',
+            fontSize: 25,
+        },
         };
       };
 

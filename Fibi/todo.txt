@@ -1,15 +1,12 @@
 
 #ways to improve user experience
-3. add checking for posting question or answering question
-8. add the FIBI icon to the top left corner on the iphone
-
+0. change all the ScrollView to listView
+ 
 
 #after I push the above changes 
 1. merge forum and jobs to one card 
     - left side jobs and right side questions 
     - possible use of a modal
-
-
 
 
 
@@ -21,8 +18,6 @@
 
 1.make sure to always remove the space at the front when entering data into input
 2. fix server to incremement on the count when adding jobs
-3. make sure modal dismisses when you press the black background
 4. add more jobs to the database
 5. make a test database for future implementations
-6. build the IOS version
 7. email the walmart dude 

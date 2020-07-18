@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
-import {Dimensions, Image, StyleSheet,Text,TouchableOpacity, ScrollView, Platform, TouchableHighlight, View } from 'react-native';
+import {Dimensions, Image, StyleSheet,Text,TouchableOpacity,
+   ScrollView, Platform, TouchableHighlight, View } from 'react-native';
 import Modal from 'react-native-modal';
 import PropTypes from 'prop-types' ;
+import Ionicons from "react-native-vector-icons/Ionicons";
 
 import Options from '../Options';
 import { defaultStyles } from '../styles';
@@ -28,7 +30,7 @@ export default class JobPopUp extends Component {
   };
 
    render() {     
-    const {jobClicked, onBook} = this.props;
+    const {jobClicked, onBook,onClose} = this.props;
     const { CompanyName, link, logo, address,jobsArr,hireArr } = jobClicked || {}; // Pull out job data
     const {countryArr} = address || [];
     //console.log('in modal')
@@ -44,7 +46,23 @@ export default class JobPopUp extends Component {
           )}
          >
 
-          <View style={styles.container}>
+          <View style={styles.container}> 
+            <View style={{flexDirection:'row-reverse',marginRight:width*0.8}}>
+              <TouchableOpacity style={{flexDirection:'row-reverse',alignItems:'center',
+                                        justifyContent:'center'}}
+                                        onPress={onClose} >
+                <Ionicons
+                  name={Platform.OS === "ios" ? "ios-close" : "md-close"}
+                  size={Platform.OS === "ios" ? 45 : 30}
+                  color={'white'}
+                  style={{alignSelf:'center', marginHorizontal: 5}}
+                />
+                <Text style={{color:'white',marginHorizontal: 5,
+                                fontSize:16,alignSelf:'center'}}>Close</Text>
+              </TouchableOpacity>
+              
+              
+            </View>
             <View style={styles.scrollableModal}>
               <View style={styles.jobContainer}>
                 <View style={styles.imageContainer}>
@@ -55,27 +73,29 @@ export default class JobPopUp extends Component {
                   <Text style={styles.genre}>{link}</Text>
                 </View>
               </View>
-              <View>              
-                <View >
-                  <Text style={[styles.pushRight,styles.sectionHeader]}>Hire</Text>
+              <View style={{flex:3, }}>              
+                <View style={{flex:1}}>
+                    <Text style={[styles.pushRight,styles.sectionHeader]}>Hire</Text>
                     <Options  values={hireArr} />
+                </View>
+                <View style={{flex:1}}>
                   <Text style={[styles.pushRight,styles.sectionHeader]}>Jobs</Text>
-                    <Options values={jobsArr}/>
-                    {/* <ScrollViews  name={countryArr} group={<Text>Countries</Text>}/>
-                    <ScrollViews  name={jobsArr} group={<Text>Jobs</Text>}/> */}
-                </View>
-                <View style={styles.footer}>
-                    <TouchableHighlight
-                      underlayColor='green'
-                      style={styles.buttonContainer}
-                      onPress={onBook}
-                    >
-                      <Text style={styles.button}>See more</Text>
-                    </TouchableHighlight>
-                </View>
+                  <Options values={jobsArr}/>
+                </View> 
               </View>
+              <View style={{flex:1,}}>
+                <View style={styles.footer}>
+                  <TouchableHighlight
+                    underlayColor='green'
+                    style={styles.buttonContainer}
+                    onPress={onBook}
+                  >
+                    <Text style={styles.button}>See more</Text>
+                  </TouchableHighlight>
+                </View>
+            </View>
           </View>
-          </View>  
+          </View> 
         </Modal>
      );
    }
@@ -115,19 +135,19 @@ const styles = StyleSheet.create({
   },
   // job container
   jobContainer: {
-    flex: 1,  
+    flex: 2,  
     flexDirection: 'row',                          // take up all available space
-    // alignItems:'center', 
-    //justifyContent:'center',
-    
-    marginBottom: 0,
+    alignItems:'center', 
+    justifyContent:'center',
+    //backgroundColor:'blue',
   },
   imageContainer: {
-    flex:1,
+    // flex:1,
     maxWidth: 110,              // limit width
-    marginTop: 20,              // take up all available space
+    //marginTop: 20,              // take up all available space
     marginLeft: 10,
     alignItems:'center',
+    justifyContent:'center'
   },
   image: {
     marginLeft:10,

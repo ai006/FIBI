@@ -42,12 +42,12 @@ class JobsData extends Component {
     super(props);
     this.state = {
       popupIsOpen: false,
-      // Query: '',
-      // searching:false,
+      
     }
   }
 
   openJob = (jobClicked) => {
+    
     this.setState({
       popupIsOpen: true,
       jobClicked, 
@@ -57,6 +57,7 @@ class JobsData extends Component {
   closeJob = () => {
     this.setState({
       popupIsOpen: false,
+      
     }); 
   }
 
@@ -88,8 +89,6 @@ class JobsData extends Component {
 
     const data = this.props.navigation.getParam('name');
     
-    //console.log(temp)
-    //console.log(data)
     // if(!data) {
     //   return (
     //    <Text>No Data</Text>

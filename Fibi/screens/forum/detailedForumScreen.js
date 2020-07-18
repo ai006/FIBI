@@ -70,8 +70,8 @@ render() {
     return (
       
         <ScrollView>
-            <View style={{marginTop:3,
-                        backgroundColor: query.approved ? 'white': '#f0f0f0'}}>
+            <View style={{marginTop:3,borderBottomWidth :1, borderBottomColor: '#f0f0f0',
+                            backgroundColor: query.approved ? 'white': '#f0f0f0'}}>
                 <View style={{ flex: 2, paddingBottom: height*0.10}}>
                     {
                         query.approved ? null   :            
@@ -80,10 +80,10 @@ render() {
                         </View> 
                     }
                     <View style={styles.title}>
-                        <Text style={{ fontSize: 15, fontWeight:'bold', color:'green'}}> {query.title} </Text>
+                        <Text style={{ fontSize: 18, fontWeight:'bold', color:'black'}}> {query.title} </Text>
                     </View>
                     <View style={styles.text}> 
-                        <Text style={{ flex:1, fontSize: 18}}> {query.inquiry} </Text>
+                        <Text style={{ flex:1, fontSize: 16,color:'#585858'}}> {query.inquiry} </Text>
                     </View>
                 </View>
                 <View style={styles.feedback}>
@@ -128,8 +128,8 @@ title: {
 },
 text: {
     flex: 4,
-   // backgroundColor: 'white',
     marginTop: 5,
+    marginHorizontal:5
 },
 feedback: {
     flex:1,

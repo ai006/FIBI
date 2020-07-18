@@ -18,14 +18,16 @@ class JobOptionScreen extends React.Component {
 
     static navigationOptions = ({ navigation }) => {
         return {
-          headerTitle:  () =>
-            <View style={{flex:1, flexDirection:'row', justifyContent:'center'}}>
+          headerLeft:  () =>
+            <View style={{flex:1, flexDirection:'row'}}>
+              <View style={{flex:1,justifyContent:'center',alignItems:'center'}}>
                 <Image
-                    source={require('../images/logo_small.jpg')}
-                    style={{width:40, height:40, flex:1}}
-                    resizeMode="contain"
-                />
-                <View style={{flex:1,justifyContent:'center',alignItems:'center'}}>
+                      source={require('../images/logo_small.jpg')}
+                      style={{width:40, height:40, flex:1}}
+                      resizeMode="contain"
+                  />
+              </View>
+              <View style={{flex:1,justifyContent:'center',alignItems:'center'}}>
                   <Text style={{
                     alignSelf:'center',
                     color: 'green',
@@ -33,7 +35,7 @@ class JobOptionScreen extends React.Component {
                     fontFamily:Platform.OS === 'ios'? 'Avenir': 'serif',}}>
                       FIBI
                   </Text>
-                </View>
+              </View>
             </View>
         ,
 
@@ -47,14 +49,7 @@ class JobOptionScreen extends React.Component {
               />
             </TouchableOpacity> 
           ,
-          headerTitleStyle: {
-              textAlign: "center",
-              justifyContent: 'center',
-              alignItems: 'center',
-              flex:1,
-              color: 'green',
-              fontSize: 25,
-          },
+          headerTitle: () => null,
         };
       };
 

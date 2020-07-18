@@ -1,5 +1,6 @@
 import React from 'react';
-import {TextInput, Dimensions, StyleSheet, Text, View,ScrollView,TouchableOpacity } from 'react-native';
+import {TextInput, Dimensions, StyleSheet, Text, View,ScrollView,TouchableOpacity,
+  Alert } from 'react-native';
 import { connect } from 'react-redux';
 import Ionicons from "react-native-vector-icons/Ionicons";
 
@@ -56,11 +57,41 @@ componentDidMount() {
 
 //function used to get all the user input to send to our database
 handleClick = async () => {
+
+  if(this.state.answer.length === 0){
+    Alert.alert(                                          //alert user if missing response
+      'status: incomplete',   
+      'Please add a response before posting your answer  :)',
+      [
+        {text: 'OK', onPress: () => console.log('OK Pressed')},
+      ],
+      {cancelable: false},
+    );
+    return;
+  }
+
   const id = this.props.navigation.getParam('id');
   const question = this.props.navigation.getParam('question');
   var clone = JSON.parse(JSON.stringify(question));
   const {questions}  = this.props; 
   //let copiedObject = JSON.parse(JSON.stringify(questions))
+
+  /*Check if the question is approved before 
+  adding a response to it
+  only allow questions that are proved to be 
+  updated with a new answer*/ 
+  if(question.approved === false){
+    Alert.alert(                                          //alert user if missing response
+      'status: error',   
+      'Please wait until the question is approved before adding a response  :)',
+      [
+        {text: 'OK', onPress: () => console.log('OK Pressed')},
+      ],
+      {cancelable: false},
+    );
+    return;
+  }
+
 
   let _id = 0;                                               //id of the new question
   for(var i = 0; i < questions[id].comments.length; i++){    //search through all the questions in redux

@@ -19,7 +19,7 @@ export default class Options extends Component {
   render() {
     const {value} = this.props;
     return (
-      <View style={{height: 60}}>
+      <View style={{marginTop:5}}>
         <Card style={[styles.card,styles.shadow]}>
           <TouchableOpacity activeOpacity={1}>
             <View>

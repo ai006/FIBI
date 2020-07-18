@@ -75,7 +75,7 @@ class ForumScreen extends React.Component {
           { 
             results.map((question,index) =>  
               <TouchableOpacity key={index} onPress={() => this.openDetailedQuery(question,index)}>
-                <View key={index} style={{marginTop: 1.5}}>
+                <View key={index} style={{}}>
                   <ForumCard openAnswer={this.openAnswerQuery}  question={question} key={index} id={index}/>
                 </View>
               </TouchableOpacity>

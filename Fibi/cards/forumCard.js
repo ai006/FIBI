@@ -46,7 +46,9 @@ export default class ForumCard extends React.Component {
     return (
           <View style={{height: height * 0.215,
                         width: width,
-                        backgroundColor: question.approved ? 'white': '#f0f0f0'}}>
+                        backgroundColor: question.approved ? 'white': '#f0f0f0',
+                        borderBottomWidth :1, borderBottomColor: '#f0f0f0',marginTop:1
+                      }}>
               {
                 question.approved ? null   :            
                   <View style={styles.pending}>
@@ -54,17 +56,17 @@ export default class ForumCard extends React.Component {
                   </View> 
               }
               <View style={styles.title}>
-                <Text style={{ fontSize: 15, fontWeight:'bold', color:'green'}}> {question.title}</Text>
+                <Text style={{ fontSize: 18, fontWeight:'bold', color:'black'}}> {question.title}</Text>
               </View>
               <View style={styles.text}> 
-                  <Text style={{flex:1,flexShrink:1, marginLeft:5, fontSize: 18}} numberOfLines={6}>
+                  <Text style={{flex:1,flexShrink:1, marginLeft:10, fontSize: 16,color:'#707070'}} numberOfLines={6}>
                       {question.inquiry}
                   </Text>
               </View>
               <View style={styles.feedback}>
                 <View style={styles.write}>
                         <Icon name='comment' type='evilicon' color='#00AF33' size={30}/>
-                        <Text style={{ fontSize: 18, alignSelf:'center',color:'gray'}}> {visibleAnswers} </Text>
+                        <Text style={{ fontSize: 18, alignSelf:'center',color:'#00AF33'}}> {visibleAnswers} </Text>
                         <Text style={{fontWeight:'bold',color:'gray'}}>answers</Text>
                 </View>
                 <View style={styles.write}>
@@ -90,6 +92,7 @@ const styles = StyleSheet.create({
   title: {
     flex:1,
     marginLeft: 5,
+    marginTop:2
     
   },
   pending:{

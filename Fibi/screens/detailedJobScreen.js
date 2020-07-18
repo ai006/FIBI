@@ -1,11 +1,13 @@
 import React, { Component} from 'react';
-import {StyleSheet, Text, Image, TouchableOpacity, ScrollView, View, Dimensions,Linking} from 'react-native';
+import {StyleSheet, Text, Image, TouchableOpacity, 
+        ScrollView, View, Dimensions,Linking} from 'react-native';
 import { Card } from 'react-native-paper';
 
 
 import { defaultStyles } from '../styles';
 import ScrollViews from '../scrollViews';
 import Options from '../Options';
+import WebModal from './jobs/webModal';
 
 
 const {height, width} = Dimensions.get('window')
@@ -17,7 +19,7 @@ export default class DetailedJobScreen extends Component {
 
   static navigationOptions = ({ navigation }) => {
     return {
-      headerTitle: navigation.getParam('job').CompanyName,
+      headerTitle: navigation.getParam('job').abbreviation,
       headerTitleStyle: {
         color: 'green',
         fontSize: 25,
@@ -25,11 +27,35 @@ export default class DetailedJobScreen extends Component {
     };
   };
 
+  constructor(props){
+    super(props);
+    this.state = {
+      showModal: false,
+      url : {}
+      
+    }
+  }
+
+
+  showSite = (link) => {
+    this.setState({
+      showModal: true,
+      url : link
+    })
+  }
+
+  closeSite = () => {
+    this.setState({
+      showModal: false,
+      url : {}
+    })
+  }
+
+
   render() {
     
     const job = this.props.navigation.getParam('job');
     let link = job.link.toString()
-    //link = 'https://'.concat(link);
     return (
       <View style={styles.container}>
         <ScrollView>
@@ -39,7 +65,7 @@ export default class DetailedJobScreen extends Component {
             </View>
           </Card>
           <Card style={[styles.shadow,styles.hireCard,styles.cardBackgroundColor]}>
-            <ScrollViews name={job.hireArr} group={<Text>Company Hires</Text>}/>
+            <ScrollViews name={job.hireArr} group={<Text>Company hires</Text>}/>
           </Card>
           <Card style={[styles.shadow,styles.linkContainer, styles.cardBackgroundColor]}>
                 <View style={[styles.linkStyle,styles.horizontalArrangement]}>
@@ -48,14 +74,14 @@ export default class DetailedJobScreen extends Component {
                 </View>
           </Card>
           <Card style={[styles.shadow,styles.linkContainer,styles.cardBackgroundColor]}>
-            <TouchableOpacity style={styles.linkStyle}>
+            <TouchableOpacity style={styles.linkStyle} onPress={()=>this.showSite(link)}>
                 <View >
-                  <Text onPress={ ()=> Linking.openURL(link) } style={{color:'blue',textDecorationLine: 'underline',fontSize:20}}>{job.link}</Text>
+                  <Text  style={{color:'blue',textDecorationLine: 'underline',fontSize:20}}>{job.link}</Text>
                 </View>
             </TouchableOpacity>
           </Card>
           <Card style={[styles.shadow,styles.containerCard,styles.cardBackgroundColor]}>
-            <ScrollViews name={job.jobsArr} group={<Text>Hiring</Text>}/>
+            <ScrollViews name={job.jobsArr} group={<Text>Hire</Text>}/>
             <ScrollViews name={job.address.cityArr} group={<Text>City</Text>}/> 
             <ScrollViews name={job.address.countryArr} group={<Text>Country</Text>}/>
           </Card>
@@ -68,7 +94,9 @@ export default class DetailedJobScreen extends Component {
               <Text style={styles.button}>Done</Text>
             </TouchableOpacity>
           </Card>
-        </ScrollView>    
+        </ScrollView> 
+        <WebModal show={this.state.showModal} 
+                  site={this.state.url} handleClick={this.closeSite}/>   
       </View>
     );
   }
