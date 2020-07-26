@@ -60,6 +60,7 @@ class ForumScreen extends React.Component {
   render() {
     const {questions}  = this.props;
     const category = this.props.navigation.getParam('option');
+    var msg = 'They are currently no questions to show for this category but you can be the first😁😁😁'
     
     var results = [];
     for (var i = 0; i < questions.length; i++) { 
@@ -67,6 +68,24 @@ class ForumScreen extends React.Component {
             results.push(questions[i]);
         }
     }
+
+    if(results.length === 0){
+      return(
+        <View style={{ backgroundColor:'#DCDCDC', flex:1, 
+                     alignItems:'center', justifyContent: 'center',paddingTop:2}}>
+          <View style={{backgroundColor:'white',padding:20, borderRadius:20,marginHorizontal:10}}>
+            <Text style={{fontSize:19}}>{msg}</Text>
+          </View>
+          <TouchableOpacity style={styles.btn} 
+            onPress={this.openNewQuestion}>
+            <ImageBackground style={styles.img} 
+                source={randomImg[Math.floor(Math.random()*randomImg.length)]}
+                imageStyle={{ borderRadius: 35}}>
+              <Icon name='create' type='material' color='white' size={45}/>
+            </ImageBackground>
+          </TouchableOpacity>    
+        </View>
+    )}
     
     return (
       <View style={{ backgroundColor:'#DCDCDC', flex:1, 
@@ -75,7 +94,7 @@ class ForumScreen extends React.Component {
           { 
             results.map((question,index) =>  
               <TouchableOpacity key={index} onPress={() => this.openDetailedQuery(question,index)}>
-                <View key={index} style={{}}>
+                <View key={index}>
                   <ForumCard openAnswer={this.openAnswerQuery}  question={question} key={index} id={index}/>
                 </View>
               </TouchableOpacity>

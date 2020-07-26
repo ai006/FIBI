@@ -1,6 +1,7 @@
 import React from 'react';
 import {TextInput, Dimensions, StyleSheet,Platform,
-        Text, View,ScrollView,TouchableOpacity,Image } from 'react-native';
+        Text, View,ScrollView,TouchableOpacity,Image,
+        FlatList } from 'react-native';
 import { connect } from 'react-redux';
 import Ionicons from "react-native-vector-icons/Ionicons";
 
@@ -9,6 +10,9 @@ import ModalComponent from './newsModal';
 
 
 const { width, height } = Dimensions.get('window');
+
+//used for getting ket for FlatList
+const extractKey = ({ _id }) => _id.toString()
 
 class NewsOptionsScreen extends React.Component {
 
@@ -44,6 +48,7 @@ constructor(props){
   }
 }
 
+//function used to open the news Modal
 newsClicked = (news) => {
     this.setState({
       showModalData:true,
@@ -51,6 +56,7 @@ newsClicked = (news) => {
     })
 }
 
+//function used to  close the news Modal
 newsClosed = () => {
   this.setState({
     showModalData:false,
@@ -59,22 +65,35 @@ newsClosed = () => {
 }
 
 
+//The function being used by flatList to display the cards
+renderItem = ({ item }) => {
+  return (
+    
+    <View>
+      <NewsCard handleClick={this.newsClicked} headlines={item}/>
+    </View>
+  )
+}
+
+
 render() {  
-  const {news}  = this.props; 
-  //console.log(news)
+  const {news}  = this.props; //get the news object to display
+  var msg = 'unfortunately we have no news shows at the moment but if you have read something share it with us😁😁😁'
+    if(news.length === 0){
+      return(
+        <View style={{backgroundColor:'white',padding:20, borderRadius:20,marginHorizontal:10}}>
+          <Text style={{fontSize:19}}>{msg}</Text>
+        </View>
+      )
+    }
     return (
           <View style={{flex:1}}>
             <View style={styles.container}>
-              <ScrollView>
-                {
-                  news.map((article,index) =>
-                  <View key={index}>
-                    <NewsCard handleClick={this.newsClicked} headlines={article}/>
-                  </View>
-                  )
-                }
-                
-              </ScrollView>
+              <FlatList 
+                data = {news}
+                renderItem={this.renderItem}
+                keyExtractor={extractKey}
+               />
             </View>
             <ModalComponent show={this.state.showModalData} article={this.state.ModalData} handleClick={this.newsClosed}/>
           </View>

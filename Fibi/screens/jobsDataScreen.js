@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import {ScrollView, Dimensions,TouchableOpacity, StyleSheet, Text, View, ActivityIndicator } from 'react-native';
+import {ScrollView, Dimensions,TouchableOpacity, 
+        StyleSheet, Text, View, ActivityIndicator,
+        FlatList } from 'react-native';
 import { Searchbar } from 'react-native-paper';
 import Ionicons from "react-native-vector-icons/Ionicons";
 import { Platform } from "react-native";
@@ -11,6 +13,47 @@ import JobPoster from '../containers/jobPoster'
 import Constants from 'expo-constants';
 import JobPopUp from '../containers/JobPopUp';
 //import {searchRedux} from '../search';
+
+
+
+// How many posters we want to have in each row and column
+const numColumns = 3;
+
+//used for getting ket for FlatList
+const extractKey = ({ id }) => id.toString()
+
+const formatData = (data, numColumns) => {
+  const numberOfFullRows = Math.floor(data.length / numColumns);
+
+  let numberOfElementsLastRow = data.length - (numberOfFullRows * numColumns);
+  while (numberOfElementsLastRow !== numColumns && numberOfElementsLastRow !== 0) {
+    data.push(  { _id: numberOfElementsLastRow,
+                  address: {
+                    cityArr:[],
+                    countryArr:[],
+                    city:'',
+                    country:''
+                  },
+                  hireArr:[],
+                  jobsArr:[],
+                  id:numberOfElementsLastRow,
+                  companyName:'',
+                  abbreviation:'',
+                  logo:'',
+                  educationLevel:'',
+                  hire:'',
+                  link:'',
+                  jobs:'',
+                  about:'',
+                  about:'',
+                  createdAt:'',
+                  updatedAt:'',
+                  __v:'',
+                  empty:true });
+    numberOfElementsLastRow++;
+  }  
+  return data;
+};
 
 class JobsData extends Component {
 
@@ -68,26 +111,26 @@ class JobsData extends Component {
       });
   }
 
-  // searchData = (data) => {
-  //   this.setState({
-  //     searching:true,
-  //   })
-  //   searchResult = searchRedux(data,this.state.Query);
-  //   this.setState({
-  //     searching:false,
-  //   })
-  //   this.props.navigation.push('ViewResult', {
-  //       arrayResult: searchResult,
-  //       userSearched: this.state.Query
-  //   });
-  // }
+  //The function being used by flatList to display the cards
+  renderItem = ({ item }) => {
+    return (
+      
+      <JobPoster job={item} onOpen={this.openJob} />
+    )
+  }
+
 
   render(){
-    //const { Query } = this.state;
-    //const {data,status,pending} = this.props;
+    
     const {status,pending} = this.props;
+    const data = this.props.navigation.getParam('jobs');
+    var msg = 'unfortunately we have no jobs to show for this category but you can help us by telling us which jobs do😁😁😁'
 
-    const data = this.props.navigation.getParam('name');
+    if(data.length === 0){
+      <View style={{backgroundColor:'white',padding:20, borderRadius:20,marginHorizontal:10}}>
+        <Text style={{fontSize:19}}>{msg}</Text>
+      </View>
+    }
     
     // if(!data) {
     //   return (
@@ -103,23 +146,12 @@ class JobsData extends Component {
     }
     return (
       <View style={{backgroundColor:'#ffffff', flex:1}}> 
-          {/* <Searchbar //android and ios have display differently
-              placeholder = {Platform.OS === "ios" ? "Search  'Texas' or  'IT'" :
-                "Search  'Texas'  or  'USA'  or  'IT'"}
-              onChangeText={query => { this.setState({ Query: query }); }}
-              value={Query}
-              style={{marginTop:2,backgroundColor:'#ecf0f1'}}
-              onIconPress={ () => this.searchData(data)}
-          />
-        {this.state.searching ?
-          <View style={styles.loading}>
-            <ActivityIndicator size='large' color='green' />
-          </View>:null
-        } */}
         <View style={[styles.ScreenBackground,styles.container]}>
-          <ScrollView style={{marginBottom: 1,}} contentContainerStyle={styles.scrollContent} showsVerticalScrollIndicator={false} >
-              { data.map((job,index) => <JobPoster job={job} onOpen={this.openJob}  key={index}/>)}
-          </ScrollView>
+          <FlatList
+            data = {formatData(data,numColumns)}
+            renderItem={this.renderItem}
+            keyExtractor={extractKey}
+            numColumns={numColumns}/>
           <JobPopUp jobClicked={this.state.jobClicked} isOpen={this.state.popupIsOpen}
             onClose={this.closeJob} onBook={this.seeDetailedJob}/>
         </View> 

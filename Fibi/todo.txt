@@ -1,12 +1,5 @@
 
-#ways to improve user experience
-0. change all the ScrollView to listView
- 
 
-#after I push the above changes 
-1. merge forum and jobs to one card 
-    - left side jobs and right side questions 
-    - possible use of a modal
 
 
 

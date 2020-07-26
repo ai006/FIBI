@@ -14,6 +14,7 @@ import DetailedJobScreen from './detailedJobScreen';
 //import ViewSearchResults from '../containers/ViewSearchResult';
 import UserAddJob from './userAddJobScreen';
 import JobOptionScreen from './jobOptionsScreen';
+import MainOptionsScreen from './mainOptionsScreen';
 
 //forum
 import detailedForumScreen from './forum/detailedForumScreen';
@@ -26,45 +27,27 @@ import ForumScreen from './forum/forumScreen';
 import NewsOptionsScreen from './news/newsOptionsScreen';
 
 //screens on the embedded in the JobsDataScreen
-const JobsStack = createStackNavigator(    
-    {
-        Options   : JobOptionScreen,
-        JobsData  : JobsDataScreen, 
-        detailedJob   : DetailedJobScreen,
-        //ViewResult: ViewSearchResults,
-        AddJob    : UserAddJob,
-    },
-    {
-        initialRouteName: "Options",
-    }
-);
-
-JobsStack.navigationOptions = {
-     tabBarIcon: ({ focused, tintColor }) => (
-      <Icon ios='ios-menu' android="md-menu" style={{fontSize: 25, color: tintColor }}/>
-    )
-  };
-
-//screens on the embedded in the Forum Screen
-const ForumStack = createStackNavigator(    
+const MainStack = createStackNavigator(    
   {
-      options   : ForumOptionsScreen,
-      Forum   : ForumScreen,
-      detailedForum : detailedForumScreen,
-      newQuestion : newQuestionScreen,
-      newAnswer : newAnswerScreen,
+      Main   : MainOptionsScreen,         //main view
+      JobsData  : JobsDataScreen,         //view with all the jobs and logos
+      detailedJob   : DetailedJobScreen,  //detailed job view
+      AddJob    : UserAddJob,             //screen for adding job
+      Forum   : ForumScreen,              //view with all forum questions selected for that category
+      detailedForum : detailedForumScreen, //detailed question with all the comments
+      newQuestion : newQuestionScreen,    //screen for asking a new question
+      newAnswer : newAnswerScreen,        //screen for asking all the queries
+      
   },
   {
-      initialRouteName: "options",
-  },
+      initialRouteName: "Main",
+  }
 );
 
-ForumStack.navigationOptions = {
+MainStack.navigationOptions = {
    tabBarIcon: ({ focused, tintColor }) => (
-    <Ionicons
-         name={Platform.OS === "ios" ? "ios-chatbubbles" : "md-chatbubbles"}
-         size={25}  color={tintColor}
-    />),
+    <Icon ios='ios-menu' android="md-menu" style={{fontSize: 25, color: tintColor }}/>
+  )
 };
 
 const NewsStack = createStackNavigator(
@@ -86,8 +69,7 @@ NewsStack.navigationOptions = {
 
 const MainTabs = createBottomTabNavigator(
     {
-      Jobs: JobsStack,
-      Forum: ForumStack,
+      main : MainStack,
       News: NewsStack,
     },
     {

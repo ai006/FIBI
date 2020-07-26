@@ -13,13 +13,12 @@ const cols = 3, rows = 3;
 when you start the app. The jobs are arranged in 3 columns */
 export default class JobPoster extends Component {
 
-  static propTypes = {
-    job: PropTypes.object.isRequired,
-    onOpen: PropTypes.func.isRequired,
-  }
-
   render() {
-     const { job, job: { CompanyName, link, logo }, onOpen } = this.props;
+    const { job, job: { CompanyName, link, logo }, onOpen } = this.props;
+    if(this.props.job.empty === true){
+      return(
+        <View style={styles.itemInvisible}/>
+    )}
     return (
         <TouchableOpacity style={styles.container} onPress={() => onOpen(job)}>
             <View style={styles.imageContainer}>
@@ -58,5 +57,8 @@ const styles = StyleSheet.create({
     color: '#BBBBBB',
     fontSize: 12,
     lineHeight: 14,
+  },
+  itemInvisible: {
+    backgroundColor: 'transparent',
   },
 });

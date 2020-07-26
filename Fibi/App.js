@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View,StatusBar } from 'react-native';
 import { Provider } from 'react-redux';
 
 import store from './redux/store';
@@ -23,6 +23,8 @@ export default class App extends React.Component {
     /*start the redux process*/
     return (
       <View style={styles.container}>
+        <StatusBar barStyle = "dark-content" hidden = {false} 
+                  backgroundColor = "#f5f5f5" translucent = {true} />
          <Provider store={store}>
           {/* <AppNavigator/> */}
           <InitialNavigator/>

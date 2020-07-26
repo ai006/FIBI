@@ -23,7 +23,7 @@ export default class ForumCard extends React.Component {
     const {question} = this.props   //get the object being passed from the APP.js file
     const {openAnswer} = this.props
     const datePosted = formatDistance(Date.parse(question.createdAt),new Date())    //get the date or time question was asked
-    //console.log(question)
+    
     if(question.show === false){
       return(
         null

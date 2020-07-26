@@ -1,5 +1,6 @@
 import React from 'react';
-import {ImageBackground,Dimensions, StyleSheet, TouchableOpacity, Text, View} from 'react-native';
+import {ImageBackground,Dimensions, StyleSheet, 
+        TouchableOpacity, Text, View} from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 
 // Get screen dimensions
@@ -8,14 +9,17 @@ const { width, height } = Dimensions.get('window');
 const cols = 2, rows = 3;
 
 var randomImg = [
-    require('../images/Cinnamint.jpg'), require('../images/EasyMed.jpg'),    
-    require('../images/EndlessRiver.jpg'), require('../images/GreenandBlue.jpg'), 
-    require('../images/LemonTwist.jpg'), require('../images/Limeade.jpg'),     
-    require('../images/Mild.jpg'), require('../images/Mojito.jpg'),    
-    require('../images/NeonLife.jpg'), require('../images/Ohhappiness.jpg'),
-    require('../images/PacificDream.jpg'), require('../images/Quepal.jpg'),    
-    require('../images/SummerDog.jpg'),require('../images/TealLove.jpg'),    
-    require('../images/UnderLake.jpg'), require('../images/Vine.jpg')];  
+    require('../images/1.jpg'), require('../images/2.jpg'),    
+    require('../images/3.jpg'), require('../images/4.jpg'), 
+    require('../images/5.jpg'), require('../images/6.jpg'),     
+    require('../images/7.jpg'), require('../images/8.jpg'),    
+    require('../images/9.jpg'), require('../images/10.jpg'),
+    require('../images/11.jpg'), require('../images/12.jpg'),    
+    require('../images/13.jpg'), require('../images/14.jpg'), 
+    require('../images/15.jpg'), require('../images/16.jpg'),     
+    require('../images/17.jpg'), require('../images/18.jpg'),    
+    require('../images/19.jpg'), require('../images/20.jpg'),
+    require('../images/21.jpg'), require('../images/22.jpg')];  
 
 export default class Cards extends React.Component {
 
@@ -32,7 +36,8 @@ export default class Cards extends React.Component {
         return (
             <ImageBackground source={ randomImg[Math.floor(Math.random()*randomImg.length)]} 
             style={[styles.shadow,styles.imageContainer]}
-            imageStyle={{ borderRadius: 10}}>
+            imageStyle={{ borderRadius: 10}}
+           >
                 <TouchableOpacity activeOpacity={0.1} style={{flex:1}}
                     onPress={() => this.handleClick(this.props.jobName)} 
                     >
