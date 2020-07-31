@@ -1,5 +1,6 @@
 import React, { Component} from 'react';
-import {StyleSheet, KeyboardAvoidingView,SafeAreaView, Text, TouchableOpacity, ScrollView, View, Dimensions} from 'react-native';
+import {StyleSheet, KeyboardAvoidingView,SafeAreaView,
+         Text, TouchableOpacity, ScrollView, View, Dimensions} from 'react-native';
 import Constants from 'expo-constants';
 import { Card } from 'react-native-paper';
 import FontAwesomeIcon from 'react-native-vector-icons/FontAwesome';

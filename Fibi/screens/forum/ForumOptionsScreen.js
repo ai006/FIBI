@@ -70,7 +70,7 @@ class ForumOptionsScreen extends Component {
       const {questions,jobTypes,datas}  = this.props; 
       //console.log(datas)
         return (
-            <View style={{backgroundColor:'white', marginBottom: 10}}>
+            <View style={{backgroundColor:'blue', marginBottom: 10}}>
               <ScrollView>
                 { 
                     jobTypes.map((jobType,index) =>  

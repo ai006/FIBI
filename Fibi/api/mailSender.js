@@ -1,7 +1,7 @@
 import { Alert} from 'react-native'
 
-const API_URL_INFO = 'https://desolate-tor-37189.herokuapp.com/api/sendmail';
-//const API_URL_INFO = 'http://10.0.2.2:5000/api/sendmail';
+//const API_URL_INFO = 'https://desolate-tor-37189.herokuapp.com/api/sendmail';
+const API_URL_INFO = 'http://10.0.2.2:5000/api/sendmail';
 
 export const mailSender = async (data,type) => {
     

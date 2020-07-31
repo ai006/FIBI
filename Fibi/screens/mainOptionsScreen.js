@@ -215,7 +215,7 @@ class MainOptionsScreen extends React.Component {
               )}
           </ScrollView>
         </View>
-        <View style={{backgroundColor:'white',flex:4,marginTop:10}}>
+        <View style={{backgroundColor:'#fcfcfc',flex:4,marginTop:10}}>
           <FlatList
             data={formatData(jobTypes, numColumns)}
             renderItem={this.renderItem}

@@ -9,22 +9,26 @@ import { Platform } from "react-native";
 //jobs
 import JobsDataScreen from './jobsDataScreen';
 //import AdviceScreen from './adviceScreen';
-import UniversityScreen from './universityScreen';
+import FeedbackScreen from './help/feedbackScreen';
 import DetailedJobScreen from './detailedJobScreen';
 //import ViewSearchResults from '../containers/ViewSearchResult';
 import UserAddJob from './userAddJobScreen';
-import JobOptionScreen from './jobOptionsScreen';
+//import JobOptionScreen from './jobOptionsScreen';
 import MainOptionsScreen from './mainOptionsScreen';
 
 //forum
 import detailedForumScreen from './forum/detailedForumScreen';
 import newQuestionScreen from './forum/newQuestionScreen';
 import newAnswerScreen from './forum/newAnswerScreen';
-import ForumOptionsScreen from './forum/ForumOptionsScreen';
+//import ForumOptionsScreen from './forum/ForumOptionsScreen';
 import ForumScreen from './forum/forumScreen';
 
 //news
 import NewsOptionsScreen from './news/newsOptionsScreen';
+
+
+//help
+import InputScreen from './help/inputScreen';
 
 //screens on the embedded in the JobsDataScreen
 const MainStack = createStackNavigator(    
@@ -67,10 +71,29 @@ NewsStack.navigationOptions = {
    />),
 };
 
+const FeedbackStack = createStackNavigator(
+  {
+      options : FeedbackScreen,
+      input : InputScreen
+  },
+  {
+    initialRouteName:"options"
+  }
+);
+
+FeedbackStack.navigationOptions = {
+  tabBarIcon: ({ focused, tintColor }) => (
+   <Ionicons
+        name={Platform.OS === "ios" ? "ios-construct" : "md-construct"}
+        size={25}  color={tintColor}
+   />),
+};
+
 const MainTabs = createBottomTabNavigator(
     {
       main : MainStack,
       News: NewsStack,
+      help: FeedbackStack
     },
     {
       tabBarOptions: { //color of active tab

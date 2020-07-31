@@ -40,6 +40,7 @@ class NewsOptionsScreen extends React.Component {
       headerTitle: () => null,
     };
   };
+
 constructor(props){
   super(props);
   this.state = {
@@ -81,7 +82,7 @@ render() {
   var msg = 'unfortunately we have no news shows at the moment but if you have read something share it with us😁😁😁'
     if(news.length === 0){
       return(
-        <View style={{backgroundColor:'white',padding:20, borderRadius:20,marginHorizontal:10}}>
+        <View style={{backgroundColor:'#fcfcfc',padding:20, borderRadius:20,marginHorizontal:10}}>
           <Text style={{fontSize:19}}>{msg}</Text>
         </View>
       )
@@ -113,7 +114,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems:'center',
-    backgroundColor:'white'
+    backgroundColor:'#fcfcfc'
   },
   
 });
