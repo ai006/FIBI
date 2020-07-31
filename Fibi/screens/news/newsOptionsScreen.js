@@ -87,11 +87,12 @@ render() {
         </View>
       )
     }
+    const reverse  = news.reverse()
     return (
           <View style={{flex:1}}>
             <View style={styles.container}>
               <FlatList 
-                data = {news}
+                data = {reverse}
                 renderItem={this.renderItem}
                 keyExtractor={extractKey}
                />

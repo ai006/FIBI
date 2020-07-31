@@ -47,6 +47,10 @@ constructor(props){
   this.state = {
         title: '',  //title for the question
         inquiry:'', //the full question
+        showEmailInput: false,
+        showNotification: true,
+        email: '',
+        postedClicked: false,
   }
 }
 
@@ -70,6 +74,12 @@ handleClick = async () => {
       {cancelable: false},
     );
     return;
+  }
+
+  if(this.state.postedClicked === false){
+    this.setState({
+      postedClicked: true })
+      return;
   }
 
   const {questions}  = this.props; 
@@ -109,10 +119,28 @@ handleClick = async () => {
   //question.show = false;                                    //change show to false so other users won't see it
 
   var status = await sendForumData(APIquestion,'question');   //send the question to the DB
+  if(this.state.showEmailInput === true){
+    APIquestion.email = this.state.email                      //if notify me is specified attach email address to object 
+  }
+
   var mailStatus = await mailSender(APIquestion,'forum');    //send a notification that something was added to the DB     
   if(status && mailStatus){
     this.props.navigation.pop()  //go back one screens
   }
+}
+
+showEmailField =() => {
+  this.setState({
+    showEmailInput: true,
+    showNotification:false,
+  })
+}
+
+noEmailField = () => {
+  this.setState({
+    showEmailInput: false,
+    showNotification:false,
+  })
 }
 
 render() {  
@@ -120,6 +148,46 @@ render() {
           <View style={styles.container}>
               <View style={styles.wrapper}>
                     <View style={styles.input}>
+                      {
+                          this.state.postedClicked ? 
+                          <View>
+                          {
+                            this.state.showNotification ?
+                              <View style={{marginVertical:5}}>
+                              <View>
+                                <Text style={{color:'green', fontSize:16}}>would you like to be notified when an answer to your question is posted?</Text>
+                              </View>
+                              <View style={{flexDirection:'row', alignItems:'center',justifyContent:'center',marginVertical:5}}>
+                                <TouchableOpacity style={{flex:1}} onPress={this.showEmailField}>
+                                  <Text style={{fontSize:18,alignSelf:'center', color:'blue'}}>Yes</Text>
+                                </TouchableOpacity>
+                                <TouchableOpacity style={{flex:1}} onPress={this.noEmailField}>
+                                  <Text style={{fontSize:18,alignSelf:'center',color:'blue'}}>No</Text>
+                                </TouchableOpacity>
+                              </View>
+                            </View>
+                            :
+                            null
+                          }
+                          {
+                            this.state.showEmailInput ?
+                              <View style={{marginVertical:5}}>
+                              <Text style={{fontWeight:'bold', fontSize:23, color:'black'}}>Email</Text>
+                              <TextInput 
+                                  multiline
+                                  scrollEnabled
+                                  placeholder='add your email here'
+                                  style={{fontSize:20,marginVertical:10}}
+                                  onChangeText={(value) =>this.setState({email:value})}
+                                  value={this.state.email}
+                              />
+                            </View>
+                            :
+                            null
+                          }
+                          </View>
+                          :null
+                      }
                       <Text style={{fontWeight:'bold', fontSize:23, color:'black'}}>Title</Text>
                       <View style={{flexDirection:'row'}}>
                         <TextInput 
