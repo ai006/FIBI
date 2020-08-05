@@ -1,5 +1,5 @@
 import React from "react";
-import {ImageBackground,Dimensions,ScrollView, Button, View,
+import {ImageBackground,Dimensions,ScrollView, Button, View,ActivityIndicator,
          StyleSheet, Text,Image,TouchableOpacity,KeyboardAvoidingView } from "react-native";
 import { Icon } from 'react-native-elements';
 import { Platform } from "react-native";
@@ -7,7 +7,8 @@ import Ionicons from "react-native-vector-icons/Ionicons";
 import { connect } from 'react-redux';
 
 import ForumCard from '../../cards/forumCard'
-import {Questions} from './models'
+//import store from '../../redux/store'
+//import {fetchForumData} from '../../api/forumApi'
 
 // Get screen dimensions
 const { width, height } = Dimensions.get('window');
@@ -19,6 +20,12 @@ var randomImg = [
   ]; 
 
 class ForumScreen extends React.Component {
+
+
+  // async componentDidMount(){
+  //   await store.dispatch(fetchForumData());
+  // }
+
     
   //hide the  header 
   static navigationOptions = ({ navigation }) => {
@@ -58,7 +65,15 @@ class ForumScreen extends React.Component {
 
   
   render() {
-    const {questions}  = this.props;
+    const {questions, status, pending}  = this.props;
+
+    if(pending){
+      return (
+        <View style={[styles.container, styles.horizontal, styles.loadingOnStart]}>
+          <ActivityIndicator size="large" color="#2ae815" />
+        </View>
+      )
+    }
     const category = this.props.navigation.getParam('option');
     var msg = 'They are currently no questions to show for this category but you can be the first😁😁😁'
     

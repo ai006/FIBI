@@ -12,7 +12,7 @@ import { Card } from 'react-native-paper';
 import JobPoster from '../containers/jobPoster'
 import Constants from 'expo-constants';
 import JobPopUp from '../containers/JobPopUp';
-//import {searchRedux} from '../search';
+
 
 
 
@@ -89,6 +89,8 @@ class JobsData extends Component {
     }
   }
 
+
+
   openJob = (jobClicked) => {
     
     this.setState({
@@ -143,6 +145,15 @@ class JobsData extends Component {
             <ActivityIndicator size="large" color="#2ae815" />
           </View>
         )
+    }
+    if(status !== "no errors")
+    {
+      return (
+        <View style={[styles.container, styles.horizontal, styles.loadingOnStart]}>
+          <Text>{status}</Text>
+        </View>
+      )
+
     }
     return (
       <View style={{backgroundColor:'#ffffff', flex:1}}> 

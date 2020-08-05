@@ -19,7 +19,10 @@ var randomImg = [
     require('../images/15.jpg'), require('../images/16.jpg'),     
     require('../images/17.jpg'), require('../images/18.jpg'),    
     require('../images/19.jpg'), require('../images/20.jpg'),
-    require('../images/21.jpg'), require('../images/22.jpg')];  
+    require('../images/21.jpg'), require('../images/22.jpg'),
+    require('../images/23.jpg'), require('../images/24.jpg'),     
+    require('../images/25.jpg'), require('../images/26.jpg'),    
+    require('../images/27.jpg'), require('../images/28.jpg')];  
 
 export default class MainOptionsCard extends React.Component {
 

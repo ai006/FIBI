@@ -84,8 +84,8 @@ class MainOptionsScreen extends React.Component {
         searching : false,  //boolean to switching the loading screen indicator on and off
         showModalData:false,  //boolean used to determine when to show the job Modal
         showdescriptionModal:false,
-        title:'The FIBI home Screen',
-        description:'on this page, you will be able to access Jobs in the different departements and also see some questions that may help you in your job search',
+        title:'FIBI home screen',
+        description:'on this page, you will be able to access  Jobs in the different departements and also see some questions that may help you in your job search',
         ModalData : {}
       }
     }
@@ -214,6 +214,16 @@ class MainOptionsScreen extends React.Component {
 
     const {jobTypes}  = this.props;         //get the types of jobs in our redux store and display
     const {title, description} = this.state;
+    
+    if(jobTypes.length === 0){
+      return(
+        <View style={{marginHorizontal:10,alignItems:'center',justifyContent:'center',flex:1}}>
+          <Text style={{fontSize:19}}>something went wrong please restart 
+            the app and make sure you have a valid internet connection </Text>
+        </View>
+      )
+    }
+    
     //get all the unique options to display on top for 
     //the horizantal scroll
     var unique = [];
@@ -260,7 +270,10 @@ class MainOptionsScreen extends React.Component {
         </View>
         <CardModal show={this.state.showModalData} data={this.state.ModalData} handleClick={this.cardClosed}
                     handleModal={this.modalHandler}/>
-         <DescriptionModal clicker={this.state.showdescriptionModal} title={title} description ={description} onclick ={this.descriptionModalClosed} reopen={this.descriptionModalreopen}/>
+         <DescriptionModal clicker={this.state.showdescriptionModal} 
+                            title={title} description ={description} 
+                            onclick ={this.descriptionModalClosed} 
+                            reopen={this.descriptionModalreopen}/>
          
       </View>
       

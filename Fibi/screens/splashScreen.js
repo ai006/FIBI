@@ -11,20 +11,34 @@ import {fetchNewsData} from '../api/newsAPI'
   Component for the splash screen (logo shown on startup)
   makes a call to the api function to get the data from the server
 
-
   should build another page for no internet connection
-
-
 */
 class SplashScreen extends React.Component {
+
+  constructor(props){
+    super(props);
+    this.state = {
+      fetchFail: false,
+      error:''
+      
+    }
+  }
 
   async componentDidMount() {
     // Preload data from an external API
     // Preload data using AsyncStorage
-    await store.dispatch(fetchJobsData());
-    await store.dispatch(fetchJobType());
-    await store.dispatch(fetchForumData());
-    await store.dispatch(fetchNewsData());
+    try{
+      await store.dispatch(fetchJobsData());
+      await store.dispatch(fetchJobType());
+      await store.dispatch(fetchForumData());
+      await store.dispatch(fetchNewsData());
+    }catch (e) {
+        this.setState({
+          fetchFail:true,
+          error:e
+        })
+    }
+    
 
 
     //switch to new screen (jobsDataScree) after the store has been
@@ -33,12 +47,18 @@ class SplashScreen extends React.Component {
 
       this.props.navigation.navigate('App');
     }
-    else{
-      //add another screen for empty store
-    }
+    
   }
 
   render() {
+    if(this.state.fetchFail === true){
+      return(
+        <View style={{backgroundColor:'#fcfcfc',padding:20, borderRadius:20,marginHorizontal:10}}>
+          <Text style={{fontSize:19}}>something went wrong please restart 
+            the app or make sure you have an internet connection </Text>
+        </View>
+      )
+    }
     return (
       <View style={styles.viewStyles}>
            <View>

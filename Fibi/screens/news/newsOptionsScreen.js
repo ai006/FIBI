@@ -47,7 +47,8 @@ constructor(props){
       showModalData: false,
       title:'On going news',
       description:'on this page, you be updated with the latest news about International Students',
-      ModalData : {}
+      ModalData : {},
+      showdescriptionModal: false
   }
 }
 
@@ -107,7 +108,7 @@ componentDidMount() {
   }
     
   });
-  }
+}
 
 render() { 
   const {title, description} = this.state; 

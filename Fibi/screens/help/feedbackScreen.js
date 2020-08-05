@@ -47,44 +47,39 @@ export default class FeedbackScreen extends React.Component {
     this.props.navigation.push('input', {
                                           title:'connect',
                                           placeHolder: 'your linkedin name or email address'})}
-constructor(props){
-  super(props);
-  this.state = {
-     
-      title:'Any Feed back',
-      description:'Please tell as how we may improve the app. Report any bugs and also connect with us if you would like to take part in the improvements of FIBI'
-}
-}
-descriptionModalClosed = () => {
-  this.setState({
-    showdescriptionModal:false
-    
-   
+  constructor(props){
+    super(props);
+    this.state = {
+        showdescriptionModal:false,
+        title:'Any Feed back',
+        description:'Please tell as how we may improve the app. Report any bugs and also connect with us if you would like to take part in the improvements of FIBI'
+    }
+  }
+
+  descriptionModalClosed = () => {
+    this.setState({
+      showdescriptionModal:false
   });
- 
   AsyncStorage.setItem('feedbackscreen', JSON.stringify(false));
 }
 
-descriptionModalreopen = () => {
-  this.setState({
-    showdescriptionModal:false
-  });
-  
-}
-componentDidMount() {
-
-  AsyncStorage.getItem('feedbackscreen').then((value) => {
-    let thevalue = JSON.parse(value);
-
-    if (thevalue != null){
-     
-      this.setState({ showdescriptionModal: thevalue});
-    }
-  else{
-    this.setState({ showdescriptionModal: true});
+  descriptionModalreopen = () => {
+    this.setState({
+      showdescriptionModal:false
+    });
   }
-    
-  });
+
+  componentDidMount() {
+
+    AsyncStorage.getItem('feedbackscreen').then((value) => {
+      let thevalue = JSON.parse(value);
+      if (thevalue != null){
+        this.setState({ showdescriptionModal: thevalue});
+      }
+      else{
+        this.setState({ showdescriptionModal: true});
+      }
+    });
   }
   render() {
     const {title, description} = this.state;
