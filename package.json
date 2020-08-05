@@ -12,7 +12,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "concurrently": "^4.1.0"
+    "concurrently": "^4.1.0",
+    "native-base": "2.13.8"
   },
   "devDependencies": {
     "babel": "^6.23.0",
