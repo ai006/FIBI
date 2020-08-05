@@ -8,21 +8,22 @@ const initialState = {
   error: "no errors"
 }
 
+//the reducer for fetching all the jobs in the DB
 export default function jobsReducer(state = initialState, action) {  
-  //console.log(action.jobs)
+
   switch (action.type) {
-      case FETCH_JOBS_ERROR:
+      case FETCH_JOBS_ERROR:    //when fetching jobs fails
         return {
           ...state,
           pending: false,
           error:  action.error
         }
-      case FETCH_JOBS_PENDING:
+      case FETCH_JOBS_PENDING:  //when fetching jobs just started or is pending
         return {
           ...state,
           pending: true
         }
-      case FETCH_JOBS_SUCCESS:
+      case FETCH_JOBS_SUCCESS:  //when fetching jobs is successful
         return{
           ...state,
           pending: false,

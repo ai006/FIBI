@@ -51,8 +51,11 @@ export default class FeedbackScreen extends React.Component {
     super(props);
     this.state = {
         showdescriptionModal:false,
-        title:'Any Feed back',
-        description:'Please tell as how we may improve the app. Report any bugs and also connect with us if you would like to take part in the improvements of FIBI'
+        title:'Feedback',
+        description:
+                    'On this page you can sign up for our contact list to be notified if a question concerning your major has been asked so that you can help us answer it.\n\n'+
+                    'You can also interact with us on this page by informing us of any bugs or errors in the app so that we can fix them.\n\n' +
+                    'You can also help us by letting us know how we can improve this app.\n\n'
     }
   }
 
@@ -94,8 +97,9 @@ export default class FeedbackScreen extends React.Component {
               <Card style={[styles.about,styles.shadow]}>
                   <View style={styles.containerCard}>
                       <Text style={styles.paragraph}>
-                          This app has the potential to help a lot of international students especially its forum feature.
-                          So we are looking for people in different that will be willing to answer some of this questions   
+                      This app has the potential to help a lot of international students, especially the forum feature. 
+                      So we are actively looking for people in or with different majors 
+                      who will be willing to answer some of these questions. The more questions we can explain the more students we can help.  
                       </Text>
                   </View>
                   <View style={{alignItems:'center',justifyContent:'center',flex:1,flexDirection:'row'}}>
@@ -112,7 +116,7 @@ export default class FeedbackScreen extends React.Component {
                   <View style={styles.containerCard}>
                       <Text style={styles.paragraph}>
                           Is your degree not represented in our database? Is there any feature you would
-                          like to see added in the future, or what would you like us to improve?
+                          like to see added in the future? what would you like us to improve? Please let us know
                       </Text>
                   </View>
                   <View style={{alignItems:'center',justifyContent:'center',flex:1,flexDirection:'row'}}>

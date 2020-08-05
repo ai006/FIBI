@@ -1,10 +1,7 @@
 import React from 'react';
 import {Dimensions, StyleSheet,Platform,TouchableOpacity, 
         Text,Image, View,ScrollView,ActivityIndicator, FlatList, AsyncStorage } from 'react-native';
-import { Card } from 'react-native-paper';
-import { LinearGradient } from 'expo-linear-gradient';
 import Ionicons from "react-native-vector-icons/Ionicons";
-import { StackNavigator } from 'react-navigation';
 import { connect } from 'react-redux';
 
 import Cards from '../cards/mainOptionsCard';
@@ -19,9 +16,10 @@ const { width, height } = Dimensions.get('window');
 // How many posters we want to have in each row and column
 const numColumns = 2;
 
-//used for getting ket for FlatList
+//used for getting key for FlatList
 const extractKey = ({ id }) => id.toString()
 
+//how the view of the main screen is laid out
 const formatData = (data, numColumns) => {
   const numberOfFullRows = Math.floor(data.length / numColumns);
 
@@ -39,6 +37,8 @@ const formatData = (data, numColumns) => {
 };
 
 
+/* This is the mainScreen
+  it shows all the types of jobs and questions in the DB*/
 class MainOptionsScreen extends React.Component {
 
     static navigationOptions = ({ navigation }) => {
@@ -84,8 +84,8 @@ class MainOptionsScreen extends React.Component {
         searching : false,  //boolean to switching the loading screen indicator on and off
         showModalData:false,  //boolean used to determine when to show the job Modal
         showdescriptionModal:false,
-        title:'FIBI home screen',
-        description:'on this page, you will be able to access  Jobs in the different departements and also see some questions that may help you in your job search',
+        title:'FIBI',
+        description:'First of all, let me start by saying welcome and thank you for downloading FIBI. FIBI is an app meant to help international students navigate through jobs, school, and many more. On this screen, you will find all the different majors in our database where each major has a forum where you can ask questions concerning it, and a jobs page which shows companies that are able and have hired international students. \n\n You can directly click any card or the words "questions" and "jobs" at the bottom of the card.',
         ModalData : {}
       }
     }

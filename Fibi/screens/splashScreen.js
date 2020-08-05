@@ -41,7 +41,7 @@ class SplashScreen extends React.Component {
     
 
 
-    //switch to new screen (jobsDataScree) after the store has been
+    //switch to new screen (mainOptionsScreen) after the store has been
     //updated with data
     if(store.getState() !== null){
 

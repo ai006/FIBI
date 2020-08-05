@@ -9,16 +9,16 @@ import news from './newsReducer';
 export default combineReducers({
     data: jobs,                     //all the jobs in the database
     jobType : jobTypes,             //all the type of jobs in database e.g. accounting
-    forum : questions,               //all the questions asked in the forum
+    forum : questions,              //all the questions asked in the forum
     articles: news                  //all the news in the database
 });
 
-//The redux looks roughly like this
+//The redux looks roughly like this when everything is saved in the redux
 /*
 {
     data:{
         pending: "",
-        jobs: [ ],
+        jobs: [],
         error: " "
     },
     jobType: {

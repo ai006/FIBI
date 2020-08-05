@@ -15,6 +15,7 @@ export default class App extends React.Component {
   //   //setInterval(this.printReduxStorage,10000)
   // }
  
+  //function used to print all the data in the redux
   printReduxStorage = () => {
    // console.log(store.getState())
   }
@@ -26,7 +27,6 @@ export default class App extends React.Component {
         <StatusBar barStyle = "dark-content" hidden = {false} 
                   backgroundColor = "#f5f5f5" translucent = {true} />
          <Provider store={store}>
-          {/* <AppNavigator/> */}
           <InitialNavigator/>
         </Provider>  
       </View>
