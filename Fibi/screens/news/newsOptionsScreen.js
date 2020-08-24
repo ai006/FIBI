@@ -95,8 +95,8 @@ descriptionModalreopen = () => {
   });
   
 }
-componentDidMount() {
 
+componentDidMount() {
   AsyncStorage.getItem('newsscreen').then((value) => {
     let thevalue = JSON.parse(value);
 
@@ -111,6 +111,15 @@ componentDidMount() {
   });
 }
 
+  //function to used in sorting the types of jobs in alphabetical order
+  compare = (a, b) => {
+    // Turn your strings into dates, and then subtract them
+    // to get a value that is either negative, positive, or zero.
+    return new Date(b.publishedAT) - new Date(a.publishedAT);
+  }
+
+
+
 render() { 
   const {title, description} = this.state; 
   const {news}  = this.props; //get the news object to display
@@ -122,12 +131,13 @@ render() {
         </View>
       )
     }
-    const reverse  = news.reverse()
+    //const reverse  = news.reverse();
+    news.sort(this.compare)
     return (
           <View style={{flex:1}}>
             <View style={styles.container}>
               <FlatList 
-                data = {reverse}
+                data = {news}
                 renderItem={this.renderItem}
                 keyExtractor={extractKey}
                />

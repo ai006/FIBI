@@ -81,6 +81,7 @@ class Jobs extends Component {
   //function which calls the routine deleteDataFromDB from api.js
   //which is used to delete a job from the database
   deleteFromDB = (idTodelete) => {
+    
     let tempIdToDelete = parseInt(idTodelete)
     let objIdToDelete = null;
     this.state.data.forEach((dat) => {
@@ -109,6 +110,7 @@ class Jobs extends Component {
 
   render() {
     const { data } = this.state;
+    console.log(data.length + 'size')
     return (
       <div>
         <div>

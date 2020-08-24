@@ -22,7 +22,7 @@ var randomImg = [
     require('../images/21.jpg'), require('../images/22.jpg'),
     require('../images/23.jpg'), require('../images/24.jpg'),     
     require('../images/25.jpg'), require('../images/26.jpg'),    
-    require('../images/27.jpg'), require('../images/28.jpg')];  
+    require('../images/0.jpg'), require('../images/1.jpg')];  
 
 export default class MainOptionsCard extends React.Component {
 
@@ -51,7 +51,7 @@ export default class MainOptionsCard extends React.Component {
         )}
         return (
         <View style={{flex:1}}>         
-            <ImageBackground source={ randomImg[Math.floor(Math.random()*randomImg.length)]} 
+            <ImageBackground source={ randomImg[parseInt(this.props.data.id)%26]} 
                 style={[styles.shadow,styles.imageContainer]}
                 imageStyle={{ borderRadius: 10}}
             >

@@ -26,7 +26,7 @@ const formatData = (data, numColumns) => {
   let numberOfElementsLastRow = data.length - (numberOfFullRows * numColumns);
   while (numberOfElementsLastRow !== numColumns && numberOfElementsLastRow !== 0) {
     data.push(  { id: numberOfElementsLastRow,
-                  occupation: `blank-${numberOfElementsLastRow}`,
+                  occupation: `xblank-${numberOfElementsLastRow}`,
                   questions: '0',
                   jobs: '0', 
                   empty:      true });

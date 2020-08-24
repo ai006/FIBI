@@ -56,6 +56,7 @@ export default class DetailedJobScreen extends Component {
     
     const job = this.props.navigation.getParam('job');
     let link = job.link.toString()
+    let about = job.about.toString()
     return (
       <View style={styles.container}>
         <ScrollView>
@@ -87,7 +88,12 @@ export default class DetailedJobScreen extends Component {
           </Card>
           <Card style={[styles.shadow,{margin:10},styles.cardBackgroundColor]}>
             <Text style={{margin:10,color:'#a5acad',fontWeight: '500'}}>About</Text>
-            <Text style={{fontSize: 16,fontWeight: '500',margin:10}}>{job.about}</Text>
+            {/* <Text style={{fontSize: 16,fontWeight: '500',margin:10}}>{job.about}</Text> */}
+            <TouchableOpacity style={styles.linkStyle} onPress={()=>this.showSite(about)}>
+                <View >
+                  <Text  style={{color:'blue',textDecorationLine: 'underline',margin:20,fontSize:20}}>{job.about}</Text>
+                </View>
+            </TouchableOpacity>
           </Card>
           <Card style={[styles.shadow,styles.cardBackgroundColor]}>
             <TouchableOpacity style={styles.buttonContainer} onPress={() => this.props.navigation.pop()}>

@@ -59,6 +59,7 @@ export const addDataToDB = async (id, data) => {
 // our delete method that uses our backend api
   // to remove existing database information
 export const deleteDataFromDB = async (id) => {
+    
     axios.delete(API_URL_LOCALHOST + 'api/deleteData', {
         data: {id: id,},
     });
