@@ -19,12 +19,10 @@ var randomImg = [
   require('../../images/SummerDog.jpg'),require('../../images/TealLove.jpg'),    
   ]; 
 
+let timer = null; //variable to use for closing the timer
+
 class ForumScreen extends React.Component {
 
-
-  // async componentDidMount(){
-  //   await store.dispatch(fetchForumData());
-  // }
 
     
   //hide the  header 
@@ -36,31 +34,68 @@ class ForumScreen extends React.Component {
             },
      };
   };
+
+  constructor(props){
+    super(props);
+    this.state = {
+        lockClick : false, //boolean used to handle debouncing when a click occurs
+    }
+  }
+
   
   openDetailedQuery = (question, idNumber) => {
-    
+
+    if(this.state.lockClick)return  //if a click has already occured and 1 sec hasn't elapsed just return and do nothing
+            this.setState({                 
+                lockClick : true              //lock the clickable object
+    })
     this.props.navigation.push('detailedForum', {   // Navigate away to detailed forum route
                                                     query: question,
                                                     id : idNumber
                                                   });
+    timer = setTimeout(() => {              //for handling debouncing
+      this.setState({                       //set lockClick to true after 1 sec
+        lockClick : false
+      })
+    }, 1000);
+                                                
   }
 
   /* function used to open the newAnswerScreen 
   which is used to add comments to questions.
   The argument data is the ID of the selected question in the redux*/ 
   openAnswerQuery = (data,inquiry) => {
+
+    if(this.state.lockClick)return  //if a click has already occured and 1 sec hasn't elapsed just return and do nothing
+            this.setState({                 
+                lockClick : true              //lock the clickable object
+    })
     this.props.navigation.push('newAnswer', {
                                               id : data,
                                               question : inquiry,
                                               route : 'first_route'
                                             }
     );
+    timer = setTimeout(() => {              //for handling debouncing
+      this.setState({                       //set lockClick to true after 1 sec
+        lockClick : false
+      })
+    }, 1000);
   }
 
   openNewQuestion = () => {
+    if(this.state.lockClick)return  //if a click has already occured and 1 sec hasn't elapsed just return and do nothing
+            this.setState({                 
+                lockClick : true              //lock the clickable object
+    })
     this.props.navigation.push('newQuestion', //name of the category selected to send to the new question screen
                                   { category : this.props.navigation.getParam('option')}
                                 )
+    timer = setTimeout(() => {              //for handling debouncing
+      this.setState({                       //set lockClick to true after 1 sec
+        lockClick : false
+      })
+    }, 1000);
   }
 
   

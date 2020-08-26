@@ -1,3 +1,11 @@
+1.  handle debounce
+        feedback back screen all clicks
+        news screen
+        main forum             --done
+        detailed forum         --done
+        unique forum cards     --done
+        main card              --done
+
 
 
 

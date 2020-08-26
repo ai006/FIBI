@@ -37,6 +37,8 @@ const formatData = (data, numColumns) => {
 };
 
 
+let timer = null; //variable to use for closing the timer
+
 /* This is the mainScreen
   it shows all the types of jobs and questions in the DB*/
 class MainOptionsScreen extends React.Component {
@@ -86,7 +88,8 @@ class MainOptionsScreen extends React.Component {
         showdescriptionModal:false,
         title:'FIBI',
         description:'First of all, let me start by saying welcome and thank you for downloading FIBI. FIBI is an app meant to help international students navigate through jobs, school, and many more. On this screen, you will find all the different majors in our database where each major has a forum where you can ask questions concerning it, and a jobs page which shows companies that are able and have hired international students. \n\n You can directly click any card or the words "questions" and "jobs" at the bottom of the card.',
-        ModalData : {}
+        ModalData : {},
+        lockClick : false,
       }
     }
 
@@ -170,9 +173,11 @@ class MainOptionsScreen extends React.Component {
   the function closes the modal and either 
   opens jobs or question depending on what the user chose*/
   modalHandler = (data,type) => {
+    if(this.state.lockClick)return  //if a click has already occured and 1 sec hasn't elapsed just return and do nothing
     this.setState({
       showModalData:false,
-      ModalData: {}
+      ModalData: {},
+      lockClick : true              //lock the clickable object
     })
     if(type === 'job'){   //if jobs is selected
       this.jobclicked(data)
@@ -180,6 +185,12 @@ class MainOptionsScreen extends React.Component {
     else if(type === 'question'){ //if questions selected
       this.openQuestions(data)
     }
+
+    timer = setTimeout(() => {              //for handling debouncing
+      this.setState({                       //set lockClick to true after 1 sec
+        lockClick : false
+      })
+    }, 1000);
   }
 
 

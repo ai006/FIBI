@@ -22,7 +22,6 @@ export default class SpecificQuestionScreen extends Component {
     //get the category of the type of question
     //and send it to function 'openQuestions' in file ForumOptionsScreen.js
     handleClick = (job) => {
-        
         this.props.openOptions(job);
      }
 

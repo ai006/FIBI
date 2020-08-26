@@ -11,6 +11,8 @@ import {mailSender} from '../../api/mailSender';
 
 const { width, height } = Dimensions.get('window');
 
+let timer = null; //variable to use for closing the timer
+
 class NewAnswerQuestion extends React.Component {
 
 static navigationOptions = ({ navigation }) => {
@@ -44,7 +46,7 @@ static navigationOptions = ({ navigation }) => {
 constructor(props){
   super(props);
   this.state = {
-        answer:'', //the response to the question
+        answer : '', //the response to the question
   }
 }
 
@@ -131,6 +133,8 @@ handleClick = async () => {
   else if(route === 'second_route' && status === true && mailStatus === true){
     this.props.navigation.pop(2)  //go back to the previous two screens
   }
+
+
 }
 
 render() {  

@@ -11,6 +11,8 @@ import {mailSender} from '../../api/mailSender';
 
 const { width, height } = Dimensions.get('window');
 
+let timer = null; //variable to use for closing the timer
+
 class NewQuestionScreen extends React.Component {
 
 static navigationOptions = ({ navigation }) => {
@@ -63,6 +65,7 @@ componentDidMount() {
 
 //function used to get all the user input to send to our database
 handleClick = async () => {
+
   //check to see if the user has entered data before sending it to the api
   if(this.state.title.length === 0 || this.state.inquiry.length === 0){
     Alert.alert(                                          //alert user if missing title or body
@@ -127,14 +130,15 @@ handleClick = async () => {
   if(status && mailStatus){
     this.props.navigation.pop()  //go back one screens
   }
+
 }
 
-showEmailField =() => {
-  this.setState({
-    showEmailInput: true,
-    showNotification:false,
-  })
-}
+  showEmailField =() => {
+    this.setState({
+      showEmailInput: true,
+      showNotification:false,
+    })
+  }
 
 noEmailField = () => {
   this.setState({

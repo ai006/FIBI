@@ -10,28 +10,39 @@ const cols = 2, rows = 3;
 
 var randomImg = [
     require('../images/2.jpg'),    
-    require('../images/3.jpg'), require('../images/4.jpg'), 
+    require('../images/10.jpg'), require('../images/4.jpg'), 
     require('../images/5.jpg'), require('../images/6.jpg'),     
     require('../images/7.jpg'), require('../images/8.jpg'),    
-    require('../images/9.jpg'), require('../images/10.jpg'),
+    require('../images/9.jpg'), require('../images/19.jpg'),
     require('../images/11.jpg'), require('../images/12.jpg'),    
     require('../images/13.jpg'), require('../images/14.jpg'), 
     require('../images/15.jpg'), require('../images/16.jpg'),     
     require('../images/17.jpg'), require('../images/18.jpg'),    
-    require('../images/19.jpg'), require('../images/20.jpg'),
+    require('../images/3.jpg'), require('../images/20.jpg'),
     require('../images/21.jpg'), require('../images/22.jpg'),
     require('../images/23.jpg'), require('../images/24.jpg'),     
     require('../images/25.jpg'), require('../images/26.jpg'),    
-    require('../images/0.jpg'), require('../images/1.jpg')];  
+    require('../images/0.jpg'), require('../images/1.jpg')]; 
+    
+let timer = null; //variable to use for closing the timer
 
 export default class MainOptionsCard extends React.Component {
 
     constructor(props){
         super(props);
+        this.state = {
+            lockClick : false, //boolean used to handle debouncing when a click occurs
+      }
     }
   
     //get the occupation for the card clicked
     handleClick = (data,type) => {
+
+        if(this.state.lockClick)return  //if a click has already occured and 1 sec hasn't elapsed just return and do nothing
+        this.setState({                 
+                lockClick : true              //lock the clickable object
+        })
+
         if(type === 'jobs'){    //if the jobs is clicked on the card
             this.props.clickedJob(data.occupation);
         }
@@ -40,7 +51,14 @@ export default class MainOptionsCard extends React.Component {
         }     
         else if(type === 'modal'){
             this.props.openModal(data)
-        } 
+        }
+        
+        timer = setTimeout(() => {              //for handling debouncing
+            this.setState({                       //set lockClick to true after 1 sec
+              lockClick : false
+            })
+        }, 1000);
+        
     }
 
     render() {  

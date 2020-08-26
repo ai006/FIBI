@@ -11,6 +11,8 @@ import Ionicons from "react-native-vector-icons/Ionicons";
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 const { width, height } = Dimensions.get('window');
 
+let timer = null; //variable to use for closing the timer
+
 var randomImg = [
     require('../images/Cinnamint.jpg'), require('../images/EasyMed.jpg'),    
     require('../images/EndlessRiver.jpg'), require('../images/GreenandBlue.jpg'), 
@@ -21,6 +23,13 @@ var randomImg = [
     require('../images/TealLove.jpg')];
 
 export default class OptionCardModal extends React.Component {
+
+    constructor(props){
+        super(props);
+        this.state = {
+            lockClick : false, //boolean used to handle debouncing when a click occurs
+        }
+    }
 
   handleClose = () => {
     return this.props.handleClick();

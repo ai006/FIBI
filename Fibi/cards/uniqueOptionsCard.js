@@ -19,18 +19,38 @@ var randomImg = [
     require('../images/Quepal.jpg'), require('../images/SummerDog.jpg'),
     require('../images/TealLove.jpg')];
 
+let timer = null; //variable to use for closing the timer
+
 /*uniqueOptionsCard is used to show the special
  options on the main screen ranging from University
  Graduate school, GRE, SAT,stories, to gerneral questions */
 export default class uniqueOptionsCard extends Component {
 
+  constructor(props){
+    super(props);
+    this.state = {
+        lockClick : false, //boolean used to handle debouncing when a click occurs
+  }
+}
+
   //function used to open forum
   openForurm = () => {
+
+    if(this.state.lockClick)return  //if a click has already occured and 1 sec hasn't elapsed just return and do nothing
+      this.setState({                 
+        lockClick : true              //lock the clickable object
+    })
+    
     //handleClick is the function that was passed when
     //this class or component was called
     this.props.handleClick(this.props.option)  
-  }
 
+    timer = setTimeout(() => {              //for handling debouncing
+      this.setState({                       //set lockClick to true after 1 sec
+        lockClick : false
+      })
+    }, 1000);
+  }
 
   render() {
     const {option,emoji} = this.props;

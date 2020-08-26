@@ -9,6 +9,8 @@ import DescriptionModal from '../../modals/descriptionModal';
 
 const {height, width} = Dimensions.get('window')
 
+let timer = null; //variable to use for closing the timer
+
 export default class FeedbackScreen extends React.Component {
   static navigationOptions = ({ navigation }) => {
     return {
@@ -35,18 +37,6 @@ export default class FeedbackScreen extends React.Component {
     };
   };
 
-  handleClickFeedback = () => {
-    this.props.navigation.push('input', {
-                                        title:'feedback',
-                                        placeHolder: 'What can we improve on or add?'})}
-  handleClickReport = () => {
-    this.props.navigation.push('input', {
-                                        title:'Report 🐞',
-                                        placeHolder: 'How did the app crash or whats not working?'})}
-  handleClickAmbassador = () => {
-    this.props.navigation.push('input', {
-                                          title:'connect',
-                                          placeHolder: 'your linkedin name or email address'})}
   constructor(props){
     super(props);
     this.state = {
@@ -55,9 +45,63 @@ export default class FeedbackScreen extends React.Component {
         description:
                     'On this page you can sign up for our contact list to be notified if a question concerning your major has been asked so that you can help us answer it.\n\n'+
                     'You can also interact with us on this page by informing us of any bugs or errors in the app so that we can fix them.\n\n' +
-                    'You can also help us by letting us know how we can improve this app.\n\n'
+                    'You can also help us by letting us know how we can improve this app.\n\n',
+        lockClick : false, //boolean used to handle debouncing when a click occurs
     }
   }
+
+  handleClickFeedback = () => {
+    if(this.state.lockClick)return  //if a click has already occured and 1 sec hasn't elapsed just return and do nothing
+    this.setState({                 
+            lockClick : true              //lock the clickable object
+    })
+
+    this.props.navigation.push('input', {
+                                        title:'feedback',
+                                        placeHolder: 'What can we improve on or add?'})
+
+    timer = setTimeout(() => {              //for handling debouncing
+      this.setState({                       //set lockClick to true after 1 sec
+        lockClick : false
+      })
+    }, 1000);
+  }
+
+  handleClickReport = () => {
+    if(this.state.lockClick)return  //if a click has already occured and 1 sec hasn't elapsed just return and do nothing
+    this.setState({                 
+            lockClick : true              //lock the clickable object
+    })
+    
+    this.props.navigation.push('input', {
+                                        title:'Report 🐞',
+                                        placeHolder: 'How did the app crash or whats not working?'})
+    
+    timer = setTimeout(() => {              //for handling debouncing
+      this.setState({                       //set lockClick to true after 1 sec
+        lockClick : false
+      })
+    }, 1000);
+  }
+  
+  handleClickAmbassador = () => {
+
+    if(this.state.lockClick)return  //if a click has already occured and 1 sec hasn't elapsed just return and do nothing
+    this.setState({                 
+            lockClick : true              //lock the clickable object
+    })
+
+    this.props.navigation.push('input', {
+                                          title:'connect',
+                                          placeHolder: 'your linkedin name or email address'})
+
+    timer = setTimeout(() => {              //for handling debouncing
+      this.setState({                       //set lockClick to true after 1 sec
+        lockClick : false
+      })
+    }, 1000);
+  }
+
 
   descriptionModalClosed = () => {
     this.setState({

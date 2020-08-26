@@ -15,6 +15,8 @@ import CommentCard from '../../cards/commentCard'
 
 const { width, height } = Dimensions.get('window');
 
+let timer = null; //variable to use for closing the timer
+
 export default class detailedForumScreen extends React.Component {
     
     static navigationOptions = ({ navigation }) => {
@@ -29,7 +31,9 @@ export default class detailedForumScreen extends React.Component {
 
 constructor(props){
     super(props);
-    //this.
+    this.state = {
+        lockClick : false, //boolean used to handle debouncing when a click occurs
+    }
 }
 
 //function used in getting the time when a response is made
@@ -38,12 +42,21 @@ getTime = (time) => {
 }
 
 handleClick = () => {
-
+    if(this.state.lockClick)return  //if a click has already occured and 1 sec hasn't elapsed just return and do nothing
+            this.setState({                 
+                lockClick : true              //lock the clickable object
+    })
+    
     this.props.navigation.push('newAnswer',{
                                                 id : this.props.navigation.getParam('id'),
                                                 question: this.props.navigation.getParam('query'),
                                                 route : 'second_route'
                                             });
+    timer = setTimeout(() => {              //for handling debouncing
+        this.setState({                       //set lockClick to true after 1 sec
+            lockClick : false
+        })
+    }, 1000);
 }
 
 

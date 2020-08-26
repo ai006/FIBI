@@ -9,10 +9,31 @@ import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-nativ
 
 const { width, height } = Dimensions.get('window');
 
+let timer = null; //variable to use for closing the timer
+
 export default class ForumCard extends React.Component {
 
+  constructor(props){
+    super(props);
+    this.state = {
+        lockClick : false, //boolean used to handle debouncing when a click occurs
+    }
+  }
+
   handleClick = (data) => {
+
+    if(this.state.lockClick)return  //if a click has already occured and 1 sec hasn't elapsed just return and do nothing
+    this.setState({                 
+            lockClick : true              //lock the clickable object
+    })
+
     this.props.handleClick(data);
+
+    timer = setTimeout(() => {              //for handling debouncing
+      this.setState({                       //set lockClick to true after 1 sec
+        lockClick : false
+      })
+    }, 1000);
   }
   
   render() {
