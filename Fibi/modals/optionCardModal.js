@@ -8,7 +8,7 @@ import { formatDistance} from 'date-fns'
 import { WebView } from 'react-native-webview';
 import Ionicons from "react-native-vector-icons/Ionicons";
 
-
+import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 const { width, height } = Dimensions.get('window');
 
 var randomImg = [
@@ -63,8 +63,8 @@ export default class OptionCardModal extends React.Component {
                     >
                       <View style={{flex: 2,alignItems:'center',
                                     justifyContent:'center'}}>
-                        <Text style={{fontSize: 30, marginHorizontal: 5}}>{data.emoji}</Text>
-                        <Text style={{fontSize: 30, marginHorizontal: 5, color:'white',fontWeight:'bold'}}>{data.occupation}</Text>
+                        <Text style={{fontSize: wp('4.75%'), marginHorizontal: 5}}>{data.emoji}</Text>
+                        <Text style={{fontSize: wp('7.75%'), marginHorizontal: 5, color:'white',fontWeight:'bold'}}>{data.occupation}</Text>
                       </View>
                       { data.special    ? 
                         //if the card is special e.g. University, General, SAT & GRE show this
@@ -73,11 +73,11 @@ export default class OptionCardModal extends React.Component {
                             onPress={this.openQuestion} 
                                 >
                             <View style={{flex:3,alignItems:'center',justifyContent:'center',flexDirection:'row'}}>
-                                <Text style={{fontSize: 20, marginHorizontal: 5, color:'green',fontWeight:'bold'}}>{data.questions}</Text>
-                                <Text style={{fontSize: 20, marginHorizontal: 5, color:'green'}}>{data.displayRight}</Text>
+                                <Text style={{fontSize: wp('3.75%'), marginHorizontal: 5, color:'green',fontWeight:'bold'}}>{data.questions}</Text>
+                                <Text style={{fontSize: wp('3.75%'), marginHorizontal: 5, color:'green'}}>{data.displayRight}</Text>
                             </View>
                             <View style={{flex:1,alignSelf:'center'}}>
-                                <Text>Tap here</Text>
+                                <Text style={{fontSize: wp('3.75%')}}>Tap here</Text>
                             </View>
                         </TouchableOpacity>
                       : 
@@ -87,12 +87,12 @@ export default class OptionCardModal extends React.Component {
                                 style={{flex:1,backgroundColor:'white',borderRadius:20,margin:10}}
                                 onPress={this.openQuestion} 
                                     >
-                                <View style={{flex:3,alignItems:'center',justifyContent:'center',flexDirection:'row'}}>
-                                    <Text style={{fontSize: 20, marginHorizontal: 5, color:'green',fontWeight:'bold'}}>{data.questions}</Text>
-                                    <Text style={{fontSize: 20, marginHorizontal: 5, color:'green'}}>Questions</Text>
+                                <View style={{flex:2,alignItems:'center',justifyContent:'center',flexDirection:'row'}}>
+                                    <Text style={{fontSize: wp('3.75%'), marginHorizontal: 5, color:'green',fontWeight:'bold'}}>{data.questions}</Text>
+                                    <Text style={{fontSize: wp('3.75%'), marginHorizontal: 5, color:'green'}}>Questions</Text>
                                 </View>
                                 <View style={{flex:1,alignSelf:'center'}}>
-                                    <Text>Tap here</Text>
+                                    <Text style={{fontSize: wp('3.75%')}}>Tap here</Text>
                                 </View>
                             </TouchableOpacity>
                             
@@ -100,12 +100,12 @@ export default class OptionCardModal extends React.Component {
                                 style={{flex:1,backgroundColor:'white',borderRadius:20,margin:10}}
                                 onPress={this.openJob}
                                 >
-                                <View style={{flex:3,alignItems:'center',justifyContent:'center',flexDirection:'row'}}>
-                                    <Text style={{fontSize: 20, marginHorizontal: 5, color:'green',fontWeight:'bold'}}>{data.jobs}</Text>
-                                    <Text style={{fontSize: 20, marginHorizontal: 5, color:'green'}}>Jobs</Text>
+                                <View style={{flex:2,alignItems:'center',justifyContent:'center',flexDirection:'row'}}>
+                                    <Text style={{fontSize: wp('3.75%'), marginHorizontal: 5, color:'green',fontWeight:'bold'}}>{data.jobs}</Text>
+                                    <Text style={{fontSize: wp('3.75%'), marginHorizontal: 5, color:'green'}}>Jobs</Text>
                                 </View>
                                 <View style={{flex:1,alignSelf:'center'}}>
-                                    <Text>Tap here</Text>
+                                    <Text style={{fontSize: wp('3.75%')}}>Tap here</Text>
                                 </View>
                             </TouchableOpacity>
                         </View> 

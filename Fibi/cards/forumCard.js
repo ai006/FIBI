@@ -42,7 +42,7 @@ export default class ForumCard extends React.Component {
       }
     }
     visibleAnswers = question.comments.length - dontShow;
-    var temp = question.inquiry.replaceAll('<br/>','\n');
+   // var temp = question.inquiry.replaceAll('<br/>','\n');
 
     return (
           <View style={{height: height * 0.215,
@@ -61,7 +61,7 @@ export default class ForumCard extends React.Component {
               </View>
               <View style={styles.text}> 
                   <Text style={{flex:1,flexShrink:1, marginLeft:10, fontSize: 16,color:'#707070'}} numberOfLines={6}>
-                      {temp}
+                      {question.inquiry}
                   </Text>
               </View>
               <View style={styles.feedback}>

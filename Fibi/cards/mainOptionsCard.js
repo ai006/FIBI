@@ -2,7 +2,7 @@ import React from 'react';
 import {ImageBackground,Dimensions, StyleSheet, 
         TouchableOpacity, Text, View} from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
-
+import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 // Get screen dimensions
 const { width, height } = Dimensions.get('window');
 // How many posters we want to have in each row and column
@@ -114,7 +114,7 @@ export default class MainOptionsCard extends React.Component {
 
 const styles = StyleSheet.create({
     textBelow : {
-        fontSize: 13, 
+        fontSize: wp('3.75%'), 
         fontWeight:'bold', 
         color:'white'
     },
@@ -156,7 +156,7 @@ const styles = StyleSheet.create({
     },
     paragraph: {
         margin: 10,
-        fontSize: 20,
+        fontSize: wp('3.75%'),
         fontWeight: 'bold',
         justifyContent:'center',
         alignItems: 'center',

@@ -66,7 +66,7 @@ render() {
     }
     visibleAnswers = query.comments.length - dontShow;
 
-    var temp = query.inquiry.replaceAll('<br/>','\n\n')
+   // var temp = query.inquiry.replaceAll('<br/>','\n\n')
     return (
       
         <ScrollView>
@@ -83,7 +83,7 @@ render() {
                         <Text style={{ fontSize: 18, fontWeight:'bold', color:'black'}}> {query.title} </Text>
                     </View>
                     <View style={styles.text}> 
-                        <Text style={{ flex:1, fontSize: 16,color:'#585858'}}> {temp} </Text>
+                        <Text style={{ flex:1, fontSize: 16,color:'#585858'}}> {query.inquiry} </Text>
                     </View>
                 </View>
                 <View style={styles.feedback}>

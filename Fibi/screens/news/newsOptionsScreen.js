@@ -8,7 +8,7 @@ import Ionicons from "react-native-vector-icons/Ionicons";
 import NewsCard from '../../cards/newsCard';
 import ModalComponent from './newsModal';
 import DescriptionModal from '../../modals/descriptionModal';
-
+import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 const { width, height } = Dimensions.get('window');
 
 //used for getting ket for FlatList

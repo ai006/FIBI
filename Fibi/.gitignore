@@ -1,4 +1,6 @@
 /node_modules
+/.history
+debug.log
 .expo/*
 npm-debug.*
 *.jks

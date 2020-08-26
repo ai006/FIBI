@@ -4,7 +4,7 @@ import { StyleSheet,Text,TouchableOpacity,View,
 import PropTypes from 'prop-types' ;
 import { Card } from 'react-native-paper';
 
-
+import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 import { defaultStyles } from '../styles';
 
 // Get screen dimensions
@@ -42,8 +42,8 @@ export default class uniqueOptionsCard extends Component {
             style={[styles.shadow,styles.imageContainer]}
             imageStyle={{ borderRadius: 10}}
           >
-            <Text style={{fontSize:20}}>{emoji} </Text>
-            <Text style={{color:'white',fontSize:20,fontWeight:'bold'}}>{option}</Text>
+            <Text style={{fontSize: wp('5%')}}>{emoji} </Text>
+            <Text style={{color:'white',fontSize: wp('5%'),fontWeight:'bold'}}>{option}</Text>
           </ImageBackground>
       </TouchableOpacity>
       

@@ -5,7 +5,7 @@ import { Card } from 'react-native-paper';
 import { LinearGradient } from 'expo-linear-gradient';
 import { Icon } from 'react-native-elements'
 import { formatDistance} from 'date-fns'
-
+import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 
 const { width, height } = Dimensions.get('window');
 
@@ -30,11 +30,11 @@ export default class ForumCard extends React.Component {
                 </View>
                 <View style={{flex:3}}>
                     <View style={styles.title}>
-                        <Text style={{flex:1,fontSize: 19, fontWeight:'bold', color:'black'}}
+                        <Text style={{flex:1,fontSize: wp('4.75%'), fontWeight:'bold', color:'black'}}
                          numberOfLines={1}> {headlines.title}</Text>
                     </View>
                     <View style={styles.text}> 
-                        <Text style={{flex:1, fontSize: 16, color:'gray',marginLeft:5,marginRight:3}} 
+                        <Text style={{flex:1, fontSize: wp('4.75%'), color:'gray',marginLeft:5,marginRight:3}} 
                             numberOfLines={4}>
                             {headlines.content}
                         </Text>
