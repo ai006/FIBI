@@ -4,6 +4,7 @@ import { Card } from 'react-native-paper';
 import { LinearGradient } from 'expo-linear-gradient';
 import { Icon } from 'react-native-elements'
 import { formatDistance} from 'date-fns'
+import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 
 import CommentCard from '../../cards/commentCard'
 
@@ -93,10 +94,10 @@ render() {
                         </View> 
                     }
                     <View style={styles.title}>
-                        <Text style={{ fontSize: 18, fontWeight:'bold', color:'black'}}> {query.title} </Text>
+                        <Text style={{ fontSize: wp('5%'), fontWeight:'bold', color:'black'}}> {query.title} </Text>
                     </View>
                     <View style={styles.text}> 
-                        <Text style={{ flex:1, fontSize: 16,color:'#585858'}}> {query.inquiry} </Text>
+                        <Text style={{ flex:1, fontSize:  wp('5%'),color:'#585858'}}> {query.inquiry} </Text>
                     </View>
                 </View>
                 <View style={styles.feedback}>

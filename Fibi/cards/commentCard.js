@@ -5,7 +5,7 @@ import { Card } from 'react-native-paper';
 import { LinearGradient } from 'expo-linear-gradient';
 import { Icon } from 'react-native-elements'
 import { formatDistance} from 'date-fns'
-
+import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 
 const { width, height } = Dimensions.get('window');
 
@@ -32,15 +32,15 @@ render() {
         {
             comment.approved ? null   :            
             <View style={styles.pending}>
-                <Text style={{ fontSize: 11, fontWeight:'bold', color:'red'}}> pending approval</Text>
+                <Text style={{ fontSize: wp('5%'), fontWeight:'bold', color:'red'}}> pending approval</Text>
             </View> 
         }
         <View style={{ flex: 2, paddingBottom: height*0.10}}>
             <View style={styles.title}>
-                <Text style={{ fontSize: 15, fontWeight:'bold', color:'green'}}> Response </Text>
+                <Text style={{ fontSize:wp('5%') , fontWeight:'bold', color:'green'}}> Response </Text>
             </View>
             <View style={styles.text}> 
-                <Text style={{ flex:1, fontSize: 16,color : '#585858',marginHorizontal:5}}> {comment.response} </Text>
+                <Text style={{ flex:1, fontSize: wp('5%'),color : '#585858',marginHorizontal:5}}> {comment.response} </Text>
             </View>
         </View>
         <View style={styles.timeStamp}>

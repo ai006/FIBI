@@ -8,7 +8,7 @@ import Ionicons from "react-native-vector-icons/Ionicons";
 import DescriptionModal from '../../modals/descriptionModal';
 
 const {height, width} = Dimensions.get('window')
-
+import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 let timer = null; //variable to use for closing the timer
 
 export default class FeedbackScreen extends React.Component {
@@ -146,10 +146,10 @@ export default class FeedbackScreen extends React.Component {
                       who will be willing to answer some of these questions. The more questions we can explain the more students we can help.  
                       </Text>
                   </View>
-                  <View style={{alignItems:'center',justifyContent:'center',flex:1,flexDirection:'row'}}>
+                  <View style={{alignItems:'center',justifyContent:'center',flex:1,flexDirection:'row',marginTop: 3}}>
                       <TouchableOpacity style={styles.write} onPress={this.handleClickAmbassador}>
-                          <Icon name='create' type='material' color='#00AF33' size={20}/>
-                          <Text style={{fontWeight:'bold',color:'gray'}}>Join us</Text>
+                          <Icon name='create' type='material' color='#00AF33' size={wp('3.67%')}/>
+                          <Text style={{fontWeight:'bold',color:'gray', fontSize: wp('3.67%')}}>Join us</Text>
                       </TouchableOpacity>
                   </View>
               </Card>
@@ -163,10 +163,10 @@ export default class FeedbackScreen extends React.Component {
                           like to see added in the future? what would you like us to improve? Please let us know
                       </Text>
                   </View>
-                  <View style={{alignItems:'center',justifyContent:'center',flex:1,flexDirection:'row'}}>
+                  <View style={{alignItems:'center',justifyContent:'center',flex:1,flexDirection:'row',marginTop: 3}}>
                       <TouchableOpacity style={styles.write} onPress={this.handleClickFeedback}>
-                          <Icon name='create' type='material' color='#00AF33' size={20}/>
-                          <Text style={{fontWeight:'bold',color:'gray'}}>Feedback</Text>
+                          <Icon name='create' type='material' color='#00AF33' size={wp('3.67%')}/>
+                          <Text style={{fontWeight:'bold',color:'gray', fontSize: wp('3.67%')}}>Feedback</Text>
                       </TouchableOpacity>
                   </View>
               </Card>
@@ -181,10 +181,10 @@ export default class FeedbackScreen extends React.Component {
                           of two and we are doing the best that we can.
                       </Text>
                   </View>
-                  <View style={{alignItems:'center',justifyContent:'center',flex:1,flexDirection:'row'}}>
+                  <View style={{alignItems:'center',justifyContent:'center',flex:1,flexDirection:'row', marginTop: 3}}>
                       <TouchableOpacity style={styles.write} onPress={this.handleClickReport}>
-                          <Icon name='create' type='material' color='#00AF33' size={20}/>
-                          <Text style={{fontWeight:'bold',color:'gray'}}>Report</Text>
+                          <Icon name='create' type='material' color='#00AF33' size={wp('3.67%')}/>
+                          <Text style={{fontWeight:'bold',color:'gray', fontSize: wp('3.67%')}}>Report</Text>
                       </TouchableOpacity>
                   </View>
               </Card>
@@ -234,7 +234,7 @@ const styles = StyleSheet.create({
   },
   paragraph: {
     margin: 10,
-    fontSize: 14,
+    fontSize: wp('3.12%'),
     fontWeight: 'bold',
     textAlign: 'center',
   }
