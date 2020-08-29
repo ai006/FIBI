@@ -87,7 +87,7 @@ class MainOptionsScreen extends React.Component {
         showModalData:false,  //boolean used to determine when to show the job Modal
         showdescriptionModal:false,
         title:'FIBI',
-        description:'First of all, let me start by saying welcome and thank you for downloading FIBI. FIBI is an app meant to help international students navigate through jobs, school, and many more. On this screen, you will find all the different majors in our database where each major has a forum where you can ask questions concerning it, and a jobs page which shows companies that are able and have hired international students. \n\n You can directly click any card or the words "questions" and "jobs" at the bottom of the card.',
+        description:'First of all, let me start by saying welcome and thank you for downloading FIBI. FIBI is an app meant to help international students navigate through jobs, school, and so much more. On this screen, you will find all the different majors in our database. Each major has a forum where you can ask questions concerning it, and a job page which shows companies that are able and have hired international students. \n\n You can directly click on any card or the words "questions" and "jobs" at the bottom of the card.',
         ModalData : {},
         lockClick : false,
       }

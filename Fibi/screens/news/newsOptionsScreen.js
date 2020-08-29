@@ -46,8 +46,8 @@ constructor(props){
   this.state = {
       showModalData: false,
       title:'On going news',
-      description:'This page is devoted to news and blogs concerning international students.\n\nList of topics we will show in our news page:\nUniversity , student visas, OPT, CPT, H1B, sponsorship, and more.\n\n'
-      +'This page will also include blogs about the international student experience and more.\nIf you know bloggers or newspapers that write about international students and are not included on this platform please let us know on the help page.',
+      description:'This page is devoted to news and blogs concerning international students.\n\nList of topics we will show in our news page:\nUniversity , student visas, OPT, CPT, H1B, sponsorship, and more. New articles will be added weekly\n\n'
+      +'This page will also include blogs about the international-student experience and more.\nIf you know bloggers or newspapers that write about international students and are not included on this platform please let us know on the help page.',
       ModalData : {},
       showdescriptionModal: false
   }
