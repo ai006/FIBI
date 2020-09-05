@@ -23,9 +23,9 @@ app.use(cors());
 **************************************************************************************************************************
 **************************************************************************************************************************
 
-              GET IN TOUCH WITH ME TO GET ACCESS TO OUR DATABASE 
+              GET IN TOUCH WITH ME TO GET ACCESS TO A KEY WITH MORE privileges (delete, add, edit)
+              THIS KEY CAN ONLY READ FROM OUR DATABASE ONLY
 
-              see read me for more info
 
 **************************************************************************************************************************
 **************************************************************************************************************************
@@ -33,7 +33,7 @@ app.use(cors());
 */
 // this is our MongoDB database
 const dbRoute =
-  ' GET IN TOUCH WITH ME TO GET AN ACCESS KEY TO OUR DATABASE ';
+  'mongodb+srv://guest:guest123@wesponsorapp-8krvn.mongodb.net/test?retryWrites=true&w=majority';
 
 // connects our back end code with the database
 //mongoose.connect(dbRoute, { useNewUrlParser: true },{useUnifiedTopology: true});
