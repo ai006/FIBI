@@ -18,9 +18,19 @@ if(API_PORT == null || API_PORT == ""){
 const app = express();
 app.use(cors());
 
+/*
+**************************************************************************************************************************
+**************************************************************************************************************************
+**************************************************************************************************************************
+              GET IN TOUCH WITH ME TO GET ACCESS TO OUR DATABASE 
+              see read me in master branch for more info
+**************************************************************************************************************************
+**************************************************************************************************************************
+***************************************************************************************************************************
+*/
 // this is our MongoDB database
 const dbRoute =
-  'mongodb+srv://guest:guest123@wesponsorapp-8krvn.mongodb.net/test?retryWrites=true&w=majority';
+  ' GET IN TOUCH WITH ME TO GET AN ACCESS KEY TO OUR DATABASE ';
 
 // connects our back end code with the database
 //mongoose.connect(dbRoute, { useNewUrlParser: true },{useUnifiedTopology: true});
