@@ -21,9 +21,10 @@ router.post('/putData', (req, res) => {
         error: 'INVALID INPUTS',
       });
     }
-    console.log(job)                      //assigning the details of the job sent from the POST request to the schema
+    //console.log(job)                      //assigning the details of the job sent from the POST request to the schema
     Job.id = job.id;
     Job.CompanyName = job.CompanyName;
+    Job.abbreviation = job.abbreviation;
     Job.logo = job.logo;
     Job.educationLevel = job.educationLevel;
     Job.hire = job.hire;

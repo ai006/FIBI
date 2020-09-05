@@ -8,6 +8,7 @@ const JobSchema = new Schema(
 {
     id: Number,
     CompanyName: String,      //company name
+    abbreviation: String,     //abbreviated company name for when the name is too long
     logo: String,             //url address of image
     educationLevel: String,   //education level (PhD, masters, or bachelors)
     hire: String,

@@ -8,6 +8,11 @@ const jobTypesSchema = new Schema(
 {
     id: Number,
     occupation: String,
+    questions: String,
+    jobs: String,
+    speacial:Boolean,
+    emoji:String,
+    displayRight:String,
 },
   { timestamps: true }
 );

@@ -14,10 +14,10 @@ const router = express.Router();
 //based on the id entered from AdminClient
 router.delete('/deleteData', (req, res) => {
     const { id } = req.body;
-   
-    console.log("id is type "+ typeof id);
-    Jobs.findByIdAndDelete(id, (err) => {
-      if (err) return res.send(err);
+
+    //console.log("id to delete "+  id);
+     Jobs.findByIdAndDelete(id, (err) => {
+       if (err) return res.send(err);
       return res.json({ success: true });
     });
   });

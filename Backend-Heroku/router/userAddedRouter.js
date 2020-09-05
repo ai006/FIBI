@@ -32,7 +32,7 @@ router.post('/userAddedJob', (req, res) => {
     job.hire = data.hire;
     job.about = data.about;
 
-    console.log(job)
+    //console.log(job)
 
     job.save((err) => {                     //save to database and return true
       if (err) return res.json({ success: false, error: err });
