@@ -80,7 +80,14 @@ render() {
     }
     visibleAnswers = query.comments.length - dontShow;
 
-   // var temp = query.inquiry.replaceAll('<br/>','\n\n')
+  
+    //sort the results newest posts first
+    query.comments.sort(function(a,b)  {   
+        var dateA = new Date(a.createdAt).getTime();
+        var dateB = new Date(b.createdAt).getTime();
+        return dateA > dateB ? -1 : 1;  
+    });
+
     return (
       
         <ScrollView>

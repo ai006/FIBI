@@ -113,11 +113,20 @@ class ForumScreen extends React.Component {
     var msg = 'They are currently no questions to show for this category but you can be the first😁😁😁'
     
     var results = [];
+    //var sortedResults = []; 
+
     for (var i = 0; i < questions.length; i++) { 
       if (questions[i].category === category) {
             results.push(questions[i]);
         }
     }
+
+    //sort the results newest posts first
+    results.sort(function(a,b)  {   
+      var dateA = new Date(a.createdAt).getTime();
+      var dateB = new Date(b.createdAt).getTime();
+      return dateA > dateB ? -1 : 1;  
+    });
 
     if(results.length === 0){
       return(
