@@ -3,6 +3,7 @@ import {TextInput, Dimensions, StyleSheet, Text, View,ScrollView,TouchableOpacit
   Alert } from 'react-native';
 import { connect } from 'react-redux';
 import Ionicons from "react-native-vector-icons/Ionicons";
+import debounce from "lodash/debounce";
 
 import {deleteForumQuestion,insertForumQuestion} from '../../redux/actions/indexForum';
 import store from '../../redux/store';
@@ -11,7 +12,7 @@ import {mailSender} from '../../api/mailSender';
 
 const { width, height } = Dimensions.get('window');
 
-let timer = null; //variable to use for closing the timer
+
 
 class NewAnswerQuestion extends React.Component {
 
@@ -50,10 +51,15 @@ constructor(props){
   }
 }
 
+
+//stackoverflow link for button debouncing
+//https://stackoverflow.com/questions/47102946/prevent-double-tap-in-react-native
+//the debounce function wrapped in handleClick makes sure that only one click is possible
+//every half a  second
 componentDidMount() {
   // set handler method with setParams
   this.props.navigation.setParams({ 
-    handleClick: this.handleClick
+    handleClick: debounce(this.handleClick.bind(this), 500)
   });
 }
 
@@ -74,7 +80,6 @@ handleClick = async () => {
 
   const id = this.props.navigation.getParam('id');
   const question = this.props.navigation.getParam('question');
-  var clone = JSON.parse(JSON.stringify(question));
   const {questions}  = this.props; 
   //let copiedObject = JSON.parse(JSON.stringify(questions))
 
@@ -101,40 +106,37 @@ handleClick = async () => {
       _id++;
     }
   }
-  
-  var comment = {
-      id_ : _id,
-      response: this.state.answer,
-      createdAt : new Date(),       //get the date and time the question was answered
-      approved : false,             //all new answers will need to be approved        
-      show: true,
-  }
 
-  var commentAPI = {
-      id_ : _id,
-      response: this.state.answer,
-      createdAt : new Date(),       //get the date and time the question was answered
-      approved : false,             //all new answers will need to be approved        
-      show: false,
-  }
+  _id++;  //remove this ID if id numbers are colliding 
+  
+
+  var comment = {
+    id_ : _id,
+    response: this.state.answer,
+    createdAt : new Date(),       //get the date and time the question was answered
+    approved : false,             //all new answers will need to be approved        
+    show: false,
+}
   
   question.comments.push(comment);
-  store.dispatch(deleteForumQuestion(id));
-  store.dispatch(insertForumQuestion(id,question));
-
   
-  clone.comments.push(commentAPI);
-  const route = this.props.navigation.getParam('route');    //get the route of which screen called this page
-  var status = await sendForumData(clone,'answer');      //send the question to the DB
-  var mailStatus = await mailSender(clone,'forum');      //send the a notification a question been added
-  if(route === 'first_route' && status === true && mailStatus === true){
+  var status = await sendForumData(question,'answer');      //send the question to the DB
+  var mailStatus = await mailSender(question,'forum');      //send the a notification a question been added
+
+  question.comments[question.comments.length-1].show  = true; // the last element in array also the answer just added
+
+  //the new method is much more improved and does not need to delete and insert a whole new comment
+  //but the deleteForumQuestion and insertForumQuestion all work fine
+  //store.dispatch(deleteForumQuestion(id));
+  //store.dispatch(insertForumQuestion(id,question));
+
+  //get the route of which screen called this page
+  //const route = this.props.navigation.getParam('route');   
+  
+  if(status === true && mailStatus === true){
     this.props.navigation.pop()  //go back to the previous screen
   }
-  else if(route === 'second_route' && status === true && mailStatus === true){
-    this.props.navigation.pop(2)  //go back to the previous two screens
-  }
-
-
+ 
 }
 
 render() {  

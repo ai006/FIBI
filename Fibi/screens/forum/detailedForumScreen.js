@@ -5,6 +5,9 @@ import { LinearGradient } from 'expo-linear-gradient';
 import { Icon } from 'react-native-elements'
 import { formatDistance} from 'date-fns'
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
+import { NavigationEvents } from "react-navigation";
+
+
 
 import CommentCard from '../../cards/commentCard'
 
@@ -91,6 +94,10 @@ render() {
     return (
       
         <ScrollView>
+            <NavigationEvents //The next three lines of code below are used to refresh the
+                          //screen when navigation.pop() is made
+                          onDidFocus={()=>this.setState({})}
+                          />
             <View style={{marginTop:3,borderBottomWidth :1, borderBottomColor: '#f0f0f0',
                             backgroundColor: query.approved ? 'white': '#f0f0f0'}}>
                 <View style={{ flex: 2, paddingBottom: height*0.10}}>

@@ -7,6 +7,7 @@ import Ionicons from "react-native-vector-icons/Ionicons";
 import { connect } from 'react-redux';
 
 import ForumCard from '../../cards/forumCard'
+import { NavigationEvents } from "react-navigation";
 //import store from '../../redux/store'
 //import {fetchForumData} from '../../api/forumApi'
 
@@ -149,6 +150,10 @@ class ForumScreen extends React.Component {
     return (
       <View style={{ backgroundColor:'#DCDCDC', flex:1, 
                      alignItems:'center', justifyContent: 'center',paddingTop:2}}>
+        <NavigationEvents //The next three lines of code below are used to refresh the
+                          //screen when navigation.pop() is made
+                          onDidFocus={()=>this.setState({})}
+                          />
         <ScrollView>
           { 
             results.map((question,index) =>  

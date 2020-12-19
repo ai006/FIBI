@@ -58,7 +58,7 @@ export default class FeedbackScreen extends React.Component {
 
     this.props.navigation.push('input', {
                                         title:'feedback',
-                                        placeHolder: 'What can we improve on or add?'})
+                                        placeHolder: 'What can we improve on or add?\n\nPlease also add your linkedin or email address incase we need more clarity'})
 
     timer = setTimeout(() => {              //for handling debouncing
       this.setState({                       //set lockClick to true after 1 sec
@@ -75,7 +75,7 @@ export default class FeedbackScreen extends React.Component {
     
     this.props.navigation.push('input', {
                                         title:'Report 🐞',
-                                        placeHolder: 'How did the app crash or whats not working?'})
+                                        placeHolder: 'How did the app crash or whats not working?\n\nPlease also add your linkedin or email address incase we need more clarity'})
     
     timer = setTimeout(() => {              //for handling debouncing
       this.setState({                       //set lockClick to true after 1 sec

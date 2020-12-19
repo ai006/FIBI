@@ -3,6 +3,7 @@ import {TextInput, Dimensions, StyleSheet,Platform,
         Text, View,ScrollView,TouchableOpacity,Alert } from 'react-native';
 import { connect } from 'react-redux';
 import Ionicons from "react-native-vector-icons/Ionicons";
+import debounce from "lodash/debounce";
 
 import {addForumQuestion} from '../../redux/actions/indexForum';
 import {sendForumData} from '../../api/sendForumAPI';
@@ -11,7 +12,7 @@ import {mailSender} from '../../api/mailSender';
 
 const { width, height } = Dimensions.get('window');
 
-let timer = null; //variable to use for closing the timer
+
 
 class NewQuestionScreen extends React.Component {
 
@@ -53,18 +54,26 @@ constructor(props){
         showNotification: true,
         email: '',
         postedClicked: false,
+
   }
 }
 
+
+//stackoverflow link for button debouncing
+//https://stackoverflow.com/questions/47102946/prevent-double-tap-in-react-native
+//the debounce function wrapped in handleClick makes sure that only one click is possible
+//every half a second
 componentDidMount() {
   // set handler method with setParams
   this.props.navigation.setParams({ 
-    handleClick: this.handleClick
+    handleClick: debounce(this.handleClick.bind(this), 500 )
   });
 }
 
 //function used to get all the user input to send to our database
 handleClick = async () => {
+
+  
 
   //check to see if the user has entered data before sending it to the api
   if(this.state.title.length === 0 || this.state.inquiry.length === 0){
@@ -80,7 +89,7 @@ handleClick = async () => {
   }
 
   if(this.state.postedClicked === false){
-    this.setState({
+  this.setState({
       postedClicked: true })
       return;
   }
@@ -92,6 +101,7 @@ handleClick = async () => {
       id_++;
     }
   }
+  id_++;  //remove this ID if id numbers are colliding 
 
   var question = {
       id    : id_,
@@ -125,12 +135,13 @@ handleClick = async () => {
   if(this.state.showEmailInput === true){
     APIquestion.email = this.state.email                      //if notify me is specified attach email address to object 
   }
-
+  
   var mailStatus = await mailSender(APIquestion,'forum');    //send a notification that something was added to the DB     
+  
+   
   if(status && mailStatus){
     this.props.navigation.pop()  //go back one screens
   }
-
 }
 
   showEmailField =() => {
