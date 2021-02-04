@@ -4,6 +4,7 @@ import { Icon } from 'react-native-elements'
 import { Platform } from "react-native";
 import { Card } from 'react-native-paper';
 
+import * as Analytics from 'expo-firebase-analytics';
 import Ionicons from "react-native-vector-icons/Ionicons";
 import DescriptionModal from '../../modals/descriptionModal';
 
@@ -115,9 +116,10 @@ export default class FeedbackScreen extends React.Component {
       showdescriptionModal:false
     });
   }
-
+  
   componentDidMount() {
-
+    //Analytics.setCurrentScreen("help_screen")
+    //console.log("hereinfeedback")
     AsyncStorage.getItem('feedbackscreen').then((value) => {
       let thevalue = JSON.parse(value);
       if (thevalue != null){
@@ -127,9 +129,11 @@ export default class FeedbackScreen extends React.Component {
         this.setState({ showdescriptionModal: true});
       }
     });
+    
   }
   render() {
     const {title, description} = this.state;
+   
     return (
       <View style={styles.container}>
         <DescriptionModal clicker={this.state.showdescriptionModal} title={title} description ={description} onclick ={this.descriptionModalClosed} reopen={this.descriptionModalreopen}/>

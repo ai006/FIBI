@@ -3,7 +3,7 @@ import {StyleSheet, Text, Image, TouchableOpacity,
         ScrollView, View, Dimensions,Linking} from 'react-native';
 import { Card } from 'react-native-paper';
 
-
+import * as Analytics from 'expo-firebase-analytics';
 import { defaultStyles } from '../styles';
 import ScrollViews from '../scrollViews';
 import Options from '../Options';
@@ -50,7 +50,10 @@ export default class DetailedJobScreen extends Component {
       url : {}
     })
   }
-
+  // componentDidMount() {
+  //   Analytics.setCurrentScreen("main_screen")
+  //   //console.log(this.props.navigation.getParam('job').CompanyName)
+  // }
 
   render() {
     

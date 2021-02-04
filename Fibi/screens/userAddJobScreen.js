@@ -10,7 +10,7 @@ import { Header, useHeaderHeight } from 'react-navigation-stack';
 import { Dropdown } from 'react-native-material-dropdown';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 import { CheckBox } from 'react-native-elements';
-
+import * as Analytics from 'expo-firebase-analytics';
 
 import { defaultStyles } from '../styles';
 import { sendAddedJob } from '../api/api';
@@ -80,7 +80,9 @@ export default class UserAddJob extends Component {
 //   componentDidMount(){
 //     //setInterval(this.printState,10000)
 //   }
-
+componentDidMount() {
+    Analytics.setCurrentScreen('useraddjobscreen')
+  }
   printState = () => {
     console.log(this.state.AddedJob);
   }

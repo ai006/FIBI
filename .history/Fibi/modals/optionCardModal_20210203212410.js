@@ -38,13 +38,13 @@ export default class OptionCardModal extends React.Component {
   openJob = () => {
    
     Analytics.logEvent('Major', { type: 'job', screen:this.props.data.occupation });
-   
+   // Analytics.logSelectItem({content_type: 'Major', item_list_id: 'job', item_list_name: this.props.data.occupation});
       return this.props.handleModal(this.props.data.occupation,'job')
   }
 
   openQuestion = () => {
     Analytics.logEvent('Major', { type: 'question', screen:this.props.data.occupation });
-    
+    //Analytics.logSelectItem({content_type: 'Major', item_list_id: 'question', item_list_name: this.props.data.occupation});
     return this.props.handleModal(this.props.data.occupation,'question')
   }
   componentDidMount() {

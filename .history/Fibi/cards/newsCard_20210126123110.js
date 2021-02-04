@@ -38,7 +38,10 @@ export default class ForumCard extends React.Component {
 
     Analytics.logEvent('News', { headline:this.props.headlines.title});
   }
-  
+  //  componentDidMount() {
+  //  // Analytics.setCurrentScreen("main_screen")
+  //   Analytics.logEvent('News', { headline:this.props.headlines.title});
+  // }
   render() {
     const {id_,headlines} = this.props;
     const datePosted = formatDistance(Date.parse(headlines.publishedAT),new Date());

@@ -13,6 +13,11 @@
     "date-fns": "^2.14.0",
     "expo": "~36.0.0",
     "expo-constants": "^8.0.0",
+<<<<<<< Updated upstream
+=======
+    "expo-firebase-analytics": "^2.6.0",
+    "lodash.debounce": "^4.0.8",
+>>>>>>> Stashed changes
     "native-base": "2.13.8",
     "prop-types": "^15.7.2",
     "react": "~16.9.0",

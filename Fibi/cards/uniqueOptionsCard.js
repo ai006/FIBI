@@ -3,7 +3,7 @@ import { StyleSheet,Text,TouchableOpacity,View,
         ImageBackground,Dimensions} from 'react-native';
 import PropTypes from 'prop-types' ;
 import { Card } from 'react-native-paper';
-
+import * as Analytics from 'expo-firebase-analytics';
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 import { defaultStyles } from '../styles';
 
@@ -40,7 +40,7 @@ export default class uniqueOptionsCard extends Component {
       this.setState({                 
         lockClick : true              //lock the clickable object
     })
-    
+    Analytics.logEvent('specialoptionsclicked', {screen:this.props.option });
     //handleClick is the function that was passed when
     //this class or component was called
     this.props.handleClick(this.props.option)  

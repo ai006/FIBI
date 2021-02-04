@@ -5,6 +5,7 @@ import {TextInput, Dimensions, StyleSheet,Platform,
 import { connect } from 'react-redux';
 import Ionicons from "react-native-vector-icons/Ionicons";
 
+import * as Analytics from 'expo-firebase-analytics';
 import NewsCard from '../../cards/newsCard';
 import ModalComponent from './newsModal';
 import DescriptionModal from '../../modals/descriptionModal';
@@ -55,6 +56,8 @@ constructor(props){
 
 //function used to open the news Modal
 newsClicked = (news) => {
+  //console.log(news.title);
+  Analytics.logEvent('newtitleclicked', {screen:news.title });
     this.setState({
       showModalData:true,
       ModalData: news
@@ -107,8 +110,9 @@ componentDidMount() {
   else{
     this.setState({ showdescriptionModal: true});
   }
-    
+  
   });
+  //Analytics.setCurrentScreen("News_screen")
 }
 
   //function to used in sorting the types of jobs in alphabetical order

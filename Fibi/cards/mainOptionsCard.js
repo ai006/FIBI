@@ -2,6 +2,7 @@ import React from 'react';
 import {ImageBackground,Dimensions, StyleSheet, 
         TouchableOpacity, Text, View} from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
+import * as Analytics from 'expo-firebase-analytics';
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 // Get screen dimensions
 const { width, height } = Dimensions.get('window');
@@ -45,12 +46,19 @@ export default class MainOptionsCard extends React.Component {
 
         if(type === 'jobs'){    //if the jobs is clicked on the card
             this.props.clickedJob(data.occupation);
+            Analytics.logEvent('Major', { type: 'job', screen:this.props.data.occupation });
+           //Analytics.logSelectItem({content_type: 'Major', item_list_id: 'job', item_list_name: this.props.data.occupation});
         }
         else if(type === 'questions'){  //if questions is clicked on the card
+            //console.log(data.occupation);
             this.props.clickedForum(data.occupation);
+            
+            Analytics.logEvent('Major', { type: 'questions', screen:data.occupation });
+           // Analytics.logSelectItem({content_type: 'Major', item_list_id: 'questions', item_list_name: this.props.data.occupation});
         }     
         else if(type === 'modal'){
             this.props.openModal(data)
+           
         }
         
         timer = setTimeout(() => {              //for handling debouncing
@@ -60,13 +68,16 @@ export default class MainOptionsCard extends React.Component {
         }, 1000);
         
     }
-
+    componentDidMount() {
+        //console.log(this.props.data.occupation)
+    }
     render() {  
         //if empty is true make the item invisible
         if(this.props.data.empty === true){
             return (
             <View style={styles.itemInvisible}/>
         )}
+        //console.log(this.props.data)
         return (
         <View style={{flex:1}}>         
             <ImageBackground source={ randomImg[parseInt(this.props.data.id)%26]} 

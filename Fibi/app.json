@@ -25,12 +25,27 @@
     ],
     "ios": {
       "bundleIdentifier": "com.angemadeit.fibi",
-      "supportsTablet": true
+      "supportsTablet": true,
+      "googleServicesFile": "./GoogleService-Info.plist"
     },
     "android": {
       "package": "com.angemadeit.fibi",
-      "versionCode": 5
+      "versionCode": 5,
+      "googleServicesFile": "./google-services.json"
     },
+    "web": {
+      "config": {
+        "firebase": {
+          "apiKey": "AIzaSyBhvGkUgITMbk6N0PSE_2J3RXYyNfLsShU",
+          "authDomain": "fibi-analytics.firebaseapp.com",
+          "projectId": "fibi-analytics",
+          "storageBucket": "fibi-analytics.appspot.com",
+          "messagingSenderId": "934230207045",
+          "appId": "1:934230207045:web:b8d5618da6fc6382eb512c",
+          "measurementId": "G-PZCYTQFEHP"
+        }
+  }
+},
     "description": ""
   }
 }

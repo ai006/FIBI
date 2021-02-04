@@ -12,7 +12,7 @@ import { Card } from 'react-native-paper';
 import JobPoster from '../containers/jobPoster'
 import Constants from 'expo-constants';
 import JobPopUp from '../containers/JobPopUp';
-
+import * as Analytics from 'expo-firebase-analytics';
 
 
 
@@ -89,10 +89,16 @@ class JobsData extends Component {
     }
   }
 
+  // componentDidMount() {
+  //   Analytics.setCurrentScreen(this.state.jobClicked)
+    
 
+  // }
 
   openJob = (jobClicked) => {
-    
+   Analytics.logEvent('Jobsclicked', {screen:jobClicked.CompanyName });
+  // console.log(jobClicked.CompanyName);
+   
     this.setState({
       popupIsOpen: true,
       jobClicked, 
@@ -107,10 +113,13 @@ class JobsData extends Component {
   }
 
   seeDetailedJob = () => {
+    
       this.closeJob();
       this.props.navigation.push('detailedJob', {   // Navigate away to detailed job route
         job: this.state.jobClicked
       });
+     // console.log(this.state.jobClicked)
+      //console.log(this.props.navigation);
   }
 
   //The function being used by flatList to display the cards

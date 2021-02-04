@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "934230207045",
+    "project_id": "fibi-analytics",
+    "storage_bucket": "fibi-analytics.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:934230207045:android:4261d70de003c00feb512c",
+        "android_client_info": {
+          "package_name": "com.angemadeit.fibi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "934230207045-6muhadifkv1d9kk2rvfhgb1t95p8b8de.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDVmxgFlosME3ov5fajiACO7nOsViVi36Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "934230207045-6muhadifkv1d9kk2rvfhgb1t95p8b8de.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "934230207045-33lpf7hgq1u21p1p40r1uboo0bcsg5uo.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.angemadeit.fibi"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

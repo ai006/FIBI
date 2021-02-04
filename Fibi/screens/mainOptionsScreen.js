@@ -8,7 +8,7 @@ import Cards from '../cards/mainOptionsCard';
 import UniqueCard from '../cards/uniqueOptionsCard';
 import CardModal from '../modals/optionCardModal';
 import DescriptionModal from '../modals/descriptionModal';
-
+import * as Analytics from 'expo-firebase-analytics';
 
 // Get screen dimensions
 const { width, height } = Dimensions.get('window');
@@ -93,6 +93,7 @@ class MainOptionsScreen extends React.Component {
       }
     }
 
+    
     //function to used in sorting the types of jobs in alphabetical order
     compare = (a, b) => {
       // Use toUpperCase() to ignore character casing
@@ -220,6 +221,10 @@ class MainOptionsScreen extends React.Component {
   }
     
   });
+
+  //Analytics.setCurrentScreen('mainOptionsScreen')
+     // console.log(this.state.showdescriptionModal)
+      //console.log("walala")
   }
   render() {
 
@@ -289,6 +294,7 @@ class MainOptionsScreen extends React.Component {
       </View>
       
     );
+    
   }
 }
 

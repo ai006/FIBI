@@ -31,7 +31,12 @@ export default class JobPopUp extends Component {
   state = {
    visibleModal: false,
   };
+//    componentDidMount() {
+  
+//     // Analytics.logEvent('JobsClicked', {screen:this.props.jobClicked.CompanyName });
+//     console.log("am here");
 
+//  }
 
    render() {     
     const {jobClicked, onBook,onClose} = this.props;
