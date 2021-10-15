@@ -47,3 +47,5 @@ Get all majors and forum topics -----GET `https://desolate-tor-37189.herokuapp.c
   <h2> Contact info</h2>
 <li> If you need any help <br>thierry.ishimwe@gmail.com and  shumbushofred@gmail.com</li>
 
+### add machine learning 
+
