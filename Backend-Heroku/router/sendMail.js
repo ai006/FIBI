@@ -6,13 +6,13 @@ const OAuth2 = google.auth.OAuth2;
 const router =express.Router();
 
 const myOAuth2Client = new OAuth2(
-  "94774374589-g8gfue4jufg4t9q0qcgvkf4s490aeg7j.apps.googleusercontent.com",
-  "j_QNcHw9ur8eTros_tbt9qHs",
+  "",
+  "",
   "https://developers.google.com/oauthplayground"
 )
 
 myOAuth2Client.setCredentials({
-    refresh_token:"1//04K5thE90_MdxCgYIARAAGAQSNwF-L9Ir97b6OV_dKT1TdlgolswD8M3F5ij_vFY90dXp41al9iPFBSJeMrCvkC41xg658A8wuLY"
+    refresh_token:""
   });
 
 const myAccessToken = myOAuth2Client.getAccessToken()
@@ -21,10 +21,10 @@ let transporter = nodemailer.createTransport({
   service: "gmail",
   auth: {
        type: "OAuth2",
-       user: "thierry.ishimwe@gmail.com", //your gmail account you used to set the project up in google cloud console"
-       clientId: "94774374589-g8gfue4jufg4t9q0qcgvkf4s490aeg7j.apps.googleusercontent.com",
-       clientSecret: "j_QNcHw9ur8eTros_tbt9qHs",
-       refreshToken: "1//04K5thE90_MdxCgYIARAAGAQSNwF-L9Ir97b6OV_dKT1TdlgolswD8M3F5ij_vFY90dXp41al9iPFBSJeMrCvkC41xg658A8wuLY",
+       user: "", //your gmail account you used to set the project up in google cloud console"
+       clientId: "",
+       clientSecret: "",
+       refreshToken: "",
        accessToken: myAccessToken //access token variable we defined earlier
     },
   });
